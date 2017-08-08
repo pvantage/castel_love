@@ -111,9 +111,15 @@ jQuery(function(jquery) {
           <input type="password" name="customer_con_password" maxlength="12" id="customer_con_password" placeholder="Password">
         </div>
         <div class="uploadfilemain">
-          <div class="custom-file-upload"> <img src="images/uploadimg.png" onclick="getImage();"/> </div>
-          <div class="custom-file-upload"> <img src="images/uploadimg.png"/> </div>
-          <div class="custom-file-upload"> <img src="images/uploadimg.png"/> </div>
+          <div class="custom-file-upload"> <img src="images/uploadimg.png" id="image_sr_1" onclick="getImage1();"/>          
+          <input type="hidden" name="profile_image_1" id="profile_image_1">          
+           </div>
+          <div class="custom-file-upload"> <img src="images/uploadimg.png" id="image_sr_2"/>
+          <input type="hidden" name="profile_image_2" id="profile_image_2">
+           </div>
+          <div class="custom-file-upload"> <img src="images/uploadimg.png" id="image_sr_3"/>
+          <input type="hidden" name="profile_image_3" id="profile_image_3">
+           </div>
           <div class="up-rightbox">
             <p><a href="#" data-toggle="modal" data-target="#myModa2">Concordo com
               os Termos 
@@ -172,7 +178,7 @@ jQuery(function(jquery) {
   $('.namesub ').circleType({radius: 700});
  </script>
  <script type="text/javascript">
-  function getImage() {	  
+  function getImage1() {	  
 	             
            navigator.camera.getPicture(uploadPhoto, function(message) {
 			alert('get picture failed');
@@ -204,15 +210,14 @@ jQuery(function(jquery) {
             ft.upload(imageURI, upload_url, win, fail, options);
         }
  
-        function win(r) {
-            /*console.log("Code = " + r.responseCode);
-            console.log("Response = " + r.response);
-            console.log("Sent = " + r.bytesSent);*/
+        function win(r){
+            
 			var resturn_data = jQuery.parseJSON(r.response);
 			
 			if(resturn_data.success)
 			{
-				alert(resturn_data.success);	
+				$('#image_sr_1').attr('src', resturn_data.success);				
+				$("#profile_image_1").val(resturn_data.img_name);
 			}else if(resturn_data.error)
 			{
 				alert(resturn_data.error);
