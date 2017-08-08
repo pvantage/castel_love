@@ -180,7 +180,7 @@ jQuery(function(jquery) {
  <script type="text/javascript">
   function getImage1() {	  
 	             
-           navigator.camera.getPicture(uploadPhoto, function(message) {
+           navigator.camera.getPicture(uploadPhoto1, function(message) {
 			alert('get picture failed');
 		},{
 			quality: 50, 
@@ -191,7 +191,7 @@ jQuery(function(jquery) {
  
         }
  
-        function uploadPhoto(imageURI) {
+        function uploadPhoto1(imageURI) {
 			var upload_url = siteurl + '?route=account/upload';
 			
             var options = new FileUploadOptions();
