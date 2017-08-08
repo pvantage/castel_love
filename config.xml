@@ -13,9 +13,7 @@
 	<preference name="phonegap-version" value="cli-6.5.0" />
 	<plugin name="cordova-plugin-device" spec="~1.1.6" />		
 	<plugin name="cordova-plugin-splashscreen" />
-	<plugin name="cordova-plugin-screen-orientation" />
-	<plugin name="cordova-plugin-camera" />
-	<plugin name="cordova-plugin-file-transfer" />
+	<plugin name="cordova-plugin-screen-orientation" />	
 	<preference name="fullscreen" value="true" />
 	<preference name="StatusBarOverlaysWebView" value="true" />
 	<gap:config-file platform="ios" parent="UIViewControllerBasedStatusBarAppearance" overwrite="true">
