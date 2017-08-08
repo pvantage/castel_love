@@ -20,8 +20,8 @@
 	<preference name="StatusBarOverlaysWebView" value="true" />
 	<preference name="orientation" value="portrait" />
 	<plugin name="cordova-plugin-screen-orientation" source="npm" />	
-	<plugin name="cordova-plugin-camera"  source="npm"/>
-	<plugin name="cordova-plugin-file-transfer"  source="npm"/>
+	<plugin name="cordova-plugin-camera" />
+	<plugin name="cordova-plugin-file-transfer" />
 	<gap:config-file platform="ios" parent="UIViewControllerBasedStatusBarAppearance" overwrite="true">
     <false/>
 </gap:config-file>

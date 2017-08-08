@@ -13,6 +13,7 @@
 <link type="text/css" rel="stylesheet" href="css/jquery.selectBoxIt.css" />
 <script src="js/jquery.min.js"></script>
 <script src="./js/config.js"></script>
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/jquery.selectBoxIt.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
@@ -171,18 +172,16 @@ jQuery(function(jquery) {
   $('.namesub ').circleType({radius: 700});
  </script>
  <script type="text/javascript">
-  function getImage() {
-	  
-	  alert("hello");
-            
-           /* navigator.camera.getPicture(uploadPhoto, function(message) {
+  function getImage() {	  
+	             
+           navigator.camera.getPicture(uploadPhoto, function(message) {
 			alert('get picture failed');
 		},{
 			quality: 50, 
 			destinationType: navigator.camera.DestinationType.FILE_URI,
 			sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
 		}
-            );*/
+            );
  
         }
  
