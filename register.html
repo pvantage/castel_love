@@ -210,7 +210,14 @@ jQuery(function(jquery) {
             console.log("Sent = " + r.bytesSent);*/
 			var resturn_data = jQuery.parseJSON(r.response);
 			
-            alert(resturn_data);
+			if(resturn_data.success)
+			{
+				alert(resturn_data.success);	
+			}else if(resturn_data.error)
+			{
+				alert(resturn_data.error);
+			}
+            
         }
  
         function fail(error) {
