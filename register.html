@@ -191,41 +191,41 @@ jQuery(function(jquery) {
  
         }
  
-        function uploadPhoto1(imageURI) {
+        function uploadPhoto1(imageURI1) {
 			var upload_url = siteurl + '?route=account/upload';
 			
-            var options = new FileUploadOptions();
-            options.fileKey="file";
-            options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
-            options.mimeType="image/jpeg";
+            var options1 = new FileUploadOptions();
+            options1.fileKey="file";
+            options1.fileName=imageURI1.substr(imageURI1.lastIndexOf('/')+1);
+            options1.mimeType="image/jpeg";
  
-            var params = new Object();
-            params.value1 = "test";
-            params.value2 = "param";
+            var params1 = new Object();
+            params1.value1 = "test";
+            params1.value2 = "param";
  
-            options.params = params;
-            options.chunkedMode = false;
+            options1.params = params;
+            options1.chunkedMode = false;
  
-            var ft = new FileTransfer();
-            ft.upload(imageURI, upload_url, win, fail, options);
+            var ft1 = new FileTransfer();
+            ft1.upload(imageURI1, upload_url, win1, fail1, options1);
         }
  
-        function win(r){
+        function win1(r){
             
-			var resturn_data = jQuery.parseJSON(r.response);
+			var resturn_data_1 = jQuery.parseJSON(r.response);
 			
-			if(resturn_data.success)
+			if(resturn_data_1.success)
 			{
-				$('#image_sr_1').attr('src', resturn_data.success);				
-				$("#profile_image_1").val(resturn_data.img_name);
-			}else if(resturn_data.error)
+				$('#image_sr_1').attr('src', resturn_data_1.success);				
+				$("#profile_image_1").val(resturn_data_1.img_name);
+			}else if(resturn_data_1.error)
 			{
-				alert(resturn_data.error);
+				alert(resturn_data_1.error);
 			}
             
         }
  
-        function fail(error) {
+        function fail1(error) {
             alert("Error occured");
         }
  </script>
@@ -243,41 +243,41 @@ jQuery(function(jquery) {
  
         }
  
-        function uploadPhoto2(imageURI) {
+        function uploadPhoto2(imageURI2) {
 			var upload_url = siteurl + '?route=account/upload';
 			
-            var options = new FileUploadOptions();
-            options.fileKey="file";
-            options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
-            options.mimeType="image/jpeg";
+            var options2 = new FileUploadOptions();
+            options2.fileKey="file";
+            options2.fileName=imageURI2.substr(imageURI2.lastIndexOf('/')+1);
+            options2.mimeType="image/jpeg";
  
-            var params = new Object();
-            params.value1 = "test";
-            params.value2 = "param";
+            var params2 = new Object();
+            params2.value1 = "test";
+            params2.value2 = "param";
  
-            options.params = params;
-            options.chunkedMode = false;
+            options2.params2 = params2;
+            options2.chunkedMode = false;
  
-            var ft = new FileTransfer();
-            ft.upload(imageURI, upload_url, win, fail, options);
+            var ft2 = new FileTransfer();
+            ft2.upload(imageURI2, upload_url, win2, fail2, options2);
         }
  
-        function win(r){
+        function win2(r){
             
-			var resturn_data = jQuery.parseJSON(r.response);
+			var resturn_data2 = jQuery.parseJSON(r.response);
 			
-			if(resturn_data.success)
+			if(resturn_data2.success)
 			{
-				$('#image_sr_2').attr('src', resturn_data.success);				
-				$("#profile_image_2").val(resturn_data.img_name);
-			}else if(resturn_data.error)
+				$('#image_sr_2').attr('src', resturn_data2.success);				
+				$("#profile_image_2").val(resturn_data2.img_name);
+			}else if(resturn_data2.error)
 			{
-				alert(resturn_data.error);
+				alert(resturn_data2.error);
 			}
             
         }
  
-        function fail(error) {
+        function fail2(error) {
             alert("Error occured");
         }
  </script> 
@@ -295,41 +295,41 @@ jQuery(function(jquery) {
  
         }
  
-        function uploadPhoto3(imageURI) {
+        function uploadPhoto3(imageURI3) {
 			var upload_url = siteurl + '?route=account/upload';
 			
-            var options = new FileUploadOptions();
-            options.fileKey="file";
-            options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
-            options.mimeType="image/jpeg";
+            var options3 = new FileUploadOptions();
+            options3.fileKey="file";
+            options3.fileName=imageURI3.substr(imageURI3.lastIndexOf('/')+1);
+            options3.mimeType="image/jpeg";
  
-            var params = new Object();
-            params.value1 = "test";
-            params.value2 = "param";
+            var params3 = new Object();
+            params3.value1 = "test";
+            params3.value2 = "param";
  
-            options.params = params;
-            options.chunkedMode = false;
+            options3.params3 = params3;
+            options3.chunkedMode = false;
  
-            var ft = new FileTransfer();
-            ft.upload(imageURI, upload_url, win, fail, options);
+            var ft3 = new FileTransfer();
+            ft3.upload(imageURI3, upload_url, win3, fail3, options3);
         }
  
-        function win(r){
+        function win3(r){
             
-			var resturn_data = jQuery.parseJSON(r.response);
+			var resturn_data3 = jQuery.parseJSON(r.response);
 			
-			if(resturn_data.success)
+			if(resturn_data3.success)
 			{
-				$('#image_sr_3').attr('src', resturn_data.success);				
-				$("#profile_image_3").val(resturn_data.img_name);
-			}else if(resturn_data.error)
+				$('#image_sr_3').attr('src', resturn_data3.success);				
+				$("#profile_image_3").val(resturn_data3.img_name);
+			}else if(resturn_data3.error)
 			{
-				alert(resturn_data.error);
+				alert(resturn_data3.error);
 			}
             
         }
  
-        function fail(error) {
+        function fail3(error) {
             alert("Error occured");
         }
  </script>
