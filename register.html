@@ -114,10 +114,10 @@ jQuery(function(jquery) {
           <div class="custom-file-upload"> <img src="images/uploadimg.png" id="image_sr_1" onclick="getImage1();"/>          
           <input type="hidden" name="profile_image_1" id="profile_image_1">          
            </div>
-          <div class="custom-file-upload"> <img src="images/uploadimg.png" id="image_sr_2"/>
+          <div class="custom-file-upload"> <img src="images/uploadimg.png" id="image_sr_2" onclick="getImage2();"/>
           <input type="hidden" name="profile_image_2" id="profile_image_2">
            </div>
-          <div class="custom-file-upload"> <img src="images/uploadimg.png" id="image_sr_3"/>
+          <div class="custom-file-upload"> <img src="images/uploadimg.png" id="image_sr_3" onclick="getImage3();"/>
           <input type="hidden" name="profile_image_3" id="profile_image_3">
            </div>
           <div class="up-rightbox">
@@ -229,6 +229,110 @@ jQuery(function(jquery) {
             alert("Error occured");
         }
  </script>
+  <script type="text/javascript">
+  function getImage2() {	  
+	             
+           navigator.camera.getPicture(uploadPhoto2, function(message) {
+			alert('get picture failed');
+		},{
+			quality: 50, 
+			destinationType: navigator.camera.DestinationType.FILE_URI,
+			sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
+		}
+            );
+ 
+        }
+ 
+        function uploadPhoto2(imageURI) {
+			var upload_url = siteurl + '?route=account/upload';
+			
+            var options = new FileUploadOptions();
+            options.fileKey="file";
+            options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+            options.mimeType="image/jpeg";
+ 
+            var params = new Object();
+            params.value1 = "test";
+            params.value2 = "param";
+ 
+            options.params = params;
+            options.chunkedMode = false;
+ 
+            var ft = new FileTransfer();
+            ft.upload(imageURI, upload_url, win, fail, options);
+        }
+ 
+        function win(r){
+            
+			var resturn_data = jQuery.parseJSON(r.response);
+			
+			if(resturn_data.success)
+			{
+				$('#image_sr_2').attr('src', resturn_data.success);				
+				$("#profile_image_2").val(resturn_data.img_name);
+			}else if(resturn_data.error)
+			{
+				alert(resturn_data.error);
+			}
+            
+        }
+ 
+        function fail(error) {
+            alert("Error occured");
+        }
+ </script> 
+ <script type="text/javascript">
+  function getImage3() {	  
+	             
+           navigator.camera.getPicture(uploadPhoto3, function(message) {
+			alert('get picture failed');
+		},{
+			quality: 50, 
+			destinationType: navigator.camera.DestinationType.FILE_URI,
+			sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
+		}
+            );
+ 
+        }
+ 
+        function uploadPhoto3(imageURI) {
+			var upload_url = siteurl + '?route=account/upload';
+			
+            var options = new FileUploadOptions();
+            options.fileKey="file";
+            options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+            options.mimeType="image/jpeg";
+ 
+            var params = new Object();
+            params.value1 = "test";
+            params.value2 = "param";
+ 
+            options.params = params;
+            options.chunkedMode = false;
+ 
+            var ft = new FileTransfer();
+            ft.upload(imageURI, upload_url, win, fail, options);
+        }
+ 
+        function win(r){
+            
+			var resturn_data = jQuery.parseJSON(r.response);
+			
+			if(resturn_data.success)
+			{
+				$('#image_sr_3').attr('src', resturn_data.success);				
+				$("#profile_image_3").val(resturn_data.img_name);
+			}else if(resturn_data.error)
+			{
+				alert(resturn_data.error);
+			}
+            
+        }
+ 
+        function fail(error) {
+            alert("Error occured");
+        }
+ </script>
 <script type="text/javascript">
 
 function accountRegister(){
@@ -236,7 +340,7 @@ function accountRegister(){
 	jQuery.ajax({
 			 type: 'POST',
 			 url: url,
-			 data: $('.registerpage input[type=\'text\'], .registerpage input[type=\'password\'], .registerpage select[name=\'customer_state\'], .registerpage input[type=\'radio\']:checked'),
+			 data: $('.registerpage input[type=\'text\'], .registerpage input[type=\'hidden\'], .registerpage input[type=\'password\'], .registerpage select[name=\'customer_state\'], .registerpage input[type=\'radio\']:checked'),
 			 dataType: 'json',
 			 crossDomain: true,
 			 success: function(data){
