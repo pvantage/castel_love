@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title>CastelLove</title>
+<!-- Bootstrap -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/demo.css" rel="stylesheet">
+<link href="css/menu.css" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="css/jquery.selectBoxIt.css" />
+<script src="js/jquery.min.js"></script>
+<script src="./js/config.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/jquery.selectBoxIt.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/circletype.js"></script>
+<script src="js/index.js"></script>
+<script type="text/javascript">
+jQuery(function(jquery) {
+ jquery('select').selectBoxIt({ });
+});
+</script>
+</head>
+<body>
+<div id="o-wrapper" class="o-wrapper innerpage">
+  <div class="container loginpage">
+    <header class="header">
+      <div class="page-heading">
+        <div class="head-line"><span>Criar Perfil</span></div>
+      </div>
+    </header>
+    <div class="innercontent registerpage">
+      <div class="loginbox">
+        <div class="l-box">
+          <label>Nome:</label>
+          <input type="text" name="customer_name" maxlength="50" id="customer_name" placeholder="Digite o nome completo">
+        </div>
+        <div class="l-box">
+          <label>E-mail:</label>
+          <input type="text" name="customer_email" maxlength="60" id="customer_email" placeholder="Digite o endereço de e-mail">
+        </div>
+        <div class="l-box wtsup">
+          <label>Idade:</label>
+          <input type="text" name="customer_age" id="customer_age" maxlength="2" placeholder="Idade">
+          <label>WhatsApp:</label>
+          <input class="wtext" type="text" maxlength="12" name="customer_whats_no" id="customer_whats_no" placeholder="Digite o número do Whatsapp">
+        </div>
+        <div class="l-box gender">
+          <label>Gender:</label>
+          <div class="rdio">
+            <input type="radio" name="customer_sex" checked value="1">
+            Male </div>
+          <div class="rdio">
+            <input type="radio" name="customer_sex" value="2">
+            Female</div>
+        </div>
+        <div class="l-box">
+          <label>Cidade:</label>
+          <input type="text" name="customer_city" maxlength="50" id="customer_city" placeholder="Digite o nome da cidade">
+        </div>
+        <div class="l-box sltbox">
+          <label>Estado:</label>
+          <div class="selectbox">
+            <select name="customer_state" id="customer_state" class="text_input">
+              <option value="">Selecione o estado</option>
+              <option value="AC">Acre</option>
+              <option value="AL">Alagoas</option>
+              <option value="AP">Amapá</option>
+              <option value="AM">Amazonas</option>
+              <option value="BA">Bahia</option>
+              <option value="CE">Ceará</option>
+              <option value="DF">Distrito Federal</option>
+              <option value="ES">Espírito Santo</option>
+              <option value="GO">Goiás</option>
+              <option value="MA">Maranhão</option>
+              <option value="MT">MatoGrosso</option>
+              <option value="MS">MatoGrosso do Sul</option>
+              <option value="MG">Minas Gerais</option>
+              <option value="PA">Pará</option>
+              <option value="PB">Paraíba</option>
+              <option value="PR">Paraná</option>
+              <option value="PE">Pernambuco</option>
+              <option value="PI">Piauí</option>
+              <option value="RJ">Rio de Janeiro</option>
+              <option value="RN">Rio Grande do Norte</option>
+              <option value="RS">Rio Grande do Sul</option>
+              <option value="RO">Rondônia</option>
+              <option value="RR">Roraima</option>
+              <option value="SC">Santa Catarina</option>
+              <option value="SP">São Paulo</option>
+              <option value="SE">Sergipe</option>
+              <option value="TO">Tocantins</option>
+            </select>
+          </div>
+        </div>
+        <div class="l-box">
+          <label>Igreja:</label>
+          <input type="text" name="customer_church" maxlength="50" id="customer_church" placeholder="Igreja Universal da Graça de Deus">
+        </div>
+        <div class="l-box pwdm">
+          <label>Password:</label>
+          <input type="password" name="customer_password" maxlength="12" id="customer_password" placeholder="Password">
+        </div>
+        <div class="l-box confm">
+          <label>Confirm Password:</label>
+          <input type="password" name="customer_con_password" maxlength="12" id="customer_con_password" placeholder="Password">
+        </div>
+        <div class="uploadfilemain">
+          <div class="custom-file-upload"> <img src="images/uploadimg.png" onclick="getImage();"/> </div>
+          <div class="custom-file-upload"> <img src="images/uploadimg.png"/> </div>
+          <div class="custom-file-upload"> <img src="images/uploadimg.png"/> </div>
+          <div class="up-rightbox">
+            <p><a href="#" data-toggle="modal" data-target="#myModa2">Concordo com
+              os Termos 
+              de Usabilidade
+              do aplicativo
+              e suas regras</a></p>
+            <ul>
+              <li>
+                <input type="radio" name="terms" value="1" checked="checked">
+                SIM</li>
+              <li>
+                <input type="radio" name="terms" value="2">
+                NÃO</li>
+            </ul>
+          </div>
+        </div>
+        <div class="l-box btn_register_submit">
+          <button name="submit_register" id="submit_register" onClick="return accountRegister();">Cadastrar Meu Perfil </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- /c-menu slide-right -->
+
+<div id="c-mask" class="c-mask"></div>
+<div id="myModa2" class="modal fade" role="dialog">
+  <div class="modal-dialog terms-conditions"> 
+    
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"></button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body loginpage">
+        <header class="header">
+          <div class="page-heading">
+            <div class="head-line"><span>Termos & Regras</span></div>
+          </div>
+        </header>
+        <div class="terms-text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</div>
+        <div class="trms-voltr-btn">
+          <div class="voltr-btn"><span>VOLTAR</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<script type="text/javascript">
+ $('.head-line span').circleType({radius: 1200});
+  $('.terms-conditions .head-line span').circleType({radius: 1200});
+ $('.volterbox button span').circleType({radius: -600});
+  $('.namesub ').circleType({radius: 700});
+ </script>
+ <script type="text/javascript">
+  function getImage() {
+            // Retrieve image file location from specified source
+            navigator.camera.getPicture(uploadPhoto, function(message) {
+			alert('get picture failed');
+		},{
+			quality: 50, 
+			destinationType: navigator.camera.DestinationType.FILE_URI,
+			sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
+		}
+            );
+ 
+        }
+ 
+        function uploadPhoto(imageURI) {
+			var upload_url = siteurl + '?route=account/upload';
+			
+            var options = new FileUploadOptions();
+            options.fileKey="file";
+            options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+            options.mimeType="image/jpeg";
+ 
+            var params = new Object();
+            params.value1 = "test";
+            params.value2 = "param";
+ 
+            options.params = params;
+            options.chunkedMode = false;
+ 
+            var ft = new FileTransfer();
+            ft.upload(imageURI, upload_url, win, fail, options);
+        }
+ 
+        function win(r) {
+            console.log("Code = " + r.responseCode);
+            console.log("Response = " + r.response);
+            console.log("Sent = " + r.bytesSent);
+            alert(r.response);
+        }
+ 
+        function fail(error) {
+            alert("Error occured");
+        }
+ </script>
+<script type="text/javascript">
+
+function accountRegister(){
+	var url = siteurl + '?route=account/register';
+	jQuery.ajax({
+			 type: 'POST',
+			 url: url,
+			 data: $('.registerpage input[type=\'text\'], .registerpage input[type=\'password\'], .registerpage select[name=\'customer_state\'], .registerpage input[type=\'radio\']:checked'),
+			 dataType: 'json',
+			 crossDomain: true,
+			 success: function(data){
+				 
+				 $("div").removeClass('error');
+				 $("#error_p").remove();
+				 if(data['error'])
+				 {
+					if(data['error']['customer_name'])
+				 	{
+						jQuery("#customer_name").parents('div').addClass('error');
+					}
+					
+					if(data['error']['customer_email'])
+				 	{
+						jQuery("#customer_email").parents('div').addClass('error');
+					}
+					
+					if(data['error']['customer_age'] || data['error']['customer_whats_no'])
+				 	{
+						jQuery("#customer_age").parents('div').addClass('error');
+					}
+					
+					if(data['error']['customer_church'])
+				 	{
+						jQuery("#customer_church").parents('div').addClass('error');
+					}
+					
+					if(data['error']['customer_city'])
+				 	{
+						jQuery("#customer_city").parents('div').addClass('error');
+					}
+					
+					if(data['error']['customer_state'])
+				 	{
+						jQuery("#customer_state").parents('div').addClass('error');
+					}
+					
+					if(data['error']['customer_password'])
+				 	{
+						jQuery("#customer_password").parents('div').addClass('error');
+					}
+					
+					if(data['error']['customer_con_password'])
+				 	{
+						jQuery("#customer_con_password").parents('div').addClass('error');
+					}
+					
+					
+					if(data['error']['email_exist'])
+				 	{
+						jQuery(".btn_register_submit").after('<p class="error" id="error_p">' + data['error']['email_exist'] + '</p>');
+					}
+				 }
+				 
+				if(data['success'])
+				{
+					localStorage.setItem("customer_log_id", data['success']['customer_id']);
+					window.location = './index.html';
+				}
+			}
+   });
+}
+</script>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title>CastelLove</title>
+
+<!-- Bootstrap -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/demo.css" rel="stylesheet">
+<link href="css/menu.css" rel="stylesheet">
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script type="text/javascript" src="js/config.js"></script> 
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+
+</head>
+<body>
+<div id="o-wrapper" class="o-wrapper innerpage">
+<div class="container loginpage">
+<div class="innercontent">
+<div class="loginbox lognewbox">
+<div class="log-top-img"><img src="images/login-logo.png"/></div>
+<div class="l-box crt-hd-acct"><div class="createacct"><a href="./register.html">Criar Minha Conta</a></div></div>
+<div class="l-box"><input type="email" name="login_email" id="login_email" placeholder="EMAIL"></div>
+<div class="l-box"><input type="password" name="login_password" id="login_password" placeholder="SENHA">
+</div>
+<div class="l-box btn-enter"><button id="acctoun_login" onClick="return accountLogin();">ENTRAR</button></div>
+</div>
+</div>
+    </div>
+
+</div>
+<div id="c-mask" class="c-mask"></div>
+</body>
+<script type="text/javascript">
+function accountLogin(){
+	var url = siteurl + '?route=account/login';
+	jQuery.ajax({
+			 type: 'POST',
+			 url: url,
+			 data: $('.lognewbox input[type=\'email\'], .lognewbox input[type=\'password\']'),
+			 dataType: 'json',
+			 crossDomain: true,
+			 success: function(data){
+				 
+				 $("div").removeClass('error');
+				 $("#error_p").remove();
+				 if(data['error'])
+				 {
+					if(data['error']['login_email'])
+				 	{
+						jQuery("#login_email").parents('div').addClass('error');
+					}
+					
+					if(data['error']['login_password'])
+				 	{
+						jQuery("#login_password").parents('div').addClass('error');
+					}
+					
+					if(data['error']['invalid'])
+				 	{
+						jQuery(".btn-enter").after('<p class="error" id="error_p">' + data['error']['invalid'] + '</p>');
+					}
+				 }
+				 
+				if(data['success'])
+				{
+					localStorage.setItem("customer_log_id", data['success']['login_id']);
+					window.location = './index.html';
+				}
+			}
+   });
+}
+</script>
+</html>
