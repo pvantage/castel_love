@@ -19,6 +19,41 @@ max-width:700px;
 padding:0 15px;	
 }
 
+a {
+    color: #fff;
+}
+.edit-up {
+    position: absolute;
+    z-index: 999999999;
+    right: 68px;
+    top: 43px;
+}
+.edit-up a{ float:left;}
+
+.edi-fav {
+    position: absolute;
+    right: 0;
+    top: 10%;
+    font-size: 22px;
+    right: 6%;
+    color: #7b1320;
+    font-weight: 800;
+    text-shadow: 4px 1px 5px #fff;
+}
+a.edit-n {
+    float: right;
+    position: absolute;
+    right: 128px;
+    top: 37px;
+}
+a.edit-n1 {
+    float: right;
+    position: absolute;
+    right: 163px;
+    bottom: -32px;
+    z-index: 999;
+}
+
 .whsupnew {
     float: right;
     position: absolute;
@@ -201,7 +236,20 @@ padding-right:15px;
 margin-right:-85px;
 background-size:100%;
 }
-
+.edit-prof-section .slider-main-wrap .profile-top-main {
+    background-image: url(../images/pro-main-top-bg1.png);
+}
+.profile-setting {
+    float: left;
+    width: 18%;
+    height: 29%;
+    position: absolute;
+    left: 7%;
+    top: 3%;
+    border-radius: 50px;
+}
+.profile-setting a{ float:left; width:100%; height:100%;}
+.profile-age-clm .ageclm-right a:hover, .profile-age-clm .ageclm-left a:hover{color:#fff;}
 .namewraper{
 max-width:672px;
 min-height:171px;
@@ -327,7 +375,12 @@ text-decoration:none;
 
 
 html .modal-backdrop {
-    background: rgba(225,39,55, 0.9);
+    background-color: transparent ;
+}
+
+
+div#myModal {
+    background: rgba(225,39,55, 0.8);
 }
 html .modal-backdrop.in {
     opacity: .9;
@@ -429,7 +482,83 @@ ul.donate-now {
     font-weight: 600;
 }
 
+/**Home Whatsup Css Start here*/
+
+.whtsupbox1 .fav-title {
+    background: url(../images/whatsup-popupbg1.png) no-repeat;
+    font-size: 32px;
+    color: #fff600;
+    font-weight: 700;
+    height: 216px;
+    line-height: normal;
+    text-align: center;
+    padding-right: 45px;
+	    padding: 83px;
+	    background-size: 100% 100%;
+}
+.whtsupbox1 .fav-pop-btn {
+    float: left;
+    width: 100%;
+    text-align: center;
+    margin-top: -40px;
+}
+.whtsupbox1 .fav-pop-btn a {
+    display: inline-block;
+    margin: 0px 20px;
+}
+.whtsupbox1 .fav-popup {
+    float: left;
+    width: 100%;
+}
+.whtsupbox1 .fav-pop-btn {
+    float: left;
+    width: 100%;
+}
+div#myModa4 {
+    background: rgba(33,58,94, 0.9);
+}
+div#myModa5 {
+    background: rgba(33,58,94, 0.9);
+}
+
+.whtsupbox .fav-title {
+    background: url(../images/whatsup-popupbg2.png) no-repeat;
+    font-size: 32px;
+    color: #fff;
+     height: 267px;
+    padding: 105px 59px;
+    line-height: 33px;
+	    background-size: 100% 100%;
+		    font-weight: 700;
+}
+.whtsupbox button.close {
+    position: absolute;
+    right: 110px;
+    color: #fff;
+    opacity: inherit;
+    font-size: 71px;
+    font-weight: 800;
+    text-shadow: 2px 3px 2px #000;
+    z-index: 999;
+    top: 24px;
+}
+.fav-title a {
+    color: #58ff06;
+}
+
+
+
 @media only screen and (min-width:500px) and (max-width: 699px){
+	
+.edi-fav {font-size: 17px; 	}
+.edit-up {  right: 35px; top: 18px;  width: 35px;}
+a.edit-n { top: 22px; width: 23px; right: 80px;}
+a.edit-n1 { right: 103px; bottom: -10px;  width: 23px;}
+.ageclm-left a img, .ageclm-right a img { width: 23px;}
+
+
+.edit-up { right: 62px;  top: 30px;    width: 35px;}
+	
 .container{
 max-width:470px;
 }
@@ -517,6 +646,12 @@ margin-right:-48px;
 
 
 @media only screen and (min-width:400px) and (max-width: 499px){
+.edi-fav { font-size: 12px; }	
+.edit-up {  right: 35px; top: 18px;  width: 35px;}
+a.edit-n { top: 19px; width: 23px; right: 70px;}
+a.edit-n1 { right: 87px; bottom: -8px;  width: 21px;}
+.ageclm-left a img, .ageclm-right a img { width: 20px;}
+	
 .container{
 max-width:400px;
 }
@@ -604,6 +739,12 @@ margin-right:-40px;
 
 
 @media only screen and (min-width:350px) and (max-width: 399px){
+.edi-fav {top: 17px; font-size: 12px; right: 13px;}	
+.edit-up {  right: 35px; top: 18px;  width: 35px;}
+a.edit-n { top: 17px; width: 17px; right: 50px;}
+a.edit-n1 { right: 60px; bottom: 0;  width: 14px;}
+.ageclm-left a img, .ageclm-right a img { width: 13px;}
+	
 .container{
 max-width:350px;
 }
@@ -702,13 +843,38 @@ margin-right:-30px;
 }
 }
 @media only screen and (min-width:600px) and (max-width: 700px){
-
+.whtsupbox .fav-title {
+  
+    font-size: 26px;
+   
+    height: 267px;
+    padding: 88px 59px;
+    line-height: 33px;
+    background-size: 100%;
+}
 .donate-now label{ font-size:27px;}
 
 }
 
 
 @media only screen and (min-width:480px) and (max-width: 600px){
+.whtsupbox1 .fav-title {    font-size: 19px;
+    height: 124px;
+    padding: 43px 66px;}
+.whtsupbox1 .fav-pop-btn a { margin: 0px 7px;   width: 52px;}
+.whtsupbox1 .fav-pop-btn{   margin-top: -22px;	}
+
+
+	
+.whtsupbox .fav-title {
+    font-size: 18px;
+    padding: 54px 36px;
+    line-height: 23px;
+    height: 151px;
+}
+.whtsupbox button.close{ font-size:36px;    right: 74px;}
+.whtsupbox .modal-body{ text-align:center;}
+.fav-popup {     font-size: 15px;}
 
 .modal-body .pooptitle {   font-size: 31px;   line-height: normal;}
 .donate-now li, .submit-btnbox input[type="submit"] {        height: 66px;
@@ -726,6 +892,17 @@ margin-right:-30px;
 
 
 @media only screen and (min-width:320px) and (max-width: 480px){
+
+
+.whtsupbox1 .fav-title {font-size: 15px;  height: 124px;  padding: 49px 24px;}
+.whtsupbox1 .fav-pop-btn a { margin: 0px 7px;   width: 52px;}
+.whtsupbox1 .fav-pop-btn{   margin-top: -22px;	}
+
+
+.whtsupbox .fav-title {font-size: 13px;    padding: 56px 20px;    line-height: 17px;  height: 132px}
+.whtsupbox button.close{ font-size:36px;    right: 74px;}
+.whtsupbox .modal-body{ text-align:center;}
+.fav-popup {     font-size: 15px;}
 
 .modal-body .pooptitle {   font-size: 31px;   line-height: normal;}
 .donate-now li, .submit-btnbox input[type="submit"] {    height: 50px;   line-height: 32px;}
@@ -821,7 +998,13 @@ margin-right:-40px;
 
 
 @media only screen and (min-width:320px) and (max-width: 349px){
-	
+.edi-fav {top: 17px; font-size: 12px; right: 13px;}	
+.edit-up {  right: 35px; top: 18px;  width: 35px;}
+a.edit-n { top: 17px; width: 17px; right: 50px;}
+a.edit-n1 { right: 60px; bottom: 0;  width: 14px;}
+.ageclm-left a img, .ageclm-right a img { width: 13px;}
+
+
 .container{
 max-width:320px;
 }
@@ -913,4 +1096,16 @@ margin-right:-30px;
 .modal-body .pooptitle {   font-size: 31px;   line-height: normal;}
 .donate-now li, .submit-btnbox input[type="submit"] {    height: 50px;   line-height: 32px;}
 .donate-now label,.submit-btnbox input[type="submit"] {   font-size: 13px;	border-radius:0px;}
+
+
+.fav-popup {
+    float: none;
+    width: 288px;
+    display: inline-block;
+}
+
+.whtsupbox1 .fav-title {font-size: 15px;  height: 124px;  padding: 49px 24px;}
+.whtsupbox1 .fav-pop-btn a { margin: 0px 7px;   width: 52px;}
+.whtsupbox1 .fav-pop-btn{   margin-top: -22px;	}
+
 }

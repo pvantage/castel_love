@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CastelLove</title>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/demo.css" rel="stylesheet">
+<link href="css/menu.css" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="css/jquery.selectBoxIt.css" />
+<script src="js/jquery.min.js"></script>
+<script src="js/config.js"></script>
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/jquery.selectBoxIt.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/circletype.js"></script>
+<script type="text/javascript">
+if(localStorage.getItem("customer_log_id") === null) {
+  window.location = './login.html';
+}
+</script>
+<script type="text/javascript">
+
+function getProfile(){
+	
+	var url = siteurl + '?route=account/login/getprofile';
+	jQuery.ajax({
+			 type: 'POST',
+			 url: url,
+			 data: {customer_id: localStorage.getItem("customer_log_id")},
+			 dataType: 'json',
+			 crossDomain: true,
+			 success: function(data){
+				 if(data['success'])
+				 {				 
+				 	$("#name").val(data['success']['name']);
+					$("#age").val(data['success']['age']);
+					$("#whatsapp").val(data['success']['whats_app']);
+					$("#city").val(data['success']['city']);
+					$("#state").val(data['success']['state']);
+					$("#customer_id").val(localStorage.getItem("customer_log_id"));
+					
+					$('#state option[value="'+ data["success"]["state"] + '"]').attr('selected', true);
+					
+					$("#church").val(data['success']['church']);
+					
+					if(data['success']['sex'] == 2)
+					{
+						$("#sex_2").prop('checked', true);
+					}else{
+						$("#sex_1").prop('checked', true);
+					}
+					
+					
+					if(data['success']['prof_pic_1'])
+					{
+						$('#image_sr_1').attr('src', data['success']['prof_pic_1']);
+					}
+					
+					if(data['success']['prof_pic_2'])
+					{
+						$('#image_sr_2').attr('src', data['success']['prof_pic_2']);
+					}
+					
+					if(data['success']['prof_pic_3'])
+					{
+						$('#image_sr_3').attr('src', data['success']['prof_pic_3']);
+					}
+					
+					var selectBox = $("select#state").selectBoxIt().data("selectBoxIt");
+					selectBox.selectOption(data["success"]["state"]);
+				 }
+			}
+   		});	
+	}
+
+jQuery(function(jquery) {
+ 	jquery('select').selectBoxIt();
+});
+
+</script>
+</head>
+<body onLoad="getProfile();">
+<div id="o-wrapper" class="o-wrapper innerpage">
+  <div class="container loginpage">
+    <header class="header">
+      <div class="page-heading">
+        <div class="head-line"><span>Editar Perfil</span></div>
+      </div>
+    </header>
+    <div class="innercontent registerpage">
+      <div class="loginbox">
+        <div class="l-box">
+          <label>Nome:</label>
+          <input type="text" name="name" id="name" tabindex="1" placeholder="Digite o nome">
+          <input type="hidden" name="customer_id" id="customer_id">
+        </div>
+        <div class="l-box wtsup">
+          <label>Idade:</label>
+          <input type="text" name="age" id="age" tabindex="2" placeholder="Era">
+          <label>WhatsApp:</label>
+          <input class="wtext" type="text" name="whatsapp" id="whatsapp" tabindex="3" placeholder="Número do Whatsapp">
+        </div>
+        <div class="l-box gender">
+          <label>Gender:</label>
+          <div class="rdio"><input type="radio" name="sex" id="sex_1" value="1">Male </div>
+          <div class="rdio"><input type="radio" name="sex" id="sex_2" value="2">Female</div>
+        </div>
+        <div class="l-box">
+          <label>Cidade:</label>
+          <input type="text" name="city" tabindex="3" id="city" placeholder="Digite o nome da cidade">
+        </div>
+        <div class="l-box sltbox">
+          <label>Estado:</label>
+          <div class="selectbox">
+            <select name="state" id="state" tabindex="4" class="text_input">
+              <option value="">Selecione o estado</option>
+              <option value="AC">Acre</option>
+              <option value="AL">Alagoas</option>
+              <option value="AP">Amapá</option>
+              <option value="AM">Amazonas</option>
+              <option value="BA">Bahia</option>
+              <option value="CE">Ceará</option>
+              <option value="DF">Distrito Federal</option>
+              <option value="ES">Espírito Santo</option>
+              <option value="GO">Goiás</option>
+              <option value="MA">Maranhão</option>
+              <option value="MT">MatoGrosso</option>
+              <option value="MS">MatoGrosso do Sul</option>
+              <option value="MG">Minas Gerais</option>
+              <option value="PA">Pará</option>
+              <option value="PB">Paraíba</option>
+              <option value="PR">Paraná</option>
+              <option value="PE">Pernambuco</option>
+              <option value="PI">Piauí</option>
+              <option value="RJ">Rio de Janeiro</option>
+              <option value="RN">Rio Grande do Norte</option>
+              <option value="RS">Rio Grande do Sul</option>
+              <option value="RO">Rondônia</option>
+              <option value="RR">Roraima</option>
+              <option value="SC">Santa Catarina</option>
+              <option value="SP">São Paulo</option>
+              <option value="SE">Sergipe</option>
+              <option value="TO">Tocantins</option>
+            </select>
+          </div>
+        </div>
+        <div class="l-box">
+          <label>Igreja:</label>
+          <input type="text" tabindex="5" name="church" id="church" placeholder="Digite o nome da igreja">
+        </div>
+        <div class="uploadfilemain">
+          <div class="custom-file-upload"><img src="images/uploadimg.png" id="image_sr_1" onclick="getImage1();"/>
+          <input type="hidden" name="profile_image_1" id="profile_image_1"> 
+          </div>
+          <div class="custom-file-upload"><img src="images/uploadimg.png" id="image_sr_2" onclick="getImage2();"/>
+          <input type="hidden" name="profile_image_2" id="profile_image_2"> 
+          </div>
+          <div class="custom-file-upload"><img src="images/uploadimg.png" id="image_sr_3" onclick="getImage3();"/>
+          <input type="hidden" name="profile_image_3" id="profile_image_3"> 
+          </div>          
+        </div>
+        <div class="l-box">
+          <button tabindex="6" onClick="return updateProfile();">Atualizar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+ $('.head-line span').circleType({radius: 1200});  
+ </script>
+ <script type="text/javascript">
+  function getImage1() {	  
+	             
+           navigator.camera.getPicture(uploadPhoto1, function(message) {
+			alert('get picture failed');
+		},{
+			quality: 50, 
+			destinationType: navigator.camera.DestinationType.FILE_URI,
+			sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
+		}
+            );
+ 
+        }
+ 
+        function uploadPhoto1(imageURI1) {
+			var upload_url = siteurl + '?route=account/upload';
+			
+            var options1 = new FileUploadOptions();
+            options1.fileKey="file";
+            options1.fileName=imageURI1.substr(imageURI1.lastIndexOf('/')+1);
+            options1.mimeType="image/jpeg";
+ 
+            var params1 = new Object();
+            params1.value1 = "test";
+            params1.value2 = "param";
+ 
+            options1.params1 = params1;
+            options1.chunkedMode = false;
+ 
+            var ft1 = new FileTransfer();
+            ft1.upload(imageURI1, upload_url, win1, fail1, options1);
+        }
+ 
+        function win1(r){
+            
+			var resturn_data_1 = jQuery.parseJSON(r.response);
+			
+			if(resturn_data_1.success)
+			{
+				$('#image_sr_1').attr('src', resturn_data_1.success);				
+				$("#profile_image_1").val(resturn_data_1.img_name);
+			}else if(resturn_data_1.error)
+			{
+				alert(resturn_data_1.error);
+			}
+            
+        }
+ 
+        function fail1(error) {
+            alert("Error occured");
+        }
+ </script>
+  <script type="text/javascript">
+  function getImage2() {	  
+	             
+           navigator.camera.getPicture(uploadPhoto2, function(message) {
+			alert('get picture failed');
+		},{
+			quality: 50, 
+			destinationType: navigator.camera.DestinationType.FILE_URI,
+			sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
+		}
+            ); 
+        }
+ 
+        function uploadPhoto2(imageURI2){
+			var upload_url = siteurl + '?route=account/upload';
+            var options2 = new FileUploadOptions();
+            options2.fileKey = "file";
+            options2.fileName = imageURI2.substr(imageURI2.lastIndexOf('/')+1);
+            options2.mimeType = "image/jpeg";
+ 
+            var params2 = new Object();
+            params2.value1 = "test";
+            params2.value2 = "param";
+ 
+            options2.params2 = params2;
+            options2.chunkedMode = false;
+ 
+            var ft2 = new FileTransfer();
+            ft2.upload(imageURI2, upload_url, win2, fail2, options2);
+        }
+ 
+        function win2(r){
+            
+			var resturn_data2 = jQuery.parseJSON(r.response);
+			
+			if(resturn_data2.success)
+			{
+				$('#image_sr_2').attr('src', resturn_data2.success);				
+				$("#profile_image_2").val(resturn_data2.img_name);
+			}else if(resturn_data2.error)
+			{
+				alert(resturn_data2.error);
+			}
+            
+        }
+ 
+        function fail2(error) {
+            alert("Error occured");
+        }
+ </script> 
+ <script type="text/javascript">
+  function getImage3() {	  
+	             
+           navigator.camera.getPicture(uploadPhoto3, function(message) {
+			alert('get picture failed');
+		},{
+			quality: 50, 
+			destinationType: navigator.camera.DestinationType.FILE_URI,
+			sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
+		}
+            );
+ 
+        }
+ 
+        function uploadPhoto3(imageURI3) {
+			var upload_url = siteurl + '?route=account/upload';
+			
+            var options3 = new FileUploadOptions();
+            options3.fileKey = "file";
+            options3.fileName = imageURI3.substr(imageURI3.lastIndexOf('/')+1);
+            options3.mimeType = "image/jpeg";
+ 
+            var params3 = new Object();
+            params3.value1 = "test";
+            params3.value2 = "param";
+ 
+            options3.params3 = params3;
+            options3.chunkedMode = false;
+ 
+            var ft3 = new FileTransfer();
+            ft3.upload(imageURI3, upload_url, win3, fail3, options3);
+        }
+ 
+        function win3(r){
+            
+			var resturn_data3 = jQuery.parseJSON(r.response);
+			
+			if(resturn_data3.success)
+			{
+				$('#image_sr_3').attr('src', resturn_data3.success);				
+				$("#profile_image_3").val(resturn_data3.img_name);
+			}else if(resturn_data3.error)
+			{
+				alert(resturn_data3.error);
+			}            
+     }
+ 
+     function fail3(error){
+            alert("Error occured");
+     }
+</script>
+<script type="text/javascript">
+
+function updateProfile(){
+	var url = siteurl + '?route=account/edit';
+	jQuery.ajax({
+			 type: 'POST',
+			 url: url,
+			 data: $('.registerpage input[type=\'text\'], .registerpage input[type=\'hidden\'], .registerpage select[name=\'state\'], .registerpage input[type=\'radio\']:checked'),
+			 dataType: 'json',
+			 crossDomain: true,
+			 success: function(data){
+				 
+				 $("div").removeClass('error');
+				 $("#error_p").remove();
+				 if(data['error'])
+				 {
+					if(data['error']['name'])
+				 	{
+						jQuery("#name").parent('div').addClass('error');
+					}					
+										
+					if(data['error']['age'] || data['error']['whatsapp'])
+				 	{
+						jQuery("#age").parent('div').addClass('error');
+					}
+					
+					if(data['error']['church'])
+				 	{
+						jQuery("#church").parent('div').addClass('error');
+					}
+					
+					if(data['error']['city'])
+				 	{
+						jQuery("#city").parent('div').addClass('error');
+					}
+					
+					if(data['error']['state'])
+				 	{
+						jQuery("#state").parent().parent('div').addClass('error');
+					}								
+					
+				 }
+				 
+				if(data['success'])
+				{
+					localStorage.setItem("customer_sex", data['success']['sex']);
+					alert("Perfil atualizado com sucesso.");
+				}
+			}
+   });
+}
+</script>
+</body>
+</html>

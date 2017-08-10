@@ -19,10 +19,9 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/plugins.js"></script>
 <script src="js/circletype.js"></script>
-<script src="js/index.js"></script>
 <script type="text/javascript">
 jQuery(function(jquery) {
- jquery('select').selectBoxIt({ });
+ jquery('select').selectBoxIt();
 });
 </script>
 </head>
@@ -174,8 +173,6 @@ jQuery(function(jquery) {
 <script type="text/javascript">
  $('.head-line span').circleType({radius: 1200});
   $('.terms-conditions .head-line span').circleType({radius: 1200});
- $('.volterbox button span').circleType({radius: -600});
-  $('.namesub ').circleType({radius: 700});
  </script>
  <script type="text/javascript">
   function getImage1() {	  
@@ -351,42 +348,42 @@ function accountRegister(){
 				 {
 					if(data['error']['customer_name'])
 				 	{
-						jQuery("#customer_name").parents('div').addClass('error');
+						jQuery("#customer_name").parent('div').addClass('error');
 					}
 					
 					if(data['error']['customer_email'])
 				 	{
-						jQuery("#customer_email").parents('div').addClass('error');
+						jQuery("#customer_email").parent('div').addClass('error');
 					}
 					
 					if(data['error']['customer_age'] || data['error']['customer_whats_no'])
 				 	{
-						jQuery("#customer_age").parents('div').addClass('error');
+						jQuery("#customer_age").parent('div').addClass('error');
 					}
 					
 					if(data['error']['customer_church'])
 				 	{
-						jQuery("#customer_church").parents('div').addClass('error');
+						jQuery("#customer_church").parent('div').addClass('error');
 					}
 					
 					if(data['error']['customer_city'])
 				 	{
-						jQuery("#customer_city").parents('div').addClass('error');
+						jQuery("#customer_city").parent('div').addClass('error');
 					}
 					
 					if(data['error']['customer_state'])
 				 	{
-						jQuery("#customer_state").parents('div').addClass('error');
+						jQuery("#customer_state").parent().parent('div').addClass('error');
 					}
 					
 					if(data['error']['customer_password'])
 				 	{
-						jQuery("#customer_password").parents('div').addClass('error');
+						jQuery("#customer_password").parent('div').addClass('error');
 					}
 					
 					if(data['error']['customer_con_password'])
 				 	{
-						jQuery("#customer_con_password").parents('div').addClass('error');
+						jQuery("#customer_con_password").parent('div').addClass('error');
 					}
 					
 					
