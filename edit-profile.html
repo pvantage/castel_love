@@ -173,6 +173,11 @@ function getProfile(){
     slideRight.open();
   });
 
+function logOut(){
+	localStorage.removeItem("customer_log_id");
+	localStorage.removeItem("customer_sex");
+	window.location = 'login.html';	
+}
 </script>
 
      
