@@ -371,8 +371,8 @@ function updateProfile(){
 				 
 				if(data['success'])
 				{
-					localStorage.setItem("customer_sex", data['success']['sex']);
-					alert("Perfil atualizado com sucesso.");
+					localStorage.setItem("customer_sex", data['success']['sex']);					
+					window.location = './edit-profile.html';
 				}
 			}
    });
