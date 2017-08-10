@@ -52,27 +52,47 @@ function getProfile(){
 					if(data['success']['prof_pic_1'])
 					{
 						ovel_items = '<div class="item">';						
-						ovel_items += '<img src=">' + data['success']['prof_pic_1'] + '" />';
+						ovel_items += '<img src="' + data['success']['prof_pic_1'] + '" />';
 						ovel_items += '</div>';
 					}
 					
 					if(data['success']['prof_pic_2'])
 					{
 						
-						ovel_items = '<div class="item">';						
-						ovel_items += '<img src=">' + data['success']['prof_pic_2'] + '" />';
+						ovel_items += '<div class="item">';						
+						ovel_items += '<img src="' + data['success']['prof_pic_2'] + '" />';
 						ovel_items += '</div>';
 						
 					}
 					
 					if(data['success']['prof_pic_3'])
 					{						
-						ovel_items = '<div class="item">';						
-						ovel_items += '<img src=">' + data['success']['prof_pic_3'] + '" />';
+						ovel_items += '<div class="item">';						
+						ovel_items += '<img src="' + data['success']['prof_pic_3'] + '" />';
 						ovel_items += '</div>';						
 					}
 					
 					$(".owl-carousel").html(ovel_items);
+					
+					
+					$('.owl-carousel').owlCarousel({
+						items:1,
+						margin:0,	
+					});
+					
+					owl = $('.owl-carousel').owlCarousel();
+					$(".prev").click(function () {
+						owl.trigger('prev.owl.carousel');
+					});
+					
+					$(".next").click(function () {
+						owl.trigger('next.owl.carousel');
+					});
+					
+					$('.starbtmtext').circleType({radius: -700});
+					 $('.namewraper span').circleType({radius: 700});
+					  $('.namesub ').circleType({radius: 700}); 
+					
 				 }
 			}
    		});	
@@ -99,18 +119,13 @@ function getProfile(){
             <div class="slider-content">
                 <div class="slider-wrap"></div>
                 <div class="owl-carousel owl-theme">
-                    
+                   
                 </div>
-				<div class="edit-up"><a href="edit-account.html"><img src="images/edit-imgicon.png"/></a></div>
-                
-                <div class="customNavigation">
-                <a class="prev"> <img src="images/prevbtn.png" alt=""></a> 
-                <a class="next"><img src="images/nextbtn.png" alt=""></a> 
-                </div>
-                
+				<div class="edit-up"><a href="#"><img src="images/edit-imgicon.png"/></a></div>
+                <div class="customNavigation"> <a class="prev"> <img src="images/prevbtn.png" alt=""></a> <a class="next"><img src="images/nextbtn.png" alt=""></a> </div>
                 <div class="profile-age-clm">
-                    <div class="ageclm-left"><a href="edit-account.html"><span id="state"></span> <img src="images/edit-icon.png"/></a></div>
-                    <div class="ageclm-right"><a href="edit-account.html"><span id="age"></span> <img src="images/edit-icon.png"/></a></div>
+                    <div class="ageclm-left"><a href="#">SP <img src="images/edit-icon.png"/></a></div>
+                    <div class="ageclm-right"><a href="#">22 <img src="images/edit-icon.png"/></a></div>
                 </div>
             </div>
             <div class="namewraper"><span id="name"></span> <a class="edit-n" href="edit-account.html"><img src="images/edit-icon.png"/></a>
@@ -141,6 +156,7 @@ function getProfile(){
 <!-- /c-menu slide-right -->
 
 <div id="c-mask" class="c-mask"></div>
+
 <script type="text/javascript">
 
   var slideRight = new Menu({
@@ -159,29 +175,13 @@ function getProfile(){
 
 </script>
 
-
+     
+     
 <script type="text/javascript">
-     $('.owl-carousel').owlCarousel({
-    items:1,
-    margin:0,
-	
-	
-});
-
-owl = $('.owl-carousel').owlCarousel();
-$(".prev").click(function () {
-    owl.trigger('prev.owl.carousel');
-});
-
-$(".next").click(function () {
-    owl.trigger('next.owl.carousel');
-});
-     </script> 
-<script>
 $(window).load(function(){
  $('.starbtmtext').circleType({radius: -700});
  $('.namewraper span').circleType({radius: 700});
-  $('.namesub ').circleType({radius: 700});
+  $('.namesub ').circleType({radius: 700});  
 });
  </script> 
 
