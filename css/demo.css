@@ -488,7 +488,9 @@ a.closed {
     background-size: 30px;
     background-size: 7%;
     background-position: 94%;
+	outline:none;
 }
+.error1{ float:left; width:100%; color:red;}
 .l-box button img {
     float: right;
     padding-right: 38px;
@@ -1336,13 +1338,13 @@ font-size: 30px;
 
 }
 
-@media only screen and (min-width:270px) and (max-width: 360px) {
+@media only screen and (min-width:320px) and (max-width: 360px) {
 body .l-box.confm input {
-    width: 27%;
+    width: 30%;
 }	
 .l-box input {    width: 65%;}
 
-.rdio {    font-size: 12px;}
+.rdio {    font-size: 14px;}
 .container {
     padding: 0 8px;
 }

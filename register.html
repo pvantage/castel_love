@@ -384,7 +384,7 @@ function accountRegister(){
 					
 					if(data['error']['customer_state'])
 				 	{
-						jQuery("#customer_state").parent().parent('div').addClass('error');
+						jQuery(".sltbox").addClass('error');
 					}
 					
 					if(data['error']['customer_password'])
@@ -400,7 +400,7 @@ function accountRegister(){
 					
 					if(data['error']['email_exist'])
 				 	{
-						jQuery(".btn_register_submit").after('<p class="error" id="error_p">' + data['error']['email_exist'] + '</p>');
+						jQuery(".btn_register_submit").after('<p class="error1" id="error_p">' + data['error']['email_exist'] + '</p>');
 					}
 				 }
 				 

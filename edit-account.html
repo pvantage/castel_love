@@ -97,13 +97,21 @@ jQuery(function(jquery) {
           <label>Nome:</label>
           <input type="text" name="name" id="name" tabindex="1" placeholder="Digite o nome">
           <input type="hidden" name="customer_id" id="customer_id">
-        </div>
-        <div class="l-box wtsup">
+        </div>     
+        
+                
+        <div class="l-box">
           <label>Idade:</label>
-          <input type="text" name="age" id="age" tabindex="2" placeholder="Era">
-          <label>WhatsApp:</label>
-          <input class="wtext" type="text" name="whatsapp" id="whatsapp" tabindex="3" placeholder="Número do Whatsapp">
+          <input type="text" name="age" id="age" maxlength="2" placeholder="Era">
+      
         </div>
+		   <div class="l-box wtsnew">
+          <label>WhatsApp:</label>
+         <input class="wtext" type="text" maxlength="12" name="whatsapp" id="whatsapp" placeholder="Número da Whatsapp">
+        </div>
+        
+        
+        
         <div class="l-box gender">
           <label>Gender:</label>
           <div class="rdio"><input type="radio" name="sex" id="sex_1" value="1">Male </div>
@@ -364,7 +372,7 @@ function updateProfile(){
 					
 					if(data['error']['state'])
 				 	{
-						jQuery("#state").parent().parent('div').addClass('error');
+						jQuery(".sltbox").addClass('error');
 					}								
 					
 				 }
