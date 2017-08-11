@@ -17,6 +17,12 @@
 <script src="js/owl.carousel.js"></script> 
 <script src="js/plugins.js"></script> 
 <script src="js/circletype.js"></script> 
+<script type="text/javascript">  
+if (localStorage.getItem("customer_log_id") === null) {
+  window.location = './login.html';
+}
+  
+</script>
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -24,7 +30,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-  <script type="text/javascript">
+<script type="text/javascript">
 
 function getProfile(){
 	
@@ -70,6 +76,13 @@ function getProfile(){
 						ovel_items += '<div class="item">';						
 						ovel_items += '<img src="' + data['success']['prof_pic_3'] + '" />';
 						ovel_items += '</div>';						
+					}
+					
+					if(ovel_items == "")
+					{
+						ovel_items += '<div class="item">';						
+						ovel_items += '<img src="./images/blank.png" />';
+						ovel_items += '</div>';
 					}
 					
 					$(".owl-carousel").html(ovel_items);
@@ -121,11 +134,11 @@ function getProfile(){
                 <div class="owl-carousel owl-theme">
                    
                 </div>
-				<div class="edit-up"><a href="#"><img src="images/edit-imgicon.png"/></a></div>
+				<div class="edit-up"><a href="edit-account.html"><img src="images/edit-imgicon.png"/></a></div>
                 <div class="customNavigation"> <a class="prev"> <img src="images/prevbtn.png" alt=""></a> <a class="next"><img src="images/nextbtn.png" alt=""></a> </div>
                 <div class="profile-age-clm">
-                    <div class="ageclm-left"><a href="#">SP <img src="images/edit-icon.png"/></a></div>
-                    <div class="ageclm-right"><a href="#">22 <img src="images/edit-icon.png"/></a></div>
+                    <div class="ageclm-left"><a href="edit-account.html"><span id="state"></span> <img src="images/edit-icon.png"/></a></div>
+                    <div class="ageclm-right"><a href="edit-account.html"><span id="age"></span> <img src="images/edit-icon.png"/></a></div>
                 </div>
             </div>
             <div class="namewraper"><span id="name"></span> <a class="edit-n" href="edit-account.html"><img src="images/edit-icon.png"/></a>
@@ -142,7 +155,7 @@ function getProfile(){
     </div>
 	
 	
-    <div class="bottom-flag"><a href="#" data-toggle="modal" data-target="#myModal"><img src="images/flag-icon.png" alt=""></a></div>
+    <div class="bottom-flag"><!--<a href="#" data-toggle="modal" data-target="#myModal">--><img src="images/flag-icon.png" alt=""><!--</a>--></div>
 </div>
 <nav id="c-menu--slide-right" class="c-menu c-menu--slide-right">
     <button class="c-menu__close">Close Menu &rarr;</button>

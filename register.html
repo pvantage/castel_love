@@ -24,6 +24,7 @@ jQuery(function(jquery) {
  jquery('select').selectBoxIt();
 });
 </script>
+
 </head>
 <body>
 <div id="o-wrapper" class="o-wrapper innerpage">
@@ -43,11 +44,14 @@ jQuery(function(jquery) {
           <label>E-mail:</label>
           <input type="text" name="customer_email" maxlength="60" id="customer_email" placeholder="Digite o endereço de e-mail">
         </div>
-        <div class="l-box wtsup">
+        <div class="l-box">
           <label>Idade:</label>
           <input type="text" name="customer_age" id="customer_age" maxlength="2" placeholder="Idade">
+      
+        </div>
+		   <div class="l-box wtsnew">
           <label>WhatsApp:</label>
-          <input class="wtext" type="text" maxlength="12" name="customer_whats_no" id="customer_whats_no" placeholder="Digite o número do Whatsapp">
+         <input class="wtext" type="text" maxlength="12" name="customer_whats_no" id="customer_whats_no" placeholder="Digite o número do Whatsapp">
         </div>
         <div class="l-box gender">
           <label>Gender:</label>
@@ -142,7 +146,12 @@ jQuery(function(jquery) {
     </div>
   </div>
 </div>
+<script type="text/javascript">
 
+ $('.head-line span').circleType({radius: 1200});
+  $('.terms-conditions .head-line span').circleType({radius: 1200});
+
+ </script>
 <!-- /c-menu slide-right -->
 
 <div id="c-mask" class="c-mask"></div>
@@ -163,17 +172,14 @@ jQuery(function(jquery) {
         </header>
         <div class="terms-text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</div>
         <div class="trms-voltr-btn">
-          <div class="voltr-btn"><span>VOLTAR</span></div>
+          <div class="voltr-btn" data-dismiss="modal"><span>VOLTAR</span></div>
         </div>
       </div>
     </div>
   </div>
 </div>
 </body>
-<script type="text/javascript">
- $('.head-line span').circleType({radius: 1200});
-  $('.terms-conditions .head-line span').circleType({radius: 1200});
- </script>
+
  <script type="text/javascript">
   function getImage1() {	  
 	             

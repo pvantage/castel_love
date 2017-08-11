@@ -161,7 +161,7 @@ a:focus, a:hover {
     width: 50%;
 }
 .l-box.pwdm input{
-    width: 70%;
+    width: 68%;
 }
 
 .file-upload-input:hover, .file-upload-input:focus {
@@ -1010,6 +1010,10 @@ div#myModa2 {
     background-image: url(../images/terms-con-bgimg.png);
 }
 
+.l-box.wtsnew input {
+    width: 64%;
+}
+
 /**innerpage css end here**/
 
 
@@ -1089,7 +1093,9 @@ div#myModa2 {
 }
 @media only screen and (max-width:600px) {
 	
-.selectbox .selectboxit-container .selectboxit-text {   height: 51px;   line-height: 54px;    font-size: 18px;}
+.selectbox .selectboxit-container .selectboxit-text {   height: 51px;   line-height: 54px;        font-size: 16px;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;}
 .selectbox span.selectboxit-arrow-container {   height: 50px;}
 .selectbox .selectboxit-default-arrow {    background: url(../images/select.png) no-repeat scroll center top rgba(0, 0, 0, 0) !important;    height: 7px !important;    width: 14px !important;    border: none !important;    background-size: 100% 100% !important;}
 .l-box input{    width: 77%;}
@@ -1098,13 +1104,13 @@ div#myModa2 {
 .l-box.wtsup input {    width: 10%;}
 .rdio {   font-size: 17px;   margin-right: 9px;   margin-top: 14px;   padding-left: 10px;}
 .l-box .rdio input { width: 18px;height: 18px;}
-.l-box.confm input { width: 45%;}
+.l-box.confm input { width: 43%;}
 
 
 .l-box.btn-enter button{ text-align:center;}
-.createacct {    font-size: 22px;    line-height: 55px;}
+.createacct {    font-size: 14px;    line-height: 55px;}
 .loginpage .page-heading .head-line span {    font-size: 59px; margin-top: 44px;}
-.l-box input {    font-size: 18px;    font-weight: 600;    width: 71%;}
+.l-box input {    font-size: 16px;    font-weight: 600;    width: 71%;}
 .l-box label {    font-size: 15px;   margin-right: 2px;    height: 85%;    line-height: 52px;}
 .l-box {    height: 58px;    background-size: 100% 100%;    padding-left: 15px;}
 .file-upload-button{ height:auto;      font-size: 17px;   padding: 40px 0px;}
@@ -1114,7 +1120,7 @@ div#myModa2 {
 .up-rightbox ul {    padding-left: 0px;    margin-top: 0;}
 .up-rightbox li {   margin-right: 22px;   font-size: 16px;}
 .up-rightbox li input[type="checkbox"] {    width: 16px;    height: 17px;    margin-right: 6px;}
-.l-box button {    font-size: 19px;    height: 95%;  text-align:left;}
+.l-box button {    font-size: 14px;    height: 95%;  text-align:left;}
 .l-box button img {   padding-right: 22px;   width: 16%;   padding-top:0px;}
 
 
