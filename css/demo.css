@@ -1102,7 +1102,12 @@ div#myModa2 {
 	
 	.l-box.wtsup input.wtext {  width: 36%;}
 .l-box.wtsup input {    width: 10%;}
-.rdio {   font-size: 17px;   margin-right: 9px;   margin-top: 14px;   padding-left: 10px;}
+.rdio { font-size: 15px;
+    margin-right: 6px;
+    margin-top: 14px;
+    padding-left: 6px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;}
 .l-box .rdio input { width: 18px;height: 18px;}
 .l-box.confm input { width: 43%;}
 
@@ -1329,4 +1334,10 @@ font-size: 30px;
 
 
 
+}
+
+@media only screen and (min-width:288px) and (max-width: 319px) {
+.l-box input {    width: 65%;}
+.l-box.confm input {    width: 37%;}
+.rdio {    font-size: 14px;}
 }

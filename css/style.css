@@ -24,7 +24,7 @@ a {
 }
 .edit-up {
     position: absolute;
-    z-index: 999999999;
+    z-index: 9;
     right: 68px;
     top: 43px;
 }
