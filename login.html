@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 <title>CastelLove</title>
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/demo.css" rel="stylesheet">
@@ -71,7 +71,7 @@ function accountLogin(){
 					
 					if(data['error']['invalid'])
 				 	{
-						jQuery(".btn-enter").after('<p class="error" id="error_p">' + data['error']['invalid'] + '</p>');
+						jQuery(".btn-enter").after('<p class="error1" id="error_p">' + data['error']['invalid'] + '</p>');
 					}
 				 }
 				 

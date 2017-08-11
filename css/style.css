@@ -22,6 +22,8 @@ padding:0 15px;
 a {
     color: #fff;
 }
+nav#c-menu--slide-right{ top:20px;}
+.error1{ float:left; width:100%; color:red; text-align:center;}
 .edit-up {
     position: absolute;
     z-index: 9;
@@ -51,7 +53,7 @@ a.edit-n1 {
     position: absolute;
     right: 163px;
     bottom: -32px;
-    z-index: 999;
+    z-index: 9;
 }
 
 .whsupnew {
