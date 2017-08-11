@@ -362,9 +362,14 @@ function accountRegister(){
 						jQuery("#customer_email").parent('div').addClass('error');
 					}
 					
-					if(data['error']['customer_age'] || data['error']['customer_whats_no'])
+					if(data['error']['customer_age'])
 				 	{
 						jQuery("#customer_age").parent('div').addClass('error');
+					}
+					
+					if(data['error']['customer_whats_no'])
+				 	{
+						jQuery("#customer_whats_no").parent('div').addClass('error');
 					}
 					
 					if(data['error']['customer_church'])
