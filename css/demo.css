@@ -69,7 +69,6 @@ body {
 
 }
 
-nav#c-menu--slide-right{ top:20px;}
 .voltr-btn span {
     padding-top: 82px;
     float: left;
@@ -1018,6 +1017,10 @@ div#myModa2 {
     width: 64%;
 }
 
+.frgtpwd .volterbox {
+    margin-bottom: 30px;
+}
+
 /**innerpage css end here**/
 
 
@@ -1230,6 +1233,10 @@ div#myModa2 {
 }
 }
  @media only screen and (max-width:480px) {
+.forgot-pass-ok p {
+    font-size: 19px;
+    font-weight: 600;
+}	
 .fav-title {    font-size: 17px;  height: 130px;    line-height: normal;   padding: 47px 50px;}
 .fav-pop-btn a {  margin: 0px 7px;   width: 44px;}
 .fav-pop-btn {   margin-top: -28px;}
