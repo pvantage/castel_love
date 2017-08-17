@@ -18,7 +18,7 @@
 <script src="js/plugins.js"></script> 
 <script src="js/circletype.js"></script> 
 <script type="text/javascript">  
-if (localStorage.getItem("customer_log_id") === null) {
+if(localStorage.getItem("customer_log_id") === null){
   window.location = './login.html';
 }
   
@@ -31,7 +31,6 @@ if (localStorage.getItem("customer_log_id") === null) {
     <![endif]-->
 
 <script type="text/javascript">
-
 function getProfile(){
 	
 	var url = siteurl + '?route=account/login/getprofile';
@@ -49,9 +48,12 @@ function getProfile(){
 					$("#whatsapp").val(data['success']['whats_app']);
 					$("#city").html(data['success']['city']);
 					$("#state").html(data['success']['state']);
-										
-										
-					//$("#church").val(data['success']['church']);
+					
+					localStorage.setItem("ranking_position", data['success']['ranking']);
+					$("#ranking_position").html(data['success']['ranking']);
+					
+					$("#lavel").html('<span>Level</span>  ' + data['success']['lavel']);
+					$("#star_balance").html(data['success']['star_balance']);
 					
 					var ovel_items = '';					
 					
@@ -116,17 +118,17 @@ function getProfile(){
 <div id="o-wrapper" class="o-wrapper">
     <div class="container edit-prof-section">
         <header class="header">
-            <div class="rating-wrap">19.856</div>
-            <div class="level-wrap"><span>Level</span> 4</div>
+            <div class="rating-wrap" id="star_balance">0</div>
+            <div class="level-wrap" id="lavel"></div>
             <div class="menu-wrap"><a href="javascript:;" id="c-button--slide-right">MENU</a></div>
         </header>
         <div class="slider-main-wrap">
             <div class="profile-top-main">
 			<div class="profile-setting"><a href="edit-account.html"></a></div>
                 <div class="pro-rankingnm">Editar Perfil</div>
-				<div class="edi-fav">5909</div>
+				<div class="edi-fav" id="total_fav"></div>
                 <div class="clearfix"></div>
-                <div class="pro-rankingnum">13499º</div>
+                <div class="pro-rankingnum" id="ranking_position"></div>
 			
             </div>
             <div class="slider-content">
@@ -155,14 +157,15 @@ function getProfile(){
     </div>
 	
 	
-    <div class="bottom-flag"><!--<a href="#" data-toggle="modal" data-target="#myModal">--><img src="images/flag-icon.png" alt=""><!--</a>--></div>
+    <!--<div class="bottom-flag"><img src="images/flag-icon.png" alt=""></div>-->
 </div>
 <nav id="c-menu--slide-right" class="c-menu c-menu--slide-right">
     <button class="c-menu__close">Close Menu &rarr;</button>
     <ul class="c-menu__items">
         <li class="c-menu__item"><a href="index.html" class="c-menu__link">Home</a></li>
         <li class="c-menu__item"><a href="edit-profile.html" class="c-menu__link">My Profile</a></li>
-        <li class="c-menu__item"><a href="update_password.html" class="c-menu__link">Change Password</a></li>        
+        <li class="c-menu__item"><a href="update_password.html" class="c-menu__link">Change Password</a></li>
+        <li class="c-menu__item"><a href="favourite.html" class="c-menu__link">My Favourites</a></li>        
         <li class="c-menu__item"><a href="javascript:void(0);" onClick="logOut();" class="c-menu__link">Log Out</a></li>
     </ul>
 </nav>
@@ -171,6 +174,22 @@ function getProfile(){
 <div id="c-mask" class="c-mask"></div>
 
 <script type="text/javascript">
+	total_fav = 0;
+
+	if(localStorage.getItem("total_fav") != null){
+		total_fav = localStorage.getItem("total_fav");
+	}
+
+	$("#total_fav").html(total_fav);
+	
+	ranking_position = '0º';
+
+	if(localStorage.getItem("ranking_position") != null){
+		ranking_position = localStorage.getItem("ranking_position");
+	}
+	
+	$("#ranking_position").html(ranking_position);
+
 
   var slideRight = new Menu({
     wrapper: '#o-wrapper',
@@ -201,119 +220,6 @@ $(window).load(function(){
  $('.namewraper span').circleType({radius: 700});
   $('.namesub ').circleType({radius: 700});  
 });
- </script> 
-
- <!---- report flag -->
- <div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">   
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"></button>
-        <h4 class="modal-title"></h4>
-      </div>
-      <div class="modal-body">
-        <div class="pooptitle">Selecione a Alternativa
-que Melhor define 
-a Imagem</div>
-
-<ul class="donate-now">
-<li>
-    <input type="radio" id="a25" name="amount" />
-    <label for="a25">Foto Não Pertence ao Usuário</label>
-</li>
-<li>
-    <input type="radio" id="a50" name="amount" />
-    <label for="a50">Foto Contém Cena de Violência</label>
-</li>
-<li>
-    <input type="radio" id="a75" name="amount" checked="checked" />
-    <label for="a75">Foto Promove Ato de Racismo</label>
-</li>
-<li>
-    <input type="radio" id="a100" name="amount" />
-    <label for="a100">A Foto Não é Verdadeira</label>
-</li>
-<li>
-    <input type="radio" id="other1" name="amount" />
-    <label for="other1">Imagem com Texto</label>
-</li>
-
-<li>
-    <input type="radio" id="other2" name="amount" />
-    <label for="other2">Foto de Crianças ou Menores de 18 Anos</label>
-</li>
-
-<li>
-    <input type="radio" id="other3" name="amount" />
-    <label for="other3">Foto de Produtos ou Serviços</label>
-</li>
-
-<li class="submit-btnbox">
-
-<input type="submit" value="DENUNCIAR O CONTEÚDO"/>
-</li>
-
-
-
-</ul>
-      </div>
-      
-    </div>
-
-  </div>
-</div>
-
-
-
-  <div id="myModa4" class="modal fade" role="dialog">
-  <div class="modal-dialog terms-conditions whtsupbox1">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">X</button>
-        <h4 class="modal-title"></h4>
-      </div>
-      <div class="modal-body">
-<div class="fav-popup">
-<div class="fav-title">Deseja ser adicionado no
-WhatsApp desta Pessoa?</div>
-<div class="fav-pop-btn"><a href="#"><img src="images/fav1.png"/></a> <a href="#"><img src="images/fav2.png"/></a></div>
-</div>
-
-      </div>
-      
-    </div>
-
-  </div>
-</div>
-
-
-  <div id="myModa5" class="modal fade" role="dialog">
-  <div class="modal-dialog terms-conditions whtsupbox">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">X</button>
-        <h4 class="modal-title"></h4>
-      </div>
-      <div class="modal-body">
-<div class="fav-popup">
-<div class="fav-title">Solicitação Enviada! O Usuário
-avaliará seu pedido em breve.
-Você será notificado via <a href="#">WhatsApp</a></div>
-
-</div>
-
-      </div>
-      
-    </div>
-
-  </div>
-</div>
-
-
-
+ </script>   
 </body>
 </html>

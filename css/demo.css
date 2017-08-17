@@ -56,7 +56,8 @@ body {
     font-weight: 700;
     vertical-align: middle;
     margin-top: -90px;
-	    background-size: 100%;
+	background-size: 100%;
+	cursor:pointer;
 }
 .voltar-page {
     text-align: center;
@@ -305,16 +306,15 @@ a:focus, a:hover {
 	margin-bottom: 30px;
 	position: relative;
 }
-.fav-prof .img-box {
-	width: 100%;
-	float: left;
-	background-image: url(../images/fav-user-bg);
-	background-repeat: no-repeat;
-	border-radius: 10px;
-	overflow: hidden;
-	height: auto;
-	box-shadow: 0px 0px 0px 3px #fff;
-	position: relative;
+.fav-prof .img-box {    
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    box-shadow: 0 0 0 3px #fff;
+    float: left;
+    height: 162px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
 }
 .page-heading {
 	float: left;
@@ -337,9 +337,9 @@ body.favbgmain {
     background-image: url(../images/fav-bg1.png);
 }
 .img-box img {
-	/* height: 100%; */
-	position: relative;
-	width: 100%;
+ height: 100%;
+    position: relative;
+    width: 100%;
 }
 .img-box {
 	float: left;
@@ -353,9 +353,9 @@ body.favbgmain {
 	margin-top: 10px;
 	text-align: center;
 }
-.username a {
-	font-size: 22px;
-	font-weight: 800;
+.username{
+font-size: 15px;
+    font-weight: 700;
 	color: #fff;
 }
 a.closed {
@@ -383,31 +383,29 @@ a.closed {
 	padding-top: 8px;
 	outline: none;
 	width: 100%;
-		line-height:0px;
+	line-height:0px;
 }
 .volterbox button span {
-	
-	
 	border: none;
 	font-size: 45px;
 	font-weight: 700;
 	color: #fff7e8;
 	outline: none;
-	    text-shadow: -2px 2px 5px #000;
+	text-shadow: -2px 2px 5px #000;
 }
 .closed img {
-	vertical-align: top;
+	vertical-align:top;
+	cursor:pointer;
 }
 
 
 .loginpage .page-heading .head-line span {
 	font-size: 64px;
-		    margin-top: 44px;
+	margin-top: 44px;
 		
 }
 .loginpage .page-heading .head-line {
-    background-image: url(../images/log-bg.png);
-	
+    background-image: url(../images/log-bg.png);	
 }
 .loginbox {
     float: left;
@@ -420,7 +418,7 @@ a.closed {
     background-image: url(../images/login-boxbg.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
-	    box-sizing: border-box;
+	box-sizing: border-box;
     padding-left: 23px;
 	margin-bottom: 15px;
 	float: left;
@@ -429,13 +427,12 @@ a.closed {
 .error { 
     background-image: url(../images/errorbg.png) !important;
 	background-repeat:no-repeat;
-
 }
 .l-box label {
     font-size: 30px;
     color: #f9eb0e;
     line-height: 88px;
-	    margin-right: 20px;
+	margin-right: 20px;
 }
 .l-box.sltbox label { float:left;}
 .l-box input {
@@ -443,8 +440,8 @@ a.closed {
     border: none;
     font-size: 30px;
     font-weight: 700;
-	    width: 78%;
-		outline: none;
+	width: 78%;
+	outline: none;
 }
 .user_pic.uploadbtn input[type="file"] {
     float: left;
@@ -462,7 +459,6 @@ a.closed {
     z-index: -1;
 }
 
-
 .up-rightbox li {
     list-style: none;
     margin-right: 43px;
@@ -476,7 +472,7 @@ a.closed {
     margin-right: 13px;
 }
 .up-rightbox ul {
-        padding-left: 0px;
+    padding-left: 0px;
     margin-top: 20px;
 	text-align:center;
 }
@@ -487,9 +483,7 @@ a.closed {
     font-size: 30px;
     font-weight: 700;
     width: 100%;
-    height: 85px;
-	
-	   
+    height: 85px;   
     background: url(../images/click.png) right;
     background-repeat: no-repeat;
     background-size: 30px;
@@ -502,7 +496,6 @@ a.closed {
     float: right;
     padding-right: 38px;
 }
-
 
 .rank-title img {
     width: 38px;
@@ -880,6 +873,8 @@ html .terms-conditions .modal-content {
     width: 100%;
 }
 
+.fav-pop-btn img{ cursor:pointer;}
+
 .chatpage .page-heading .head-line {
     background-image: url(../images/chat-title.png);
 	    height: 128px;
@@ -1091,7 +1086,7 @@ header.header {
 	width: 21%;
 	margin: 0px 4px 17px 4px;
 }
-.username a {
+.username{
 	font-size: 15px;
 	font-weight: 600;
 }
@@ -1356,7 +1351,7 @@ font-size: 30px;
 	height: auto;
 	box-shadow: 0px -1px 0px 2px #fff;
 }
-.username a {
+.username {
 	font-size: 15px;
 }
 

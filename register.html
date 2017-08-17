@@ -28,7 +28,7 @@ jQuery(function(jquery) {
 <body>
 <div id="o-wrapper" class="o-wrapper innerpage">
   <div class="container loginpage">
-    <header class="header">
+    <header class="header" id="header">
       <div class="page-heading">
         <div class="head-line"><span>Criar Perfil</span></div>
       </div>
@@ -145,14 +145,13 @@ jQuery(function(jquery) {
     </div>
   </div>
 </div>
-<script type="text/javascript">
 
- $('.head-line span').circleType({radius: 1200});
+<!-- /c-menu slide-right -->
+<script type="text/javascript">
+ 
   $('.terms-conditions .head-line span').circleType({radius: 1200});
 
  </script>
-<!-- /c-menu slide-right -->
-
 <div id="c-mask" class="c-mask"></div>
 <div id="myModa2" class="modal fade regsppu" role="dialog">
   <div class="modal-dialog terms-conditions">  
@@ -406,4 +405,9 @@ function accountRegister(){
    });
 }
 </script>
+<script type="text/javascript">
+
+ $('#header .head-line span').circleType({radius: 1200}); 
+
+ </script>
 </html>

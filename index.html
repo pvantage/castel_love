@@ -13,10 +13,10 @@
 <script src="js/bootstrap.min.js"></script>
 <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 <script type="text/javascript" src="js/config.js"></script>
-<script src="js/menu.js"></script> 
-<script src="js/owl.carousel.js"></script> 
-<script src="js/plugins.js"></script> 
-<script src="js/circletype.js"></script> 
+<script src="js/menu.js"></script>
+<script src="js/owl.carousel.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/circletype.js"></script>
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -26,64 +26,309 @@
 <script type="text/javascript">  
 if (localStorage.getItem("customer_log_id") === null) {
   window.location = './login.html';
+}else if(parseInt(localStorage.getItem("customer_log_id")) > 0)
+{
+	var url = siteurl + '?route=common/home/getcustomers';
+	jQuery.ajax({
+			 type: 'POST',
+			 url: url,
+			 data: {sex: localStorage.getItem("customer_sex"), customer_id: localStorage.getItem("customer_log_id")},
+			 dataType: 'json',
+			 crossDomain: true,
+			 success: function(data){
+				 if(data['customer'])
+				 {				 
+				 	$("#name").html(data['customer']['name']);
+					$("#age").html(data['customer']['age']);					
+					$("#city").html(data['customer']['city']);
+					$("#state").html(data['customer']['state']);
+					$("#current_customer").val(data['customer']['customer_id']);					
+					$("#rating").html(data['customer']['rating']);
+															
+					var ovel_items = '';					
+					
+					if(data['customer']['prof_pic_1'])
+					{
+						ovel_items = '<div class="item">';						
+						ovel_items += '<img src="' + data['customer']['prof_pic_1'] + '" />';
+						ovel_items += '</div>';
+					}
+					
+					if(data['customer']['prof_pic_2'])
+					{
+						
+						ovel_items += '<div class="item">';						
+						ovel_items += '<img src="' + data['customer']['prof_pic_2'] + '" />';
+						ovel_items += '</div>';
+						
+					}
+					
+					if(data['customer']['prof_pic_3'])
+					{						
+						ovel_items += '<div class="item">';						
+						ovel_items += '<img src="' + data['customer']['prof_pic_3'] + '" />';
+						ovel_items += '</div>';						
+					}
+					
+					if(ovel_items == "")
+					{
+						ovel_items += '<div class="item">';						
+						ovel_items += '<img src="./images/blank.png" />';
+						ovel_items += '</div>';
+					}
+					
+					$(".owl-carousel").html(ovel_items);
+					
+					
+					$('.owl-carousel').owlCarousel({
+						items:1,
+						margin:0,	
+					});
+					
+					owl = $('.owl-carousel').owlCarousel();
+					$(".prev").click(function () {
+						owl.trigger('prev.owl.carousel');
+					});
+					
+					$(".next").click(function () {
+						owl.trigger('next.owl.carousel');
+					});
+					
+					 $('.starbtmtext').circleType({radius: -700});
+					 $('.namewraper span').circleType({radius: 700});
+					 $('.namesub').circleType({radius: 700}); 					
+				 }else{
+					 	$(".user_exist").hide();
+					 	$(".no_results").show();
+					 }
+			}
+   		});	
+}  
+
+function getFlag(){
+	var url = siteurl + '?route=common/home/getQuestions';
+	jQuery.ajax({
+			 type: 'POST',
+			 url: url,			 
+			 dataType: 'json',
+			 crossDomain: true,
+			 success: function(data){
+				 
+				 var question_lists = '';
+				 
+				 if(data['question'])
+				 {
+					 for(i = 0; i < data['question'].length; i++)
+					 {
+						question_lists += '<li>';
+						question_lists += '<input type="radio" id="a'+ data['question'][i]['question_id'] + '" name="report_flag"';
+						question_lists += 'value="'+data['question'][i]['question_id'] + '"';
+						
+						if(i == 0)
+						{
+							question_lists += "checked='checked'";
+						}
+						
+						
+						question_lists += '><label for="a'+ data['question'][i]['question_id'] + '">'+ data['question'][i]['title'] + '</label>';
+						question_lists += '</li>'; 
+					 }
+					 
+					 
+					 question_lists += '<li class="submit-btnbox"><input onclick="return reportFlag();" type="submit" value="DENUNCIAR O CONTEÚDO"/></li>';
+				 
+				 }
+				 
+				 	$("#report_flag_container").html(question_lists);
+				 
+			}
+   		});
 }
-  
+
+
+function rateUser(rate_point){
+	var url = siteurl + '?route=common/home/rateuser';
+	
+	var user_id = $('input[name=\'current_customer\']').val();
+	
+	jQuery.ajax({
+			 type: 'POST',
+			 url: url,
+			 data: {user_id: user_id, rating: rate_point, customer_id: localStorage.getItem("customer_log_id"), sex: localStorage.getItem("customer_sex")},
+			 dataType: 'json',
+			 beforeSend: function() {
+				$('.stars-mainwrap a').attr('disabled', true);				
+			},
+			 crossDomain: true,
+			 success: function(data){
+				 
+				 window.location = "index.html";
+				 /* 
+				 if(data['customer'])
+				 {				 
+				 	$("#name").html(data['customer']['name']);
+					$("#age").html(data['customer']['age']);					
+					$("#city").html(data['customer']['city']);
+					$("#state").html(data['customer']['state']);
+					$("#current_customer").val(data['customer']['customer_id']);
+															
+					var ovel_items = '';					
+					
+					if(data['customer']['prof_pic_1'])
+					{
+						ovel_items = '<div class="item">';						
+						ovel_items += '<img src="' + data['customer']['prof_pic_1'] + '" />';
+						ovel_items += '</div>';
+					}
+					
+					if(data['customer']['prof_pic_2'])
+					{
+						
+						ovel_items += '<div class="item">';						
+						ovel_items += '<img src="' + data['customer']['prof_pic_2'] + '" />';
+						ovel_items += '</div>';
+						
+					}
+					
+					if(data['customer']['prof_pic_3'])
+					{						
+						ovel_items += '<div class="item">';						
+						ovel_items += '<img src="' + data['customer']['prof_pic_3'] + '" />';
+						ovel_items += '</div>';						
+					}
+					
+					if(ovel_items == "")
+					{
+						ovel_items += '<div class="item">';						
+						ovel_items += '<img src="./images/blank.png" />';
+						ovel_items += '</div>';
+					}
+					
+					$(".owl-carousel").html(ovel_items);
+					
+					
+					$('.owl-carousel').owlCarousel({
+						items:1,
+						margin:0,	
+					});
+					
+					owl = $('.owl-carousel').owlCarousel();
+					$(".prev").click(function () {
+						owl.trigger('prev.owl.carousel');
+					});
+					
+					$(".next").click(function () {
+						owl.trigger('next.owl.carousel');
+					});
+					
+					 $('.starbtmtext').circleType({radius: -700});
+					 $('.namewraper span').circleType({radius: 700});
+					 $('.namesub').circleType({radius: 700}); 					
+				 }else{
+					 	$(".user_exist").hide();
+					 	$(".no_results").show();
+					 }
+				*/	 
+						 
+			}
+   });
+}
 </script>
-    
+
+
+
+
 </head>
-<body>
+<body onLoad="getFlag();">
 <div id="o-wrapper" class="o-wrapper">
-    <div class="container">
-        <header class="header">
-            <div class="rating-wrap">19.856</div>
-            <div class="level-wrap"><span>Level</span> 4</div>
-            <div class="menu-wrap"><a href="javascript:;" id="c-button--slide-right">MENU</a></div>
-        </header>
-        <div class="slider-main-wrap">
-            <div class="profile-top-main">
-                <div class="pro-rankingnm">Ranking Brasil</div>
-                <div class="clearfix"></div>
-                <div class="pro-rankingnum">13499º</div>
-				<div class="whsupnew"><a href="#" href="#" data-toggle="modal" data-target="#myModa5"><img src="images/whtsup.png"/></a></div>
-            </div>
-            <div class="slider-content">
-                <div class="slider-wrap"></div>
-                <div class="owl-carousel owl-theme">
-                    <div class="item" > <img src="images/slide1.jpg" alt=""> </div>
-                    <div class="item" > <img src="images/slide1.jpg" alt=""> </div>
-                </div>
-                <div class="customNavigation"> <a class="prev"> <img src="images/prevbtn.png" alt=""></a> <a class="next"><img src="images/nextbtn.png" alt=""></a> </div>
-                <div class="profile-age-clm">
-                    <div class="ageclm-left">SP</div>
-                    <div class="ageclm-right">22</div>
-                </div>
-            </div>
-            <div class="namewraper"><span>Maria Amélia</span></div>
-            <div class="namesub">São José do Rio Preto</div>
-        </div>
-        <div class="stars-mainwrap">
-            <div class="starone"><span>1</span></div>
-            <div class="startwo"><span>10</span></div>
-            <div class="starthree"><span>30</span></div>
-        </div>
-        <div class="starbtmtext">Quantas Estrelas Ele(a) Merece?</div>
+
+  <div class="container">
+    <header class="header">
+      <div class="menu-wrap"><a href="javascript:;" id="c-button--slide-right">MENU</a></div>
+    </header>
     </div>
-	
-	
-    <div class="bottom-flag"><a href="#" data-toggle="modal" data-target="#myModal"><img src="images/flag-icon.png" alt=""></a></div>
+    
+    
+    <div class="user_exist">
+    
+    <div class="container">
+    <div class="slider-main-wrap">
+      <div class="profile-top-main">
+        <div class="pro-rankingnm">Ranking Brasil</div>
+		  <div class="hrt-box"><a href="javascript:void(0);" onClick="addFav();"><img src="images/hrt.png"/></a></div>
+        <div class="clearfix"></div>
+        <div class="pro-rankingnum" id="rating"></div>
+        <div class="whsupnew"><a href="#" href="#" data-toggle="modal" data-target="#myModa5"><img src="images/whtsup.png"/></a></div>
+      </div>
+      <div class="slider-content">
+        <div class="slider-wrap"></div>
+        <div class="owl-carousel owl-theme">
+          <div class="item" > <img src="images/blank.png" alt=""> </div>
+        </div>
+        <div class="customNavigation"> <a class="prev"> <img src="images/prevbtn.png" alt=""></a> <a class="next"><img src="images/nextbtn.png" alt=""></a> </div>
+        <div class="profile-age-clm">
+          <div class="ageclm-left" id="state"></div>
+          <div class="ageclm-right" id="age"></div>
+        </div>
+      </div>
+      <div class="namewraper"><span id="name"></span></div>
+      <div class="namesub"><span id="city"></span></div>
+      <input type="hidden" name="current_customer" id="current_customer">
+    </div>
+    <div class="stars-mainwrap">
+      <div class="starone"><a onClick="return rateUser(1);"><span>1</span></a></div>
+      <div class="startwo"><a onClick="return rateUser(10);"><span>10</span></a></div>
+      <div class="starthree"><a onClick="return rateUser(30);"><span>30</span></a></div>
+    </div>
+    <div class="starbtmtext">Quantas Estrelas Ele(a) Merece?</div>  
+  </div>  
+    
+  <div class="bottom-flag"><a href="#" data-toggle="modal" data-target="#myModal"><img src="images/flag-icon.png" alt=""></a></div>
+  
+  
+  </div> <!------- end user_exist -->
+  
+  
+  
+  
+  <div class="no_results no-profile-display">
+    <div class="container">
+	<div class="index-no-profile">
+	<p>Não há mais usuários para revisar / avaliar hoje.</p>
+	<div class="volterbox"><a href="edit-profile.html"><button><span>Voltar</span></button></a></div>
+	</div>
 </div>
+</div>
+
+<!-- end no results -->
+  
+  
+  
+  
+</div>
+
+
+
+
 <nav id="c-menu--slide-right" class="c-menu c-menu--slide-right">
-    <button class="c-menu__close">Close Menu &rarr;</button>
-    <ul class="c-menu__items">
-        <li class="c-menu__item"><a href="index.html" class="c-menu__link">Home</a></li>
-        <li class="c-menu__item"><a href="edit-profile.html" class="c-menu__link">My Profile</a></li>
-        <li class="c-menu__item"><a href="update_password.html" class="c-menu__link">Change Password</a></li>        
-        <li class="c-menu__item"><a href="javascript:void(0);" onClick="logOut();" class="c-menu__link">Log Out</a></li>
-    </ul>
+  <button class="c-menu__close">Fechar Menu &rarr;</button>
+  <ul class="c-menu__items">
+    <li class="c-menu__item"><a href="index.html" class="c-menu__link">Home</a></li>
+    <li class="c-menu__item"><a href="edit-profile.html" class="c-menu__link">My Profile</a></li>
+    <li class="c-menu__item"><a href="update_password.html" class="c-menu__link">Change Password</a></li>
+    <li class="c-menu__item"><a href="favourite.html" class="c-menu__link">My Favourites</a></li>
+    <li class="c-menu__item"><a href="javascript:void(0);" onClick="logOut();" class="c-menu__link">Log Out</a></li>
+  </ul>
 </nav>
 <!-- /c-menu slide-right -->
 
 <div id="c-mask" class="c-mask"></div>
+
+</div>
+
+
+
+
 <script type="text/javascript">
 
   var slideRight = new Menu({
@@ -106,137 +351,106 @@ function logOut(){
 	localStorage.removeItem("customer_sex");
 	window.location = 'login.html';	
 }
-</script>
+</script> 
 
-
+<!---- report flag -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="pooptitle">Selecione a Alternativa que Melhor define a Imagem</div>        
+        <ul class="donate-now" id="report_flag_container">
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="myModa4" class="modal fade" role="dialog">
+  <div class="modal-dialog terms-conditions whtsupbox1"> 
+    
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">X</button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+        <div class="fav-popup">
+          <div class="fav-title">Deseja ser adicionado no
+            WhatsApp desta Pessoa?</div>
+          <div class="fav-pop-btn"><a href="#"><img src="images/fav1.png"/></a> <a href="#"><img src="images/fav2.png"/></a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="myModa5" class="modal fade" role="dialog">
+  <div class="modal-dialog terms-conditions whtsupbox"> 
+    
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">X</button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+        <div class="fav-popup">
+          <div class="fav-title">Solicitação Enviada! O Usuário
+            avaliará seu pedido em breve.
+            Você será notificado via <a href="#">WhatsApp</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <script type="text/javascript">
-     $('.owl-carousel').owlCarousel({
-    items:1,
-    margin:0,
+function reportFlag(){
+	var url = siteurl + '?route=common/home/reportFlag';	
+	var user_id = $('input[name=\'current_customer\']').val();
+	var report_id = $('input[name=\'report_flag\']:checked').val();
 	
-	
-});
+	jQuery.ajax({
+			 type: 'POST',
+			 url: url,
+			 data: {user_id: user_id, report_id: report_id, customer_id: localStorage.getItem("customer_log_id")},
+			 dataType: 'json',
+			 beforeSend: function() {
+				$('.submit-btnbox submit').attr('disabled', true);				
+			},
+			 crossDomain: true,
+			 success: function(data){
+				 if(data['success'])
+				 {
+					 alert("Obrigado por informar, o administrador irá rever o perfil e tomar as medidas necessárias, se aplicável.");
+					 $('#myModal').modal('hide');
+				 }	 
+			}
+   });
 
-owl = $('.owl-carousel').owlCarousel();
-$(".prev").click(function () {
-    owl.trigger('prev.owl.carousel');
-});
+}
 
-$(".next").click(function () {
-    owl.trigger('next.owl.carousel');
-});
-     </script> 
-<script>
- $('.starbtmtext').circleType({radius: -700});
- $('.namewraper span').circleType({radius: 700});
-  $('.namesub ').circleType({radius: 700});
- </script> 
+function addFav(){
+	var url = siteurl + '?route=common/home/addFav';	
+	var user_id = $('input[name=\'current_customer\']').val();
+		
+	jQuery.ajax({
+			 type: 'POST',
+			 url: url,
+			 data: {user_id: user_id, customer_id: localStorage.getItem("customer_log_id")},
+			 dataType: 'json',			
+			 crossDomain: true,
+			 success: function(data){
+				 if(data['success'])
+				 {
+					 localStorage.setItem("total_fav", data['success']['fav']);
+					 
+					 alert("Você adicionou o usuário à sua lista favorita.");					 
+				 }	 
+			}
+   });
 
- <!---- report flag -->
- <div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">   
-    <div class="modal-content">      
-      <div class="modal-body">
-        <div class="pooptitle">Selecione a Alternativa que Melhor define a Imagem</div>
+}
 
-<ul class="donate-now">
-<li>
-    <input type="radio" id="a25" name="amount" />
-    <label for="a25">Foto Não Pertence ao Usuário</label>
-</li>
-<li>
-    <input type="radio" id="a50" name="amount" />
-    <label for="a50">Foto Contém Cena de Violência</label>
-</li>
-<li>
-    <input type="radio" id="a75" name="amount" checked="checked" />
-    <label for="a75">Foto Promove Ato de Racismo</label>
-</li>
-<li>
-    <input type="radio" id="a100" name="amount" />
-    <label for="a100">A Foto Não é Verdadeira</label>
-</li>
-<li>
-    <input type="radio" id="other1" name="amount" />
-    <label for="other1">Imagem com Texto</label>
-</li>
-
-<li>
-    <input type="radio" id="other2" name="amount" />
-    <label for="other2">Foto de Crianças ou Menores de 18 Anos</label>
-</li>
-
-<li>
-    <input type="radio" id="other3" name="amount" />
-    <label for="other3">Foto de Produtos ou Serviços</label>
-</li>
-
-<li class="submit-btnbox">
-
-<input type="submit" value="DENUNCIAR O CONTEÚDO"/>
-</li>
-
-
-
-</ul>
-      </div>
-      
-    </div>
-
-  </div>
-</div>
-
-
-
-  <div id="myModa4" class="modal fade" role="dialog">
-  <div class="modal-dialog terms-conditions whtsupbox1">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">X</button>
-        <h4 class="modal-title"></h4>
-      </div>
-      <div class="modal-body">
-<div class="fav-popup">
-<div class="fav-title">Deseja ser adicionado no
-WhatsApp desta Pessoa?</div>
-<div class="fav-pop-btn"><a href="#"><img src="images/fav1.png"/></a> <a href="#"><img src="images/fav2.png"/></a></div>
-</div>
-
-      </div>
-      
-    </div>
-
-  </div>
-</div>
-
-
-  <div id="myModa5" class="modal fade" role="dialog">
-  <div class="modal-dialog terms-conditions whtsupbox">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">X</button>
-        <h4 class="modal-title"></h4>
-      </div>
-      <div class="modal-body">
-<div class="fav-popup">
-<div class="fav-title">Solicitação Enviada! O Usuário
-avaliará seu pedido em breve.
-Você será notificado via <a href="#">WhatsApp</a></div>
-
-</div>
-
-      </div>
-      
-    </div>
-
-  </div>
-</div>
-
-
-
+</script>
 </body>
 </html>

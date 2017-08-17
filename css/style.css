@@ -22,6 +22,43 @@ padding:0 15px;
 a {
     color: #fff;
 }
+.hrt-box {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.no-profile-display .volterbox {
+    float: left;
+    width: 100%;
+}
+.index-no-profile {
+    text-align: center;
+}
+.no-profile-display .volterbox button {
+    background: url(../images/volterbg.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 126px;
+    max-width: 363px;
+    border: none;
+    font-size: 45px;
+    font-weight: 700;
+    padding-top: 8px;
+    outline: none;
+    width: 100%;
+    line-height: 0px;
+}
+.index-no-profile p {
+    font-size: 30px;
+    font-weight: 700;
+    width: 100%;
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+    margin-top: 20px;
+	margin-bottom:50px;
+	    text-transform: uppercase;
+}
 .error1{ float:left; width:100%; color:red; text-align:center;}
 .edit-up {
     position: absolute;
@@ -283,7 +320,10 @@ margin:auto;
 margin-top:55px;
 position:relative;
 min-height:200px;
+z-index:999;
 }
+
+.stars-mainwrap a{ cursor:pointer; z-index:9999;}
 
 .stars-mainwrap .starone{
 background-image:url(../images/star1.png);
@@ -547,7 +587,7 @@ div#myModa5 {
     color: #58ff06;
 }
 
-
+.no_results{ display:none;}
 
 @media only screen and (min-width:500px) and (max-width: 699px){
 	
@@ -835,6 +875,11 @@ margin-right:-30px;
 
 
 @media only screen and (max-width:700px) {
+.no-profile-display .volterbox button{height: 100px;}	
+.hrt-box {
+    top: -12px;
+    width: 21%;
+}	
 	.whsupnew {
     float: right;
     position: absolute;
@@ -893,8 +938,18 @@ margin-right:-30px;
 
 
 @media only screen and (min-width:320px) and (max-width: 480px){
-
-
+.no-profile-display .header .menu-wrap {
+    width: 184px;
+   height: 81px;
+    font-size: 21px;
+    padding-top: 10px;
+}
+.no-profile-display  .volterbox button {
+    height: 70px;
+    max-width: 205px;
+    font-size: 34px;
+}
+.index-no-profile p{ font-size:22px;}
 .whtsupbox1 .fav-title {font-size: 15px;  height: 124px;  padding: 49px 24px;}
 .whtsupbox1 .fav-pop-btn a { margin: 0px 7px;   width: 52px;}
 .whtsupbox1 .fav-pop-btn{   margin-top: -22px;	}
@@ -999,6 +1054,11 @@ margin-right:-40px;
 
 
 @media only screen and (min-width:320px) and (max-width: 349px){
+.hrt-box {
+    top: 1px;
+    width: 21%;
+}
+	
 .edi-fav {top: 17px; font-size: 12px; right: 13px;}	
 .edit-up {  right: 35px; top: 18px;  width: 35px;}
 a.edit-n { top: 17px; width: 17px; right: 50px;}
