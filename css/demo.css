@@ -23,12 +23,17 @@ body {
 }
 
 body .rnk-page {
-    padding-top: 50px;
+    padding-top: 30px;
 }
 body .favrouitepage {
-    padding-top: 50px;
+    padding-top: 30px;
 }
-
+#myModal .modal-dialog {
+    margin-top: 10px;
+}
+.editaccountms {
+    padding-top: 30px;
+}
 
 
 .editaccountms .custom-file-upload img {
