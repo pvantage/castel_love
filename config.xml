@@ -16,7 +16,7 @@
 	<plugin name="cordova-plugin-device" spec="~1.1.6" />	
 	<plugin name="cordova-plugin-inappbrowser" spec="~1.7.1" />
 	<plugin name="cordova-plugin-splashscreen" />	
-	<!--<preference name="fullscreen" value="true" />-->
+	<preference name="fullscreen" value="true" />
 	<preference name="StatusBarOverlaysWebView" value="true" />
 	<!--<preference name="orientation" value="portrait" />-->
 	<plugin name="cordova-plugin-screen-orientation" source="npm" />	
