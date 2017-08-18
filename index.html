@@ -24,7 +24,6 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 <script type="text/javascript">
-StatusBar.hide();  
 if (localStorage.getItem("customer_log_id") === null) {
   window.location = './login.html';
 }else if(parseInt(localStorage.getItem("customer_log_id")) > 0)
@@ -78,8 +77,18 @@ if (localStorage.getItem("customer_log_id") === null) {
 						ovel_items += '</div>';
 					}
 					
-					$(".owl-carousel").html(ovel_items);
-					
+										
+				 }else{
+					 
+					 	ovel_items += '<div class="item">';						
+						ovel_items += '<img src="./images/blank.png" />';
+						ovel_items += '</div>';
+					 	
+					 	$(".user_exist").hide();
+					 	$(".no_results").show();
+					 }
+					 
+				$(".owl-carousel").html(ovel_items);				
 					
 					$('.owl-carousel').owlCarousel({
 						items:1,
@@ -97,11 +106,7 @@ if (localStorage.getItem("customer_log_id") === null) {
 					
 					 $('.starbtmtext').circleType({radius: -700});
 					 $('.namewraper span').circleType({radius: 700});
-					 $('.namesub').circleType({radius: 700}); 					
-				 }else{
-					 	$(".user_exist").hide();
-					 	$(".no_results").show();
-					 }
+					 $('.namesub').circleType({radius: 700}); 
 			}
    		});	
 }  
@@ -264,7 +269,7 @@ function rateUser(rate_point){
       <div class="slider-content">
         <div class="slider-wrap"></div>
         <div class="owl-carousel owl-theme">
-          <div class="item" > <img src="images/blank.png" alt=""> </div>
+          <div class="item" ><img src="images/blank.png" alt=""></div>
         </div>
         <div class="customNavigation"> <a class="prev"> <img src="images/prevbtn.png" alt=""></a> <a class="next"><img src="images/nextbtn.png" alt=""></a> </div>
         <div class="profile-age-clm">
