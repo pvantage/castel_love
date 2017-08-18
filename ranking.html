@@ -36,107 +36,113 @@ function getRanking(){
 			 dataType: 'json',
 			 crossDomain: true,
 			 success: function(data){
-				 if(data['success'])
+				 if(data['customer'])
 				 {
+					 var top_3_users = '';
+					 var bottom_3_users = '';
 					 
+				 for(i = 0; i < data['customer'].length; i++)
+				 {
+					if(i <= 2)
+					{
+						if(i == 0)
+						{
+							top_3_users += '<div class="ranking-top-div r-top-only"><div class="trophy"><img src="images/trophy.png">';
+							top_3_users += '</div><div class="rank">1º<br><img src="images/dw-g1.png"></div><div class="ranking-person">';
+							
+							if(data['customer'][i]['image'])
+							{
+								top_3_users += '<img src="' + data['customer'][i]['image'] + '">';
+							}
+							top_3_users += '</div><div class="rank-title">';
+							top_3_users += data['customer'][i]['name'];
+							top_3_users += ' <br><img src="images/ranking-star.png">' + data['customer'][i]['rating'] + '</div></div>'; 
+						}else if(i == 1)
+						{
+							top_3_users += '<div class="ranking-top-div r-top-only"><div class="trophy"><img src="images/trophy-silver.png">';
+							top_3_users += '</div><div class="rank">2º<br><img src="images/dw-g1.png"></div><div class="ranking-person">';
+							if(data['customer'][i]['image'])
+							{
+								top_3_users += '<img src="' + data['customer'][i]['image'] + '">';	
+							}
+							top_3_users += '</div><div class="rank-title">';
+							top_3_users += data['customer'][i]['name'];
+							top_3_users += ' <br><img src="images/ranking-star.png">' + data['customer'][i]['rating'] + '</div></div>'; 
+						}else if(i == 2)
+						{
+							top_3_users += '<div class="ranking-top-div r-top-only"><div class="trophy"><img src="images/trophy-metal.png">';
+							top_3_users += '</div><div class="rank">3º<br><img src="images/dw-g1.png"></div><div class="ranking-person">';
+							
+							if(data['customer'][i]['image'])
+							{
+								top_3_users += '<img src="' + data['customer'][i]['image'] + '">';								
+							}else{
+								//top_3_users += '<img src="images/top_ranking_3.png">';
+							}
+							top_3_users += '</div><div class="rank-title">';
+							top_3_users += data['customer'][i]['name'];
+							top_3_users += ' <br><img src="images/ranking-star.png">' + data['customer'][i]['rating'] + '</div></div>'; 
+						}
+						
+					}else if(i >2)
+					{
+						var class_name = '';
+						
+						if(i%2 == 0)
+						{
+							class_name = ' r-scnd';	
+						}
+						
+						
+						
+						bottom_3_users += '<div class="ranking-top-div '+ class_name + '"><div class="rank">' + i + 'º<br><img src="images/dw-g.png"/></div>';
+						bottom_3_users += '<div class="ranking-person">';
+						if(data['customer'][i]['image'])
+						{
+							bottom_3_users += '<img src="' + data['customer'][i]['image'] + '">';
+						}else{
+								//bottom_3_users += '<img src="images/bottom_ranking.png">';
+							
+							}
+							
+							bottom_3_users += '</div><div class="rank-title">' + data['customer'][i]['name'] + '<br>';
+							bottom_3_users += '<img src="images/ranking-star.png">' + data['customer'][i]['rating'] + '</div>';
+							bottom_3_users += '</div>';
+						
+							
+						
+					}				 
 				 }
+				 
+				 	$("#top_3").html(top_3_users);
+					$("#bottom_3").html(bottom_3_users);
+			  }
 			}
    		});	
 	}
 </script>
 </head>
-<body class="ranking-page">
+<body class="ranking-page" onLoad="getRanking();">
 <div id="o-wrapper" class="o-wrapper innerpage">
-  <div class="container">
+  <div class="container rnk-page">
     <header class="header">
       <div class="page-heading">
         <div class="head-line"><span>Ranking</span></div>
       </div>
     </header>
     <div class="innercontent">
+    
       <div class="ranking-main-div">
-        <div class="ranking-top-div r-top-only">
-          <div class="trophy"><img src="images/trophy.png"/></div>
-          <div class="rank">1º<br>
-            <img src="images/dw-g1.png"/></div>
-          <div class="ranking-person"><img src="images/ranking-person1.png"/></div>
-          <div class="rank-title">Paulo da Silva<br>
-            <img src="images/ranking-star.png"/>192.325 </div>
-        </div>
-        <div class="ranking-top-div r-top-only">
-          <div class="trophy"><img src="images/trophy-silver.png"/></div>
-          <div class="rank">2º<br>
-            <img src="images/dw-g1.png"/></div>
-          <div class="ranking-person"><img src="images/ranking-person1.png"/></div>
-          <div class="rank-title">Paulo da Silva<br>
-            <img src="images/ranking-star.png"/>192.325 </div>
-        </div>
-        <div class="ranking-top-div r-top-only">
-          <div class="trophy"><img src="images/trophy-metal.png"/></div>
-          <div class="rank">3º<br>
-            <img src="images/dw-g1.png"/></div>
-          <div class="ranking-person"><img src="images/ranking-person1.png"/></div>
-          <div class="rank-title">Paulo da Silva<br>
-            <img src="images/ranking-star.png"/>192.325 </div>
-        </div>
-        <div class="rankingbtm-section">
-          <div class="ranking-top-div">
-            <div class="rank">4º<br>
-              <img src="images/dw.png"/></div>
-            <div class="ranking-person"><img src="images/ranking-person.png"/></div>
-            <div class="rank-title">Paulo da Silva<br>
-              <img src="images/ranking-star.png"/>192.325</div>
-          </div>
-          <div class="ranking-top-div r-scnd">
-            <div class="rank">5º<br>
-              <img src="images/dw.png"/></div>
-            <div class="ranking-person"><img src="images/ranking-person.png"/></div>
-            <div class="rank-title">Paulo da Silva<br>
-              <img src="images/ranking-star.png"/>192.325</div>
-          </div>
-          <div class="ranking-top-div">
-            <div class="rank">6º<br>
-              <img src="images/dw.png"/></div>
-            <div class="ranking-person"><img src="images/ranking-person.png"/></div>
-            <div class="rank-title">Paulo da Silva<br>
-              <img src="images/ranking-star.png"/>192.325</div>
-          </div>
-          <div class="ranking-top-div r-scnd">
-            <div class="rank">7º<br>
-              <img src="images/dw.png"/></div>
-            <div class="ranking-person"><img src="images/ranking-person.png"/></div>
-            <div class="rank-title">Paulo da Silva<br>
-              <img src="images/ranking-star.png"/>192.325</div>
-          </div>
-          <div class="ranking-top-div">
-            <div class="rank">8º<br>
-              <img src="images/dw-g.png"/></div>
-            <div class="ranking-person"><img src="images/ranking-person.png"/></div>
-            <div class="rank-title">Paulo da Silva<br>
-              <img src="images/ranking-star.png"/>192.325</div>
-          </div>
-          <div class="ranking-top-div r-scnd">
-            <div class="rank">9º<br>
-              <img src="images/dw-g.png"/></div>
-            <div class="ranking-person"><img src="images/ranking-person.png"/></div>
-            <div class="rank-title">Paulo da Silva<br>
-              <img src="images/ranking-star.png"/>192.325</div>
-          </div>
-          <div class="ranking-top-div">
-            <div class="rank">10º<br>
-              <img src="images/dw-g.png"/></div>
-            <div class="ranking-person"><img src="images/ranking-person.png"/></div>
-            <div class="rank-title">Paulo da Silva<br>
-              <img src="images/ranking-star.png"/>192.325</div>
-          </div>
-          <div class="ranking-top-div r-scnd">
-            <div class="rank">11º<br>
-              <img src="images/dw-g.png"/></div>
-            <div class="ranking-person"><img src="images/ranking-person.png"/></div>
-            <div class="rank-title">Paulo da Silva<br>
-              <img src="images/ranking-star.png"/>192.325</div>
-          </div>
-        </div>
+      
+      <div id="top_3"></div>
+        <div class="rankingbtm-section" id="bottom_3"></div>
+        
+        
+        
+        
+        
+        
+        
         <div class="volterbox">
           <button onClick="window.history.back(-1);"><span>Voltar</span></button>
         </div>

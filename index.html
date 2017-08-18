@@ -234,64 +234,82 @@ function rateUser(rate_point){
    });
 }
 </script>
+
+
+
+
 </head>
 <body onLoad="getFlag();">
 <div id="o-wrapper" class="o-wrapper">
+
   <div class="container">
     <header class="header">
       <div class="menu-wrap"><a href="javascript:;" id="c-button--slide-right">MENU</a></div>
     </header>
-  </div>
-  <div class="user_exist">
-    <div class="container">
-      <div class="slider-main-wrap">
-        <div class="profile-top-main">
-          <div class="pro-rankingnm">Ranking Brasil</div>
-          <div class="hrt-box"><a href="javascript:void(0);" onClick="addFav();"><img src="images/hrt.png"/></a></div>
-          <div class="clearfix"></div>
-          <div class="pro-rankingnum" id="rating"></div>
-          <div class="whsupnew"><a href="#" href="#" data-toggle="modal" data-target="#myModa5"><img src="images/whtsup.png"/></a></div>
-        </div>
-        <div class="slider-content">
-          <div class="slider-wrap"></div>
-          <div class="owl-carousel owl-theme">
-            <div class="item" > <img src="images/blank.png" alt=""> </div>
-          </div>
-          <div class="customNavigation"> <a class="prev"> <img src="images/prevbtn.png" alt=""></a> <a class="next"><img src="images/nextbtn.png" alt=""></a> </div>
-          <div class="profile-age-clm">
-            <div class="ageclm-left" id="state"></div>
-            <div class="ageclm-right" id="age"></div>
-          </div>
-        </div>
-        <div class="namewraper"><span id="name"></span></div>
-        <div class="namesub"><span id="city"></span></div>
-        <input type="hidden" name="current_customer" id="current_customer">
-      </div>
-      <div class="stars-mainwrap">
-        <div class="starone"><a onClick="return rateUser(1);"><span>1</span></a></div>
-        <div class="startwo"><a onClick="return rateUser(10);"><span>10</span></a></div>
-        <div class="starthree"><a onClick="return rateUser(30);"><span>30</span></a></div>
-      </div>
-      <div class="starbtmtext">Quantas Estrelas Ele(a) Merece?</div>
     </div>
-    <div class="bottom-flag"><a href="#" data-toggle="modal" data-target="#myModal"><img src="images/flag-icon.png" alt=""></a></div>
-  </div>
-  <!------- end user_exist -->
+    
+    
+    <div class="user_exist">
+    
+    <div class="container">
+    <div class="slider-main-wrap">
+      <div class="profile-top-main">
+        <div class="pro-rankingnm">Ranking Brasil</div>
+		  <div class="hrt-box"><a href="javascript:void(0);" onClick="addFav();"><img src="images/hrt.png"/></a></div>
+        <div class="clearfix"></div>
+        <div class="pro-rankingnum" id="rating"></div>
+        <div class="whsupnew"><a href="#" href="#" data-toggle="modal" data-target="#myModa5"><img src="images/whtsup.png"/></a></div>
+      </div>
+      <div class="slider-content">
+        <div class="slider-wrap"></div>
+        <div class="owl-carousel owl-theme">
+          <div class="item" > <img src="images/blank.png" alt=""> </div>
+        </div>
+        <div class="customNavigation"> <a class="prev"> <img src="images/prevbtn.png" alt=""></a> <a class="next"><img src="images/nextbtn.png" alt=""></a> </div>
+        <div class="profile-age-clm">
+          <div class="ageclm-left" id="state"></div>
+          <div class="ageclm-right" id="age"></div>
+        </div>
+      </div>
+      <div class="namewraper"><span id="name"></span></div>
+      <div class="namesub"><span id="city"></span></div>
+      <input type="hidden" name="current_customer" id="current_customer">
+    </div>
+    <div class="stars-mainwrap">
+      <div class="starone"><a onClick="return rateUser(1);"><span>1</span></a></div>
+      <div class="startwo"><a onClick="return rateUser(10);"><span>10</span></a></div>
+      <div class="starthree"><a onClick="return rateUser(30);"><span>30</span></a></div>
+    </div>
+    <div class="starbtmtext">Quantas Estrelas Ele(a) Merece?</div>  
+  </div>  
+    
+  <div class="bottom-flag"><a href="#" data-toggle="modal" data-target="#myModal"><img src="images/flag-icon.png" alt=""></a></div>
+  
+  
+  </div> <!------- end user_exist -->
+  
+  
+  
   
   <div class="no_results no-profile-display">
     <div class="container">
-      <div class="index-no-profile">
-        <p>Não há mais usuários para revisar / avaliar hoje.</p>
-        <div class="volterbox"><a href="edit-profile.html">
-          <button><span>Voltar</span></button>
-          </a></div>
-      </div>
-    </div>
-  </div>
+	<div class="index-no-profile">
+	<p>Não há mais usuários para revisar / avaliar hoje.</p>
+	<div class="volterbox"><a href="edit-profile.html"><button><span>Voltar</span></button></a></div>
+	</div>
+</div>
+</div>
+
+<!-- end no results -->
   
-  <!-- end no results --> 
+  
+  
   
 </div>
+
+
+
+
 <nav id="c-menu--slide-right" class="c-menu c-menu--slide-right">
   <button class="c-menu__close">Fechar Menu &rarr;</button>
   <ul class="c-menu__items">
@@ -305,7 +323,12 @@ function rateUser(rate_point){
 <!-- /c-menu slide-right -->
 
 <div id="c-mask" class="c-mask"></div>
+
 </div>
+
+
+
+
 <script type="text/javascript">
 
   var slideRight = new Menu({
@@ -330,34 +353,34 @@ function logOut(){
 }
 </script> 
 
-<!---------- REPORT FLAG CONFIRMATION ---->
+<!---- report flag -->
 <div id="myModal13" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-body">
         <div class="voltar-page">
-          <div class="voltar-text-bg">
-            <div class="vt-text"> OBRIGADO
-              POR AJUDAR
-              A MANTER NOSSO
-              APLICATIVO
-              MAIS SEGURO! </div>
-          </div>
-          <div class="voltr-btn" data-dismiss="modal"><span>VOLTAR</span></div>
-        </div>
+<div class="voltar-text-bg">
+<div class="vt-text">
+OBRIGADO
+POR AJUDAR
+A MANTER NOSSO
+APLICATIVO
+MAIS SEGURO!
+</div>
+</div>
+<div class="voltr-btn"><span>VOLTAR</span></div>
+
+</div>
       </div>
     </div>
   </div>
 </div>
-<!----------- END ------------>
 
-
-<!----------- REPORT FLAG FORM  ------------>
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-body">
-        <div class="pooptitle">Selecione a Alternativa que Melhor define a Imagem</div>
+        <div class="pooptitle">Selecione a Alternativa que Melhor define a Imagem</div>        
         <ul class="donate-now" id="report_flag_container">
         </ul>
       </div>
@@ -365,11 +388,10 @@ function logOut(){
   </div>
 </div>
 
-
-<!--- POP UP WHATSAPP InVITATION -->
 <div id="myModa4" class="modal fade" role="dialog">
-  <div class="modal-dialog terms-conditions whtsupbox1">    
-   
+  <div class="modal-dialog terms-conditions whtsupbox1"> 
+    
+    <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">X</button>
@@ -385,10 +407,6 @@ function logOut(){
     </div>
   </div>
 </div>
-
-<!--------- END ---->
-
-
 <div id="myModa5" class="modal fade" role="dialog">
   <div class="modal-dialog terms-conditions whtsupbox"> 
     
@@ -426,9 +444,8 @@ function reportFlag(){
 			 success: function(data){
 				 if(data['success'])
 				 {
-					 //alert("Obrigado por informar, o administrador irá rever o perfil e tomar as medidas necessárias, se aplicável.");
+					 alert("Obrigado por informar, o administrador irá rever o perfil e tomar as medidas necessárias, se aplicável.");
 					 $('#myModal').modal('hide');
-					 $('#myModal13').modal('show');
 				 }	 
 			}
    });

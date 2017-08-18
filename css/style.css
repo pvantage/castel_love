@@ -32,6 +32,10 @@ div#myModal13 {
     font-family: 'Open Sans', sans-serif;
     color: #fff;
 }
+
+header.header {
+    padding-top: 20px;
+}
 .voltar-text-bg{	background-image: url(../images/voltartext.png);
 	background-position: top center;
 	background-repeat: no-repeat;
@@ -262,6 +266,8 @@ display:inline-block;
 background: -webkit-linear-gradient(#ffffff, #f8c20a);
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;	
+    vertical-align: top;
+    line-height: normal;
 }
 .slider-content{
 position:relative;
@@ -1030,6 +1036,13 @@ margin-right:-30px;
 
 
 @media only screen and (min-width:320px) and (max-width: 480px){
+.whsupnew {
+  top: 53px;
+}
+.namewraper {
+  font-size: 20px;
+}
+	
 .voltr-btn span {  padding-top: 44px;   padding-left: 29px;   font-size: 22px;}
 .voltr-btn {   max-width: 200px;   height: 127px;}
 .vt-text {  font-size: 20px;   padding-top: 71px;	    line-height: 32px;}	
@@ -1216,7 +1229,8 @@ padding-left:20px;
 .slider-content .owl-carousel .item {
     height: 231px;
 }
-.namewraper{ font-size:23px; padding-top:8px;}
+
+.namewraper{ font-size:18px; padding-top:8px;}
 .namesub{ font-size:13px; margin-top:-115px;}
 .stars-mainwrap .starone{
 width:90px;
