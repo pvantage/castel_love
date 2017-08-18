@@ -27,6 +27,13 @@ body .rnk-page {
 body .favrouitepage {
     padding-top: 50px;
 }
+
+body {
+    padding-top: 40px;
+}
+.modal-content {
+    padding-top: 30px;
+}
 .editaccountms .custom-file-upload img {
     border-radius: 19px;
     border: 3px solid #1cbac6;
