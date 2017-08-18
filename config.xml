@@ -18,7 +18,7 @@
 	<plugin name="cordova-plugin-splashscreen" />	
 	<preference name="fullscreen" value="true" />
 	<preference name="StatusBarOverlaysWebView" value="true" />
-	<!--<preference name="orientation" value="portrait" />-->
+	<preference name="orientation" value="portrait" />
 	<plugin name="cordova-plugin-screen-orientation" source="npm" />	
 	<plugin name="cordova-plugin-camera" />
 	<plugin name="cordova-plugin-file-transfer" />
