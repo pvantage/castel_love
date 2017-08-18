@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title>CastelLove</title>
+
+<!-- Bootstrap -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/owl.carousel.css">
+<link href="css/demo.css" rel="stylesheet">
+<link href="css/menu.css" rel="stylesheet">
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script type="text/javascript" src="js/config.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/circletype.js"></script>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+<script type="text/javascript">
+function getRanking(){
+	
+	var url = siteurl + '?route=common/home/getRanking';
+	jQuery.ajax({
+			 type: 'POST',
+			 url: url,			
+			 dataType: 'json',
+			 crossDomain: true,
+			 success: function(data){
+				 if(data['success'])
+				 {
+					 
+				 }
+			}
+   		});	
+	}
+</script>
+</head>
+<body class="ranking-page">
+<div id="o-wrapper" class="o-wrapper innerpage">
+  <div class="container">
+    <header class="header">
+      <div class="page-heading">
+        <div class="head-line"><span>Ranking</span></div>
+      </div>
+    </header>
+    <div class="innercontent">
+      <div class="ranking-main-div">
+        <div class="ranking-top-div r-top-only">
+          <div class="trophy"><img src="images/trophy.png"/></div>
+          <div class="rank">1º<br>
+            <img src="images/dw-g1.png"/></div>
+          <div class="ranking-person"><img src="images/ranking-person1.png"/></div>
+          <div class="rank-title">Paulo da Silva<br>
+            <img src="images/ranking-star.png"/>192.325 </div>
+        </div>
+        <div class="ranking-top-div r-top-only">
+          <div class="trophy"><img src="images/trophy-silver.png"/></div>
+          <div class="rank">2º<br>
+            <img src="images/dw-g1.png"/></div>
+          <div class="ranking-person"><img src="images/ranking-person1.png"/></div>
+          <div class="rank-title">Paulo da Silva<br>
+            <img src="images/ranking-star.png"/>192.325 </div>
+        </div>
+        <div class="ranking-top-div r-top-only">
+          <div class="trophy"><img src="images/trophy-metal.png"/></div>
+          <div class="rank">3º<br>
+            <img src="images/dw-g1.png"/></div>
+          <div class="ranking-person"><img src="images/ranking-person1.png"/></div>
+          <div class="rank-title">Paulo da Silva<br>
+            <img src="images/ranking-star.png"/>192.325 </div>
+        </div>
+        <div class="rankingbtm-section">
+          <div class="ranking-top-div">
+            <div class="rank">4º<br>
+              <img src="images/dw.png"/></div>
+            <div class="ranking-person"><img src="images/ranking-person.png"/></div>
+            <div class="rank-title">Paulo da Silva<br>
+              <img src="images/ranking-star.png"/>192.325</div>
+          </div>
+          <div class="ranking-top-div r-scnd">
+            <div class="rank">5º<br>
+              <img src="images/dw.png"/></div>
+            <div class="ranking-person"><img src="images/ranking-person.png"/></div>
+            <div class="rank-title">Paulo da Silva<br>
+              <img src="images/ranking-star.png"/>192.325</div>
+          </div>
+          <div class="ranking-top-div">
+            <div class="rank">6º<br>
+              <img src="images/dw.png"/></div>
+            <div class="ranking-person"><img src="images/ranking-person.png"/></div>
+            <div class="rank-title">Paulo da Silva<br>
+              <img src="images/ranking-star.png"/>192.325</div>
+          </div>
+          <div class="ranking-top-div r-scnd">
+            <div class="rank">7º<br>
+              <img src="images/dw.png"/></div>
+            <div class="ranking-person"><img src="images/ranking-person.png"/></div>
+            <div class="rank-title">Paulo da Silva<br>
+              <img src="images/ranking-star.png"/>192.325</div>
+          </div>
+          <div class="ranking-top-div">
+            <div class="rank">8º<br>
+              <img src="images/dw-g.png"/></div>
+            <div class="ranking-person"><img src="images/ranking-person.png"/></div>
+            <div class="rank-title">Paulo da Silva<br>
+              <img src="images/ranking-star.png"/>192.325</div>
+          </div>
+          <div class="ranking-top-div r-scnd">
+            <div class="rank">9º<br>
+              <img src="images/dw-g.png"/></div>
+            <div class="ranking-person"><img src="images/ranking-person.png"/></div>
+            <div class="rank-title">Paulo da Silva<br>
+              <img src="images/ranking-star.png"/>192.325</div>
+          </div>
+          <div class="ranking-top-div">
+            <div class="rank">10º<br>
+              <img src="images/dw-g.png"/></div>
+            <div class="ranking-person"><img src="images/ranking-person.png"/></div>
+            <div class="rank-title">Paulo da Silva<br>
+              <img src="images/ranking-star.png"/>192.325</div>
+          </div>
+          <div class="ranking-top-div r-scnd">
+            <div class="rank">11º<br>
+              <img src="images/dw-g.png"/></div>
+            <div class="ranking-person"><img src="images/ranking-person.png"/></div>
+            <div class="rank-title">Paulo da Silva<br>
+              <img src="images/ranking-star.png"/>192.325</div>
+          </div>
+        </div>
+        <div class="volterbox">
+          <button onClick="window.history.back(-1);"><span>Voltar</span></button>
+        </div>
+        <div class="ranking-ftr-design"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+ $('.head-line span').circleType({radius: 600});
+ $('.volterbox button span').circleType({radius: -600});
+  $('.namesub ').circleType({radius: 700});
+ </script>
+</body>
+</html>
