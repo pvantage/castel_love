@@ -24,8 +24,6 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-
 <script type="text/javascript">
 function getRanking(){
 	
@@ -95,6 +93,11 @@ function getRanking(){
 						
 						var j = i+1;
 						
+						if(i%2 > 0)
+						{
+							bottom_3_users += ' <div class="row_repeat">';	
+						}
+						
 						bottom_3_users += '<div class="ranking-top-div '+ class_name + '"><div class="rank">' + j + 'º<br><img src="images/dw-g.png"/></div>';
 						bottom_3_users += '<div class="ranking-person">';
 						if(data['customer'][i]['image'])
@@ -108,11 +111,16 @@ function getRanking(){
 							bottom_3_users += '</div><div class="rank-title">' + data['customer'][i]['name'] + '<br>';
 							bottom_3_users += '<img src="images/ranking-star.png">' + data['customer'][i]['rating'] + '</div>';
 							bottom_3_users += '</div>';
-						
 							
-						
-					}				 
-				 }
+							if(i%2 == 0)
+							{
+								bottom_3_users += ' </div>';	
+							}else if(i == data['customer'].length)
+							{
+								bottom_3_users += ' </div>';	
+							}						
+					   }				 
+				    }
 				 
 				 	$("#top_3").html(top_3_users);
 					$("#bottom_3").html(bottom_3_users);
@@ -135,13 +143,7 @@ function getRanking(){
       <div class="ranking-main-div">
       
       <div id="top_3"></div>
-        <div class="rankingbtm-section" id="bottom_3"></div>
-        
-        
-        
-        
-        
-        
+        <div class="rankingbtm-section" id="bottom_3"></div>        
         
         <div class="volterbox">
           <button onClick="window.history.back(-1);"><span>Voltar</span></button>
