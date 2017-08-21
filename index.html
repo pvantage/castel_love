@@ -24,7 +24,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 <script type="text/javascript">
-if (localStorage.getItem("customer_log_id") === null) {
+if(localStorage.getItem("customer_log_id") === null){
   window.location = './login.html';
 }else if(parseInt(localStorage.getItem("customer_log_id")) > 0)
 {
@@ -45,43 +45,40 @@ if (localStorage.getItem("customer_log_id") === null) {
 					$("#current_customer").val(data['customer']['customer_id']);					
 					$("#rating").html(data['customer']['rating']);
 															
-					var ovel_items = '';					
+					var ovel_items = '';
 					
 					if(data['customer']['prof_pic_1'])
 					{
-						ovel_items = '<div class="item">';						
-						ovel_items += '<img src="' + data['customer']['prof_pic_1'] + '" />';
+						ovel_items = '<div class="item">';
+						ovel_items += '<img src="' + data['customer']['prof_pic_1'] + '">';
 						ovel_items += '</div>';
 					}
 					
 					if(data['customer']['prof_pic_2'])
-					{
-						
+					{						
 						ovel_items += '<div class="item">';						
-						ovel_items += '<img src="' + data['customer']['prof_pic_2'] + '" />';
-						ovel_items += '</div>';
-						
+						ovel_items += '<img src="' + data['customer']['prof_pic_2'] + '">';
+						ovel_items += '</div>';						
 					}
 					
 					if(data['customer']['prof_pic_3'])
 					{						
 						ovel_items += '<div class="item">';						
-						ovel_items += '<img src="' + data['customer']['prof_pic_3'] + '" />';
+						ovel_items += '<img src="' + data['customer']['prof_pic_3'] + '">';
 						ovel_items += '</div>';						
 					}
 					
 					if(ovel_items == "")
 					{
 						ovel_items += '<div class="item">';						
-						ovel_items += '<img src="./images/blank.png" />';
+						ovel_items += '<img src="./images/blank.png">';
 						ovel_items += '</div>';
 					}
 					
 										
-				 }else{
-					 
+				 }else{					 
 					 	ovel_items += '<div class="item">';						
-						ovel_items += '<img src="./images/blank.png" />';
+						ovel_items += '<img src="./images/blank.png">';
 						ovel_items += '</div>';
 					 	
 					 	$(".user_exist").hide();
@@ -320,11 +317,11 @@ function rateUser(rate_point){
   <button class="c-menu__close">Fechar Menu &rarr;</button>
   <ul class="c-menu__items">
     <li class="c-menu__item"><a href="index.html" class="c-menu__link">Home</a></li>
-    <li class="c-menu__item"><a href="edit-profile.html" class="c-menu__link">My Profile</a></li>
-    <li class="c-menu__item"><a href="update_password.html" class="c-menu__link">Change Password</a></li>
-    <li class="c-menu__item"><a href="favourite.html" class="c-menu__link">My Favourites</a></li>
-    <li class="c-menu__item"><a href="ranking.html" class="c-menu__link">Rankings</a></li>
-    <li class="c-menu__item"><a href="javascript:void(0);" onClick="logOut();" class="c-menu__link">Log Out</a></li>
+    <li class="c-menu__item"><a href="edit-profile.html" class="c-menu__link">Meu perfil</a></li>
+    <li class="c-menu__item"><a href="update_password.html" class="c-menu__link">Mudar Senha</a></li>
+    <li class="c-menu__item"><a href="favourite.html" class="c-menu__link">Meus favoritos</a></li>
+    <li class="c-menu__item"><a href="ranking.html" class="c-menu__link">Confira O Ranking</a></li>
+    <li class="c-menu__item"><a href="javascript:void(0);" onClick="logOut();" class="c-menu__link">Sair</a></li>
   </ul>
 </nav>
 <!-- /c-menu slide-right -->

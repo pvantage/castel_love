@@ -9,19 +9,18 @@
 <link rel="stylesheet" href="css/owl.carousel.css">
 <link href="css/style.css" rel="stylesheet">
 <link href="css/menu.css" rel="stylesheet">
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/bootstrap.min.js" type="text/javascript"></script>
 <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 <script type="text/javascript" src="js/config.js"></script>
-<script src="js/menu.js"></script> 
-<script src="js/owl.carousel.js"></script> 
-<script src="js/plugins.js"></script> 
-<script src="js/circletype.js"></script> 
+<script src="js/menu.js" type="text/javascript"></script>
+<script src="js/owl.carousel.js" type="text/javascript"></script> 
+<script src="js/plugins.js" type="text/javascript"></script> 
+<script src="js/circletype.js" type="text/javascript"></script>
 <script type="text/javascript">  
 if(localStorage.getItem("customer_log_id") === null){
   window.location = './login.html';
-}
-  
+}  
 </script>
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -42,60 +41,51 @@ function getProfile(){
 			 crossDomain: true,
 			 success: function(data){
 				 if(data['success'])
-				 {				 
+				 {
 				 	$("#name").html(data['success']['name']);
 					$("#age").html(data['success']['age']);
 					$("#whatsapp").val(data['success']['whats_app']);
 					$("#city").html(data['success']['city']);
-					$("#state").html(data['success']['state']);
-					
+					$("#state").html(data['success']['state']);					
 					localStorage.setItem("ranking_position", data['success']['ranking']);
-					$("#ranking_position").html(data['success']['ranking']);
-					
+					$("#ranking_position").html(data['success']['ranking']);					
 					$("#lavel").html('<span>Level</span>  ' + data['success']['lavel']);
 					$("#star_balance").html(data['success']['star_balance']);
 					
-					var ovel_items = '';					
+					var ovel_items = '';
 					
 					if(data['success']['prof_pic_1'])
 					{
-						ovel_items = '<div class="item">';						
+						ovel_items = '<div class="item">';
 						ovel_items += '<img src="' + data['success']['prof_pic_1'] + '" />';
 						ovel_items += '</div>';
 					}
 					
 					if(data['success']['prof_pic_2'])
-					{
-						
-						ovel_items += '<div class="item">';						
+					{						
+						ovel_items += '<div class="item">';
 						ovel_items += '<img src="' + data['success']['prof_pic_2'] + '" />';
 						ovel_items += '</div>';
-						
 					}
 					
 					if(data['success']['prof_pic_3'])
-					{						
-						ovel_items += '<div class="item">';						
-						ovel_items += '<img src="' + data['success']['prof_pic_3'] + '" />';
+					{
+						ovel_items += '<div class="item">';
+						ovel_items += '<img src="' + data['success']['prof_pic_3'] + '">';
 						ovel_items += '</div>';						
 					}
 					
 					if(ovel_items == "")
 					{
 						ovel_items += '<div class="item">';						
-						ovel_items += '<img src="./images/blank.png" />';
+						ovel_items += '<img src="./images/blank.png">';
 						ovel_items += '</div>';
 					}
 					
-					$(".owl-carousel").html(ovel_items);
-					
-					
-					$('.owl-carousel').owlCarousel({
-						items:1,
-						margin:0,	
-					});
-					
+					$(".owl-carousel").html(ovel_items);	
+					$('.owl-carousel').owlCarousel({items:1, margin:0});					
 					owl = $('.owl-carousel').owlCarousel();
+					
 					$(".prev").click(function () {
 						owl.trigger('prev.owl.carousel');
 					});
@@ -105,9 +95,8 @@ function getProfile(){
 					});
 					
 					$('.starbtmtext').circleType({radius: -700});
-					 $('.namewraper span').circleType({radius: 700});
-					  $('.namesub ').circleType({radius: 700}); 
-					
+					$('.namewraper span').circleType({radius: 700});
+					$('.namesub ').circleType({radius: 700});
 				 }
 			}
    		});	
@@ -128,25 +117,24 @@ function getProfile(){
                 <div class="pro-rankingnm">Editar Perfil</div>
 				<div class="edi-fav" id="total_fav"></div>
                 <div class="clearfix"></div>
-                <div class="pro-rankingnum" id="ranking_position"></div>
-			
+                <div class="pro-rankingnum" id="ranking_position"></div>			
             </div>
             <div class="slider-content">
                 <div class="slider-wrap"></div>
-                <div class="owl-carousel owl-theme">
-                   
+                <div class="owl-carousel owl-theme">                   
                 </div>
-				<div class="edit-up"><a href="edit-account.html"><img src="images/edit-imgicon.png"/></a></div>
+				<!--<div class="edit-up"><a href="edit-account.html"><img src="images/edit-imgicon.png"/></a></div>-->
                 <div class="customNavigation"> <a class="prev"> <img src="images/prevbtn.png" alt=""></a> <a class="next"><img src="images/nextbtn.png" alt=""></a> </div>
                 <div class="profile-age-clm">
-                    <div class="ageclm-left"><a href="edit-account.html"><span id="state"></span> <img src="images/edit-icon.png"/></a></div>
-                    <div class="ageclm-right"><a href="edit-account.html"><span id="age"></span> <img src="images/edit-icon.png"/></a></div>
+                    <div class="ageclm-left"><!--<a href="edit-account.html">--><span id="state"></span><!-- <img src="images/edit-icon.png"/></a>--></div>
+                    <div class="ageclm-right"><!--<a href="edit-account.html">--><span id="age"></span> <!--<img src="images/edit-icon.png"/></a>--></div>
                 </div>
             </div>
-            <div class="namewraper"><span id="name"></span> <a class="edit-n" href="edit-account.html"><img src="images/edit-icon.png"/></a>
+            <div class="namewraper"><span id="name"></span> 
+           <!-- <a class="edit-n" href="edit-account.html"><img src="images/edit-icon.png"/></a>-->
              </div>
             <div class="namesub" id="city"></div>
-			<a class="edit-n1" href="edit-account.html"><img src="images/edit-icon.png"/></a>
+			<!--<a class="edit-n1" href="edit-account.html"><img src="images/edit-icon.png"/></a>-->
         </div>
         <div class="stars-mainwrap">
             <div class="starone"><span>1</span></div>
@@ -154,26 +142,21 @@ function getProfile(){
             <div class="starthree"><span>30</span></div>
         </div>
         <div class="starbtmtext">Quantas Estrelas Ele(a) Merece?</div>
-    </div>
-	
-	
-    <!--<div class="bottom-flag"><img src="images/flag-icon.png" alt=""></div>-->
+    </div>    
 </div>
 <nav id="c-menu--slide-right" class="c-menu c-menu--slide-right">
     <button class="c-menu__close">Close Menu &rarr;</button>
     <ul class="c-menu__items">
         <li class="c-menu__item"><a href="index.html" class="c-menu__link">Home</a></li>
-        <li class="c-menu__item"><a href="edit-profile.html" class="c-menu__link">My Profile</a></li>
-        <li class="c-menu__item"><a href="update_password.html" class="c-menu__link">Change Password</a></li>
-        <li class="c-menu__item"><a href="favourite.html" class="c-menu__link">My Favourites</a></li>
-        <li class="c-menu__item"><a href="ranking.html" class="c-menu__link">Rankings</a></li>        
-        <li class="c-menu__item"><a href="javascript:void(0);" onClick="logOut();" class="c-menu__link">Log Out</a></li>
+        <li class="c-menu__item"><a href="edit-profile.html" class="c-menu__link">Meu perfil</a></li>
+        <li class="c-menu__item"><a href="update_password.html" class="c-menu__link">Mudar Senha</a></li>
+        <li class="c-menu__item"><a href="favourite.html" class="c-menu__link">Meus favoritos</a></li>
+        <li class="c-menu__item"><a href="ranking.html" class="c-menu__link">Confira O Ranking</a></li>
+        <li class="c-menu__item"><a href="javascript:void(0);" onClick="logOut();" class="c-menu__link">Sair</a></li>
     </ul>
 </nav>
-<!-- /c-menu slide-right -->
 
 <div id="c-mask" class="c-mask"></div>
-
 <script type="text/javascript">
 	total_fav = 0;
 
@@ -189,8 +172,7 @@ function getProfile(){
 		ranking_position = localStorage.getItem("ranking_position");
 	}
 	
-	$("#ranking_position").html(ranking_position);
-
+  $("#ranking_position").html(ranking_position);
 
   var slideRight = new Menu({
     wrapper: '#o-wrapper',
