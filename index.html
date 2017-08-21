@@ -448,13 +448,26 @@ function reportFlag(){
 			 success: function(data){
 				 if(data['success'])
 				 {
-					 alert("Obrigado por informar, o administrador irá rever o perfil e tomar as medidas necessárias, se aplicável.");
+					 //alert("Obrigado por informar, o administrador irá rever o perfil e tomar as medidas necessárias, se aplicável.");
+					navigator.notification.alert(
+						"Obrigado por informar, o administrador irá rever o perfil e tomar as medidas necessárias, se aplicável.",
+						callBackFunctionFlag, 
+						'Confirmações',
+						"OK"
+					); 
+					 
 					 $('#myModal').modal('hide');
 				 }	 
 			}
    });
 
 }
+
+
+function callBackFunctionFlag(){
+	console.log(true);	
+}
+
 
 function addFav(){
 	var url = siteurl + '?route=common/home/addFav';	
@@ -471,7 +484,14 @@ function addFav(){
 				 {
 					 localStorage.setItem("total_fav", data['success']['fav']);
 					 
-					 alert("Você adicionou o usuário à sua lista favorita.");					 
+					 alert("Você adicionou o usuário à sua lista favorita.");
+					 
+					 navigator.notification.alert(
+						"Você adicionou o usuário à sua lista favorita.",
+						callBackFunctionFlag, 
+						'Confirmações',
+						"OK"
+					); 					 
 				 }	 
 			}
    });
