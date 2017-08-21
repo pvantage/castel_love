@@ -465,7 +465,7 @@ function reportFlag(){
 
 
 function callBackFunctionFlag(){
-	console.log(true);	
+	return true;
 }
 
 
@@ -484,7 +484,7 @@ function addFav(){
 				 {
 					 localStorage.setItem("total_fav", data['success']['fav']);
 					 
-					 alert("Você adicionou o usuário à sua lista favorita.");
+					 //alert("Você adicionou o usuário à sua lista favorita.");
 					 
 					 navigator.notification.alert(
 						"Você adicionou o usuário à sua lista favorita.",
