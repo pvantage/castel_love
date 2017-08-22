@@ -304,14 +304,7 @@ function rateUser(rate_point){
 </div>
 
 <!-- end no results -->
-  
-  
-  
-  
-</div>
-
-
-
+ </div>
 
 <nav id="c-menu--slide-right" class="c-menu c-menu--slide-right">
   <button class="c-menu__close">Fechar Menu &rarr;</button>
@@ -330,11 +323,7 @@ function rateUser(rate_point){
 
 </div>
 
-
-
-
 <script type="text/javascript">
-
   var slideRight = new Menu({
     wrapper: '#o-wrapper',
     type: 'slide-right',
@@ -342,13 +331,11 @@ function rateUser(rate_point){
     maskId: '#c-mask'
   });
  
-  var slideRightBtn = document.querySelector('#c-button--slide-right');
-  
+  var slideRightBtn = document.querySelector('#c-button--slide-right');  
   slideRightBtn.addEventListener('click', function(e) {
     e.preventDefault;
     slideRight.open();
   });
-
 
 function logOut(){
 	localStorage.removeItem("customer_log_id");
@@ -447,13 +434,12 @@ function reportFlag(){
 			 crossDomain: true,
 			 success: function(data){
 				 if(data['success'])
-				 {
-					 //alert("Obrigado por informar, o administrador irá rever o perfil e tomar as medidas necessárias, se aplicável.");
+				 {					 
 					navigator.notification.alert(
 						"Obrigado por informar, o administrador irá rever o perfil e tomar as medidas necessárias, se aplicável.",
 						callBackFunctionFlag, 
 						'Confirmações',
-						"OK"
+						"Está bem"
 					); 
 					 
 					 $('#myModal').modal('hide');
@@ -482,15 +468,12 @@ function addFav(){
 			 success: function(data){
 				 if(data['success'])
 				 {
-					 localStorage.setItem("total_fav", data['success']['fav']);
-					 
-					 //alert("Você adicionou o usuário à sua lista favorita.");
-					 
+					 localStorage.setItem("total_fav", data['success']['fav']);					 
 					 navigator.notification.alert(
 						"Você adicionou o usuário à sua lista favorita.",
 						callBackFunctionFlag, 
 						'Confirmações',
-						"OK"
+						"Está bem"
 					); 					 
 				 }	 
 			}
