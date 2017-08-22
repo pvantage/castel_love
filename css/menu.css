@@ -132,6 +132,7 @@
   display: block;
   padding: 12px 24px;
   color: #fff;
+  text-transform:uppercase;
 }
 
 .c-menu--slide-left .c-menu__close,
@@ -363,6 +364,7 @@ body.has-active-menu {
   appearance: none;
   cursor: pointer;
   text-align:left;
+  text-transform:uppercase;
 }
 
 .c-menu__close:focus {
