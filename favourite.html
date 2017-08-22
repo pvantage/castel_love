@@ -131,12 +131,16 @@ function showConfirm(user_id) {
             'Tem Certeza Que Deseja Excluir?',  
             removeFav,              
             'Confirmações',            
-            'OK, Cancel'          
+            'Cancel, OK'          
         );
     }
 
-function removeFav()
+function removeFav(button_press)
 {
+	alert(button_press);
+	
+   /*if(button_press == 2)
+   {
 	var user_id = $("#user_id").val();
 		
 	var url = siteurl + '?route=common/home/removeFav';	
@@ -184,6 +188,8 @@ function removeFav()
 				$(".fav-prof").html(fav_lists);	 
 			}
    		});
+		
+	}*/
 }	
 </script>
 </body>
