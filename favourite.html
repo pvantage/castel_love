@@ -124,26 +124,20 @@ function loadFav(){
 function goBack(){
 	window.location= "edit-profile.html";	
 }
-function removeMe(user_id){
-		$("#user_id").val(user_id);
-		$("#myModa3").modal('show');
-	}
-	
-function noAction(){
-	$("#myModa3").modal('hide');	
-}
 
 function showConfirm(user_id) {
+		$("#user_id").val(user_id);
         navigator.notification.confirm(
             'Tem Certeza Que Deseja Excluir?',  
             removeFav,              
             'Confirmações',            
-            'Submit, Cancel'          
+            'OK, Cancel'          
         );
     }
 
-function removeFav(user_id)
+function removeFav()
 {
+	var user_id = $("#user_id").val(user_id);
 	alert(user_id);
 	
 	/*var url = siteurl + '?route=common/home/removeFav';	
