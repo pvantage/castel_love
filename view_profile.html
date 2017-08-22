@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CastelLove</title>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/owl.carousel.css">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/menu.css" rel="stylesheet">
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script type="text/javascript" src="js/config.js"></script>
+<script src="js/menu.js"></script>
+<script src="js/owl.carousel.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/circletype.js"></script>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<script type="text/javascript">
+if(localStorage.getItem("customer_log_id") === null){
+  window.location = './login.html';
+}else if(parseInt(localStorage.getItem("customer_log_id")) > 0)
+{
+	var url = siteurl + '?route=account/login/getprofile';
+	jQuery.ajax({
+			 type: 'POST',
+			 url: url,
+			 data: {customer_id:gup("customer_id")},
+			 dataType: 'json',
+			 crossDomain: true,
+			 success: function(data){
+				 if(data['success'])
+				 {				 
+				 	$("#name").html(data['success']['name']);
+					$("#age").html(data['success']['age']);					
+					$("#city").html(data['success']['city']);
+					$("#state").html(data['success']['state']);
+					$("#current_customer").val(data['success']['customer_id']);					
+					$("#rating").html(data['success']['ranking']);
+															
+					var ovel_items = '';
+					
+					if(data['success']['prof_pic_1'])
+					{
+						ovel_items = '<div class="item">';
+						ovel_items += '<img src="' + data['success']['prof_pic_1'] + '">';
+						ovel_items += '</div>';
+					}
+					
+					if(data['success']['prof_pic_2'])
+					{						
+						ovel_items += '<div class="item">';						
+						ovel_items += '<img src="' + data['success']['prof_pic_2'] + '">';
+						ovel_items += '</div>';						
+					}
+					
+					if(data['success']['prof_pic_3'])
+					{						
+						ovel_items += '<div class="item">';						
+						ovel_items += '<img src="' + data['success']['prof_pic_3'] + '">';
+						ovel_items += '</div>';						
+					}
+					
+					if(ovel_items == "")
+					{
+						ovel_items += '<div class="item">';						
+						ovel_items += '<img src="./images/blank.png">';
+						ovel_items += '</div>';
+					}
+					
+										
+				 }else{					 
+					 	ovel_items += '<div class="item">';						
+						ovel_items += '<img src="./images/blank.png">';
+						ovel_items += '</div>';				 	
+					 	
+					 }
+					 
+				$(".owl-carousel").html(ovel_items);				
+					
+					$('.owl-carousel').owlCarousel({
+						items:1,
+						margin:0,	
+					});
+					
+					owl = $('.owl-carousel').owlCarousel();
+					$(".prev").click(function () {
+						owl.trigger('prev.owl.carousel');
+					});
+					
+					$(".next").click(function () {
+						owl.trigger('next.owl.carousel');
+					});
+					
+					 $('.starbtmtext').circleType({radius: -700});
+					 $('.namewraper span').circleType({radius: 700});
+					 $('.namesub').circleType({radius: 700}); 
+			}
+   		});	
+}  
+</script>
+</head>
+<body>
+<div id="o-wrapper" class="o-wrapper">
+
+  <div class="container">
+    <header class="header">
+      <div class="menu-wrap"><a href="javascript:;" id="c-button--slide-right">MENU</a></div>
+    </header>
+    </div>
+    
+    
+    <div class="user_exist">
+    
+    <div class="container">
+    <div class="slider-main-wrap">
+      <div class="profile-top-main">
+        <div class="pro-rankingnm">Ranking Brasil</div>
+		  <div class="hrt-box"><a href="javascript:void(0);"><img src="images/hrt.png"/></a></div>
+        <div class="clearfix"></div>
+        <div class="pro-rankingnum" id="rating"></div>
+        <div class="whsupnew"><a href="javascript:void(0);"><img src="images/whtsup.png"/></a></div>
+      </div>
+      <div class="slider-content">
+        <div class="slider-wrap"></div>
+        <div class="owl-carousel owl-theme">
+          <div class="item" ><img src="images/blank.png" alt=""></div>
+        </div>
+        <div class="customNavigation"> <a class="prev"> <img src="images/prevbtn.png" alt=""></a> <a class="next"><img src="images/nextbtn.png" alt=""></a> </div>
+        <div class="profile-age-clm">
+          <div class="ageclm-left" id="state"></div>
+          <div class="ageclm-right" id="age"></div>
+        </div>
+      </div>
+      <div class="namewraper"><span id="name"></span></div>
+      <div class="namesub"><span id="city"></span></div>
+      <input type="hidden" name="current_customer" id="current_customer">
+    </div>   
+  </div>  
+  
+  </div> <!------- end user_exist -->
+  
+  
+  
+</div>
+
+
+
+
+<nav id="c-menu--slide-right" class="c-menu c-menu--slide-right">
+  <button class="c-menu__close">Fechar Menu &rarr;</button>
+  <ul class="c-menu__items">
+    <li class="c-menu__item"><a href="index.html" class="c-menu__link">Home</a></li>
+    <li class="c-menu__item"><a href="edit-profile.html" class="c-menu__link">Meu perfil</a></li>
+    <li class="c-menu__item"><a href="update_password.html" class="c-menu__link">Mudar Senha</a></li>
+    <li class="c-menu__item"><a href="favourite.html" class="c-menu__link">Meus favoritos</a></li>
+    <li class="c-menu__item"><a href="ranking.html" class="c-menu__link">Confira O Ranking</a></li>
+    <li class="c-menu__item"><a href="javascript:void(0);" onClick="logOut();" class="c-menu__link">Sair</a></li>
+  </ul>
+</nav>
+<!-- /c-menu slide-right -->
+
+<div id="c-mask" class="c-mask"></div>
+
+</div>
+
+
+
+
+<script type="text/javascript">
+
+  var slideRight = new Menu({
+    wrapper: '#o-wrapper',
+    type: 'slide-right',
+    menuOpenerClass: '.c-button',
+    maskId: '#c-mask'
+  });
+ 
+  var slideRightBtn = document.querySelector('#c-button--slide-right');
+  
+  slideRightBtn.addEventListener('click', function(e) {
+    e.preventDefault;
+    slideRight.open();
+  });
+
+
+function logOut(){
+	localStorage.removeItem("customer_log_id");
+	localStorage.removeItem("customer_sex");
+	window.location = 'login.html';	
+}
+</script>
+</body>
+</html>

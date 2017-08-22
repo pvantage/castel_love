@@ -57,10 +57,10 @@ function loadFav(){
 						{
 							fav_lists += '<img src="'+ data['customer'][i]['image'] + '">';	
 						}else{
-							fav_lists += '<img src="images/fav-p.png" alt=""/>';
+							fav_lists += '<img src="images/fav-p.png" alt="">';
 						}
 						
-						fav_lists += '<span></span></div>';
+						fav_lists += '<a href="view_profile.html?customer_id='+ data['customer'][i]['customer_id'] + '"><span></span></a></div>';
           				fav_lists += '<a class="closed" onClick="showConfirm('+ data['customer'][i]['customer_id'] +');"><img src="images/close.png"/></a>';
          				fav_lists += '<div class="username">' + data['customer'][i]['name'] + '</div>';						
 						
@@ -167,10 +167,10 @@ function removeFav(button_press)
 						{
 							fav_lists += '<img src="'+ data['customer'][i]['image'] + '">';	
 						}else{
-							fav_lists += '<img src="images/fav-p.png" alt=""/>';
+							fav_lists += '<img src="images/fav-p.png" alt="">';
 						}
 						
-						fav_lists += '<span></span></div>';
+						fav_lists += '<a href="view_profile.html?customer_id='+ data['customer'][i]['customer_id'] +'"><span></span></a></div>';
           				fav_lists += '<a class="closed" onClick="showConfirm('+ data['customer'][i]['customer_id'] +');"><img src="images/close.png"/></a>';
          				fav_lists += '<div class="username">' + data['customer'][i]['name'] + '</div>';						
 						
