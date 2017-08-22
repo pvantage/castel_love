@@ -61,7 +61,7 @@ function loadFav(){
 						}
 						
 						fav_lists += '<span></span></div>';
-          				fav_lists += '<a class="closed" onClick="removeMe('+ data['customer'][i]['customer_id'] +');"><img src="images/close.png"/></a>';
+          				fav_lists += '<a class="closed" onClick="showConfirm('+ data['customer'][i]['customer_id'] +');"><img src="images/close.png"/></a>';
          				fav_lists += '<div class="username">' + data['customer'][i]['name'] + '</div>';						
 						
 						fav_lists += '</li>'; 
@@ -133,10 +133,21 @@ function noAction(){
 	$("#myModa3").modal('hide');	
 }
 
-function removeFav()
+function showConfirm(user_id) {
+        navigator.notification.confirm(
+            'Tem Certeza Que Deseja Excluir?',  
+            onConfirm,              
+            'Confirmações',            
+            'OK,Cancel'          
+        );
+    }
+
+function removeFav(user_id)
 {
+	alert(user_id);
+	
 	var url = siteurl + '?route=common/home/removeFav';	
-	var user_id = $("#user_id").val();
+	
 	
 	jQuery.ajax({
 			 type: 'POST',
@@ -146,7 +157,7 @@ function removeFav()
 			 crossDomain: true,
 			 success: function(data)
 			 {
-				$("#myModa3").modal('hide'); 
+				//$("#myModa3").modal('hide'); 
 				 
 				var fav_lists = ''; 
 				 				 
@@ -165,7 +176,7 @@ function removeFav()
 						}
 						
 						fav_lists += '<span></span></div>';
-          				fav_lists += '<a class="closed" onClick="removeMe('+ data['customer'][i]['customer_id'] +');"><img src="images/close.png"/></a>';
+          				fav_lists += '<a class="closed" onClick="showConfirm('+ data['customer'][i]['customer_id'] +');"><img src="images/close.png"/></a>';
          				fav_lists += '<div class="username">' + data['customer'][i]['name'] + '</div>';						
 						
 						fav_lists += '</li>'; 
