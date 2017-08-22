@@ -138,9 +138,8 @@ function showConfirm(user_id) {
 function removeFav()
 {
 	var user_id = $("#user_id").val();
-	alert(user_id);
-	
-	/*var url = siteurl + '?route=common/home/removeFav';	
+		
+	var url = siteurl + '?route=common/home/removeFav';	
 	
 	
 	jQuery.ajax({
@@ -150,8 +149,7 @@ function removeFav()
 			 dataType: 'json',
 			 crossDomain: true,
 			 success: function(data)
-			 {
-				//$("#myModa3").modal('hide'); 
+			 {				
 				 
 				var fav_lists = ''; 
 				 				 
@@ -185,7 +183,7 @@ function removeFav()
 				
 				$(".fav-prof").html(fav_lists);	 
 			}
-   		});*/
+   		});
 }	
 </script>
 </body>
