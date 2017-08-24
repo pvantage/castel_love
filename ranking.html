@@ -30,7 +30,7 @@ function getRanking(){
 	var url = siteurl + '?route=common/home/getRanking';
 	jQuery.ajax({
 			 type: 'POST',
-			 url: url,			
+			 url: url,
 			 dataType: 'json',
 			 crossDomain: true,
 			 success: function(data){
@@ -38,95 +38,30 @@ function getRanking(){
 				 {
 					 var top_3_users = '';
 					 var bottom_3_users = '';
-					 
-				 for(i = 0; i < data['customer'].length; i++)
-				 {
-					if(i <= 2)
-					{
-						if(i == 0)
-						{
-							top_3_users += '<div class="ranking-top-div r-top-only"><div class="trophy"><img src="images/trophy.png">';
-							top_3_users += '</div><div class="rank">1º<br><img src="images/dw-g1.png"></div><div class="ranking-person">';
+					var j =1; 
+					 for(i = 0; i < data['customer'].length; i++)
+					 {	
+								top_3_users += '<div class="ranking-top-div r-top-only">';
+								top_3_users += '<div class="rank">' + j +'º</div><div class="ranking-person">';
+								
+								if(data['customer'][i]['image'])
+								{
+									top_3_users += '<img src="' + data['customer'][i]['image'] + '">';
+								}
+								top_3_users += '</div><div class="rank-title">';
+								top_3_users += data['customer'][i]['name'];
+								top_3_users += ' <br><img src="images/ranking-star.png">' + data['customer'][i]['rating'] + '</div></div>';
 							
-							if(data['customer'][i]['image'])
-							{
-								top_3_users += '<img src="' + data['customer'][i]['image'] + '">';
-							}
-							top_3_users += '</div><div class="rank-title">';
-							top_3_users += data['customer'][i]['name'];
-							top_3_users += ' <br><img src="images/ranking-star.png">' + data['customer'][i]['rating'] + '</div></div>'; 
-						}else if(i == 1)
-						{
-							top_3_users += '<div class="ranking-top-div r-top-only"><div class="trophy"><img src="images/trophy-silver.png">';
-							top_3_users += '</div><div class="rank">2º<br><img src="images/dw-g1.png"></div><div class="ranking-person">';
-							if(data['customer'][i]['image'])
-							{
-								top_3_users += '<img src="' + data['customer'][i]['image'] + '">';	
-							}
-							top_3_users += '</div><div class="rank-title">';
-							top_3_users += data['customer'][i]['name'];
-							top_3_users += ' <br><img src="images/ranking-star.png">' + data['customer'][i]['rating'] + '</div></div>'; 
-						}else if(i == 2)
-						{
-							top_3_users += '<div class="ranking-top-div r-top-only"><div class="trophy"><img src="images/trophy-metal.png">';
-							top_3_users += '</div><div class="rank">3º<br><img src="images/dw-g1.png"></div><div class="ranking-person">';
-							
-							if(data['customer'][i]['image'])
-							{
-								top_3_users += '<img src="' + data['customer'][i]['image'] + '">';								
-							}else{
-								//top_3_users += '<img src="images/top_ranking_3.png">';
-							}
-							top_3_users += '</div><div class="rank-title">';
-							top_3_users += data['customer'][i]['name'];
-							top_3_users += ' <br><img src="images/ranking-star.png">' + data['customer'][i]['rating'] + '</div></div>'; 
+							j++;
+						
 						}
-						
-					}else if(i >2)
-					{
-						var class_name = '';
-						
-						if(i%2 == 0)
-						{
-							class_name = ' r-scnd';	
-						}
-						
-						var j = i+1;
-						
-						if(i%2 > 0)
-						{
-							bottom_3_users += ' <div class="row_repeat">';	
-						}
-						
-						bottom_3_users += '<div class="ranking-top-div '+ class_name + '"><div class="rank">' + j + 'º<br><img src="images/dw-g.png"/></div>';
-						bottom_3_users += '<div class="ranking-person">';
-						if(data['customer'][i]['image'])
-						{
-							bottom_3_users += '<img src="' + data['customer'][i]['image'] + '">';
-						}else{
-								//bottom_3_users += '<img src="images/bottom_ranking.png">';
-							
-							}
-							
-							bottom_3_users += '</div><div class="rank-title">' + data['customer'][i]['name'] + '<br>';
-							bottom_3_users += '<img src="images/ranking-star.png">' + data['customer'][i]['rating'] + '</div>';
-							bottom_3_users += '</div>';
-							
-							if(i%2 == 0)
-							{
-								bottom_3_users += ' </div>';	
-							}else if(i == data['customer'].length)
-							{
-								bottom_3_users += ' </div>';	
-							}						
-					   }				 
-				    }
 				 
 				 	$("#top_3").html(top_3_users);
-					$("#bottom_3").html(bottom_3_users);
+					
+					$('.volterbox button span').circleType({radius: -600});
 			  }
 			}
-   		});	
+   		});
 	}
 </script>
 </head>
@@ -138,13 +73,10 @@ function getRanking(){
         <div class="head-line"><span>Ranking</span></div>
       </div>
     </header>
-    <div class="innercontent">
-    
-      <div class="ranking-main-div">
-      
+    <div class="innercontent">    
+      <div class="ranking-main-div">      
       <div id="top_3"></div>
-        <div class="rankingbtm-section" id="bottom_3"></div>        
-        
+                
         <div class="volterbox">
           <button onClick="window.history.back(-1);"><span>Voltar</span></button>
         </div>
@@ -153,10 +85,10 @@ function getRanking(){
     </div>
   </div>
 </div>
-<script>
+<script type="text/javascript">
  $('.head-line span').circleType({radius: 600});
  $('.volterbox button span').circleType({radius: -600});
-  $('.namesub ').circleType({radius: 700});
+ $('.namesub ').circleType({radius: 700});
  </script>
 </body>
 </html>

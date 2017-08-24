@@ -304,7 +304,14 @@ function rateUser(rate_point){
 </div>
 
 <!-- end no results -->
- </div>
+  
+  
+  
+  
+</div>
+
+
+
 
 <nav id="c-menu--slide-right" class="c-menu c-menu--slide-right">
   <button class="c-menu__close">Fechar Menu &rarr;</button>
@@ -323,7 +330,11 @@ function rateUser(rate_point){
 
 </div>
 
+
+
+
 <script type="text/javascript">
+
   var slideRight = new Menu({
     wrapper: '#o-wrapper',
     type: 'slide-right',
@@ -331,11 +342,13 @@ function rateUser(rate_point){
     maskId: '#c-mask'
   });
  
-  var slideRightBtn = document.querySelector('#c-button--slide-right');  
+  var slideRightBtn = document.querySelector('#c-button--slide-right');
+  
   slideRightBtn.addEventListener('click', function(e) {
     e.preventDefault;
     slideRight.open();
   });
+
 
 function logOut(){
 	localStorage.removeItem("customer_log_id");
@@ -399,7 +412,7 @@ MAIS SEGURO!
   </div>
 </div>
 <div id="myModa5" class="modal fade" role="dialog">
-  <div class="modal-dialog terms-conditions whtsupbox"> 
+  <div class="modal-dialog terms-conditions whtsupbox whtsup-display"> 
     
     <!-- Modal content-->
     <div class="modal-content">
@@ -434,12 +447,13 @@ function reportFlag(){
 			 crossDomain: true,
 			 success: function(data){
 				 if(data['success'])
-				 {					 
+				 {
+					 //alert("Obrigado por informar, o administrador irá rever o perfil e tomar as medidas necessárias, se aplicável.");
 					navigator.notification.alert(
 						"Obrigado por informar, o administrador irá rever o perfil e tomar as medidas necessárias, se aplicável.",
 						callBackFunctionFlag, 
 						'Confirmações',
-						"Está bem"
+						"OK"
 					); 
 					 
 					 $('#myModal').modal('hide');
@@ -468,12 +482,15 @@ function addFav(){
 			 success: function(data){
 				 if(data['success'])
 				 {
-					 localStorage.setItem("total_fav", data['success']['fav']);					 
+					 localStorage.setItem("total_fav", data['success']['fav']);
+					 
+					 //alert("Você adicionou o usuário à sua lista favorita.");
+					 
 					 navigator.notification.alert(
 						"Você adicionou o usuário à sua lista favorita.",
 						callBackFunctionFlag, 
 						'Confirmações',
-						"Está bem"
+						"OK"
 					); 					 
 				 }	 
 			}

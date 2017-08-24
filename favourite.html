@@ -137,25 +137,20 @@ function showConfirm(user_id) {
 
 function removeFav(button_press)
 {	
-	
    if(button_press == 1)
    {
-	var user_id = $("#user_id").val();
-		
-	var url = siteurl + '?route=common/home/removeFav';	
+		var user_id = $("#user_id").val();
+		var url = siteurl + '?route=common/home/removeFav';	
 	
-	
-	jQuery.ajax({
+		jQuery.ajax({
 			 type: 'POST',
 			 url: url,
 			 data: {customer_id: localStorage.getItem("customer_log_id"), user_id: user_id},			 
 			 dataType: 'json',
 			 crossDomain: true,
 			 success: function(data)
-			 {				
-				 
-				var fav_lists = ''; 
-				 				 
+			 {				 
+				var fav_lists = '';				 				 
 				if(data['customer'])
 				{
 					for(i = 0; i < data['customer'].length; i++)
@@ -179,7 +174,7 @@ function removeFav(button_press)
 					 
 					 localStorage.setItem("total_fav", data['customer'].length);	
 				}else{
-					fav_lists += '<li>você excluiu todos os seus favoritos.</li>';
+					fav_lists += '<li class="fav_alart">você excluiu todos os seus favoritos.</li>';
 					
 					localStorage.setItem("total_fav", 0);	
 				}
