@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CastelLove</title>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/demo.css" rel="stylesheet">
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script type="text/javascript" src="js/config.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/circletype.js"></script>
+
+<script type="text/javascript">
+function myInvitation(){
+	var url = siteurl + '?route=common/home/myInvites';
+	jQuery.ajax({
+			 type: 'POST',
+			 url: url,			 
+			 dataType: 'json',
+			 data: {customer_id: localStorage.getItem("customer_log_id")},
+			 crossDomain: true,
+			 success: function(data){
+				 
+				 var invite_lists = '';
+				 
+				 if(data['invites'])
+				 {
+					 for(i = 0; i < data['invites'].length; i++)
+					 {
+						invite_lists += '<li>';
+						invite_lists += '<label>' + data['invites'][i]['name'] + '</label>';
+						invite_lists += '<p>' + data['invites'][i]['whatsapp'] + '</p>';
+						
+						invite_lists += '<span class="whts-accept"><a href="#"><img src="images/not-accept.png"/></a> <a href="#"><img src="images/not-notaccept.png"/></a> </span>';
+						
+						invite_lists += '</li>'; 
+					 }				 
+				 }else if(data['no_results'])
+				 {
+					invite_lists = '<li class="align_centre">You have no invitations.</li>'; 
+				}
+				 
+				 
+				 
+				 	$(".bankof-ul").html(invite_lists);
+				 
+			}
+   		});
+}
+</script>
+</head>
+<body class="chat-main" onLoad="myInvitation();">
+<div id="o-wrapper" class="o-wrapper innerpage">
+  <div class="container bankstars whatsapp-sect">
+    <header class="header">
+      <div class="page-heading">
+        <div class="head-line"><span>WhatsApp</span></div>
+      </div>
+    </header>
+    <div class="innercontent">
+      <div class="banlstarsection">
+        <ul class="bankof-ul">
+          
+        </ul>
+        <div class="volterbox">
+          <button onClick="goBack();">Voltar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+function goBack(){
+	window.location= "edit-profile.html";	
+}
+</script>
+</body>
+</html>

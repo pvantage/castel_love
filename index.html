@@ -261,7 +261,7 @@ function rateUser(rate_point){
 		  <div class="hrt-box"><a href="javascript:void(0);" onClick="addFav();"><img src="images/hrt.png"/></a></div>
         <div class="clearfix"></div>
         <div class="pro-rankingnum" id="rating"></div>
-        <div class="whsupnew"><a href="#" href="#" data-toggle="modal" data-target="#myModa5"><img src="images/whtsup.png"/></a></div>
+        <div class="whsupnew"><a onClick="sentInvite();"><img src="images/whtsup.png"/></a></div>
       </div>
       <div class="slider-content">
         <div class="slider-wrap"></div>
@@ -284,16 +284,9 @@ function rateUser(rate_point){
       <div class="starthree"><a onClick="return rateUser(30);"><span>30</span></a></div>
     </div>
     <div class="starbtmtext">Quantas Estrelas Ele(a) Merece?</div>  
+  </div>    
+  <div class="bottom-flag"><a href="#" data-toggle="modal" data-target="#myModal"><img src="images/flag-icon.png" alt=""></a></div>  
   </div>  
-    
-  <div class="bottom-flag"><a href="#" data-toggle="modal" data-target="#myModal"><img src="images/flag-icon.png" alt=""></a></div>
-  
-  
-  </div> <!------- end user_exist -->
-  
-  
-  
-  
   <div class="no_results no-profile-display">
     <div class="container">
 	<div class="index-no-profile">
@@ -301,17 +294,8 @@ function rateUser(rate_point){
 	<div class="volterbox"><a href="edit-profile.html"><button><span>Voltar</span></button></a></div>
 	</div>
 </div>
+</div>  
 </div>
-
-<!-- end no results -->
-  
-  
-  
-  
-</div>
-
-
-
 
 <nav id="c-menu--slide-right" class="c-menu c-menu--slide-right">
   <button class="c-menu__close">Fechar Menu &rarr;</button>
@@ -321,17 +305,12 @@ function rateUser(rate_point){
     <li class="c-menu__item"><a href="update_password.html" class="c-menu__link">Mudar Senha</a></li>
     <li class="c-menu__item"><a href="favourite.html" class="c-menu__link">Meus favoritos</a></li>
     <li class="c-menu__item"><a href="ranking.html" class="c-menu__link">Confira O Ranking</a></li>
+    <li class="c-menu__item"><a href="whatsapp.html" class="c-menu__link">Convites de WhatsApp</a></li>
     <li class="c-menu__item"><a href="javascript:void(0);" onClick="logOut();" class="c-menu__link">Sair</a></li>
   </ul>
 </nav>
-<!-- /c-menu slide-right -->
-
 <div id="c-mask" class="c-mask"></div>
-
 </div>
-
-
-
 
 <script type="text/javascript">
 
@@ -357,7 +336,6 @@ function logOut(){
 }
 </script> 
 
-<!---- report flag -->
 <div id="myModal13" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -393,9 +371,7 @@ MAIS SEGURO!
 </div>
 
 <div id="myModa4" class="modal fade" role="dialog">
-  <div class="modal-dialog terms-conditions whtsupbox1"> 
-    
-    <!-- Modal content-->
+  <div class="modal-dialog terms-conditions whtsupbox1">  
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">X</button>
@@ -411,10 +387,8 @@ MAIS SEGURO!
     </div>
   </div>
 </div>
-<div id="myModa5" class="modal fade" role="dialog">
-  <div class="modal-dialog terms-conditions whtsupbox whtsup-display"> 
-    
-    <!-- Modal content-->
+<!--<div id="myModa5" class="modal fade" role="dialog">
+  <div class="modal-dialog terms-conditions whtsupbox whtsup-display">    
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">X</button>
@@ -429,8 +403,36 @@ MAIS SEGURO!
       </div>
     </div>
   </div>
-</div>
+</div>-->
 <script type="text/javascript">
+
+function sentInvite(){
+	var url = siteurl + '?route=common/home/whatsappInvite';	
+	var customer_id = $('input[name=\'current_customer\']').val();		
+	jQuery.ajax({
+			 type: 'POST',
+			 url: url,
+			 data: {user_id: localStorage.getItem("customer_log_id"), customer_id: customer_id},
+			 dataType: 'json',
+			 crossDomain: true,
+			 success: function(data){
+				 if(data['success'])
+				 {					 
+					navigator.notification.alert(
+						"Solicitação Enviada! O Usuário avaliará seu pedido em breve. Você será notificado via WhatsApp",
+						callBackFunctionFlag, 
+						'Confirmações',
+						"OK"
+					); 
+					 
+					 //$('#myModal').modal('hide');
+				 }	 
+			}
+   });
+
+}
+
+
 function reportFlag(){
 	var url = siteurl + '?route=common/home/reportFlag';	
 	var user_id = $('input[name=\'current_customer\']').val();
@@ -467,7 +469,6 @@ function reportFlag(){
 function callBackFunctionFlag(){
 	return true;
 }
-
 
 function addFav(){
 	var url = siteurl + '?route=common/home/addFav';	
