@@ -35,7 +35,22 @@ function myInvitation(){
 						invite_lists += '<label>' + data['invites'][i]['name'] + '</label>';
 						invite_lists += '<p>' + data['invites'][i]['whatsapp'] + '</p>';
 						
-						invite_lists += '<span class="whts-accept"><a href="#"><img src="images/not-accept.png"/></a> <a href="#"><img src="images/not-notaccept.png"/></a> </span>';
+						if(data['invites'][i]['status'] == 0)
+						{
+						
+						invite_lists += '<span class="whts-accept"><a href="javascript:void(0)" onClick="accept('+ data['invites'][i]['invitation_id'] +')"><img src="images/not-accept.png"/></a> <a href="javascript:void(0);" onClick="reject('+ data['invites'][i]['invitation_id'] +')"><img src="images/not-notaccept.png"/></a> </span>';
+						
+						}else if(data['invites'][i]['status'] == 1)
+						{
+						
+						invite_lists += '<span class="whts-accept"><a href="javascript:void(0)"><img src="images/click.png"/></a> <a href="javascript:void(0);" onClick="reject('+ data['invites'][i]['invitation_id'] +')"><img src="images/not-notaccept.png"/></a> </span>';
+						
+						}else if(data['invites'][i]['status'] == 2)
+						{
+						
+						invite_lists += '<span class="whts-accept"><a href="javascript:void(0)" onClick="accept('+ data['invites'][i]['invitation_id'] +')"><img src="images/not-accept.png"/></a></span>';
+						
+						}
 						
 						invite_lists += '</li>'; 
 					 }				 
@@ -76,6 +91,50 @@ function myInvitation(){
 <script type="text/javascript">
 function goBack(){
 	window.location= "edit-profile.html";	
+}
+
+function accept(invitation_id)
+{
+	var url = siteurl + '?route=common/home/accepted';
+	jQuery.ajax({
+			 type: 'POST',
+			 url: url,			 
+			 dataType: 'json',
+			 data: {invitation_id: invitation_id, type: 1},
+			 crossDomain: true,
+			 success: function(data){				 
+				 navigator.notification.alert(
+						"Você aceitou o convite com sucesso.",
+						callBackFunctionFlag, 
+						'Confirmações',
+						"Está bem"
+					);
+					
+					window.location = 'whatsapp.html';
+			}
+   		});
+}
+
+function reject(invitation_id)
+{
+	var url = siteurl + '?route=common/home/rejected';
+	jQuery.ajax({
+			 type: 'POST',
+			 url: url,			 
+			 dataType: 'json',
+			 data: {invitation_id: invitation_id, type: 2},
+			 crossDomain: true,
+			 success: function(data){				 
+				 navigator.notification.alert(
+						"Convite rejeitado com sucesso.",
+						callBackFunctionFlag, 
+						'Confirmações',
+						"Está bem"
+					);
+					
+					window.location = 'whatsapp.html';
+			}
+   		});
 }
 </script>
 </body>
