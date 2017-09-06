@@ -176,7 +176,16 @@ jQuery(function(jquery) {
   function getImage1() {	  
 	             
            navigator.camera.getPicture(uploadPhoto1, function(message) {
-			alert('get picture failed');
+						
+			navigator.notification.alert(
+						"desculpa! upload da imagem descartado.",
+						callBackFunctionFlag, 
+						'Confirmações',
+						"Está bem"
+					);
+			
+			
+			
 		},{
 			quality: 50, 
 			destinationType: navigator.camera.DestinationType.FILE_URI,
@@ -214,21 +223,37 @@ jQuery(function(jquery) {
 				$('#image_sr_1').attr('src', resturn_data_1.success);				
 				$("#profile_image_1").val(resturn_data_1.img_name);
 			}else if(resturn_data_1.error)
-			{
-				alert(resturn_data_1.error);
+			{								
+				navigator.notification.alert(
+						resturn_data_1.error,
+						callBackFunctionFlag, 
+						'Confirmações',
+						"Está bem"
+					);
 			}
             
         }
  
         function fail1(error) {
-            alert("Error occured");
+           
+			navigator.notification.alert(
+						"Ocorreu um erro",
+						callBackFunctionFlag, 
+						'Confirmações',
+						"Está bem"
+					);
         }
  </script>
   <script type="text/javascript">
   function getImage2() {	  
 	             
            navigator.camera.getPicture(uploadPhoto2, function(message) {
-			alert('get picture failed');
+			navigator.notification.alert(
+						"desculpa! upload da imagem descartado.",
+						callBackFunctionFlag, 
+						'Confirmações',
+						"Está bem"
+					);
 		},{
 			quality: 50, 
 			destinationType: navigator.camera.DestinationType.FILE_URI,
@@ -267,20 +292,37 @@ jQuery(function(jquery) {
 				$("#profile_image_2").val(resturn_data2.img_name);
 			}else if(resturn_data2.error)
 			{
-				alert(resturn_data2.error);
+				//alert(resturn_data2.error);
+				
+				navigator.notification.alert(
+						resturn_data2.error,
+						callBackFunctionFlag, 
+						'Confirmações',
+						"Está bem"
+					);
 			}
             
         }
  
         function fail2(error) {
-            alert("Error occured");
+            navigator.notification.alert(
+						"Ocorreu um erro",
+						callBackFunctionFlag, 
+						'Confirmações',
+						"Está bem"
+					);
         }
  </script> 
  <script type="text/javascript">
   function getImage3() {	  
 	             
            navigator.camera.getPicture(uploadPhoto3, function(message) {
-			alert('get picture failed');
+			navigator.notification.alert(
+						"desculpa! upload da imagem descartado.",
+						callBackFunctionFlag, 
+						'Confirmações',
+						"Está bem"
+					);
 		},{
 			quality: 50, 
 			destinationType: navigator.camera.DestinationType.FILE_URI,
@@ -319,14 +361,30 @@ jQuery(function(jquery) {
 				$("#profile_image_3").val(resturn_data3.img_name);
 			}else if(resturn_data3.error)
 			{
-				alert(resturn_data3.error);
+				//alert(resturn_data3.error);
+				
+				navigator.notification.alert(
+						resturn_data3.error,
+						callBackFunctionFlag, 
+						'Confirmações',
+						"Está bem"
+					);
 			}
             
         }
  
         function fail3(error) {
-            alert("Error occured");
+            navigator.notification.alert(
+						"Ocorreu um erro",
+						callBackFunctionFlag, 
+						'Confirmações',
+						"Está bem"
+					);
         }
+		
+function callBackFunctionFlag(){
+	return true;
+}
  </script>
 <script type="text/javascript">
 
