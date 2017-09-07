@@ -32,7 +32,7 @@ function myInvitation(){
 					 for(i = 0; i < data['invites'].length; i++)
 					 {
 						invite_lists += '<li>';
-						invite_lists += '<label>' + data['invites'][i]['name'] + '</label>';
+						invite_lists += '<label><a href="view_profile.html?customer_id='+ data['invites'][i]['customer_id'] + '">' + data['invites'][i]['name'] + '</a></label>';
 						invite_lists += '<p>' + data['invites'][i]['whatsapp'] + '</p>';
 						
 						if(data['invites'][i]['status'] == 0)
