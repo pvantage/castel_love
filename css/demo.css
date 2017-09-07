@@ -791,7 +791,7 @@ font-size: 35px;
 }
 
 
-.align_centre{ text-align:center;}
+
 
 
 
@@ -1342,7 +1342,7 @@ ul.bankof-ul span {  float: right;}
 }
 }
  @media only screen and (min-width:400px) and (max-width: 480px) {
- 
+
 .favrouitepage .page-heading .head-line {
 	padding: 19px 0px 0px 0px;
 	height: 158px;
@@ -1374,6 +1374,18 @@ ul.bankof-ul span {  float: right;}
 }
 }
  @media only screen and (max-width:480px) {
+.loginpage.reset-confirmation .page-heading .head-line span {
+    font-size: 35px;
+} 
+.editaccountms .head-line, .registermin .head-line {
+    padding-top: 34px;
+}
+.termsonly .page-heading .head-line {
+    padding: 19px 0px 0px 0px;
+
+}
+.loginpage .page-heading .head-line span{ font-size:42px;}
+ 
 .bankstars.whatsapp-sect .page-heading .head-line {    height: 79px;     width: 228px;}
 body .innerpage .whatsapp-sect .page-heading .head-line span{          padding-left: 38px; padding-top: 0; font-size: 24px; margin-top: 20px; }
 .whatsapp-sect label {    font-size: 20px;    padding-right: 3px;    margin-right: 15px;    width: 44%; border-right:1px solid #a8f39d; line-height: 16px;}
@@ -1519,7 +1531,7 @@ ul.bankof-ul span {  float: right;}
 .lognewbox .l-box input {   width: 100%;}
 .lognewbox .l-box input:focus {    border-radius: 12px;}
 
-.loginpage .page-heading .head-line span {    font-size: 29px;    margin-top: 0;}
+.loginpage .page-heading .head-line span {    font-size: 24px;    margin-top: 0;}
 .page-heading .head-line {
 	padding: 19px 0px 0px 0px;
 	height: 96px;

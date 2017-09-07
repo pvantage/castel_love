@@ -63,7 +63,7 @@ jQuery(function(jquery) {
         </div>
         <div class="l-box">
           <label>Cidade:</label>
-          <input type="text" name="customer_city" maxlength="50" id="customer_city" placeholder="Entre na cidade">
+          <input type="text" name="customer_city" maxlength="50" id="customer_city" placeholder="Insira na cidade">
         </div>
         <div class="l-box sltbox">
           <label>Estado:</label>
@@ -102,7 +102,7 @@ jQuery(function(jquery) {
         </div>
         <div class="l-box">
           <label>Igreja:</label>
-          <input type="text" name="customer_church" maxlength="50" id="customer_church" placeholder="Entre a Igreja">
+          <input type="text" name="customer_church" maxlength="50" id="customer_church" placeholder="Insira a Igreja">
         </div>
         <div class="l-box pwdm">
           <label>Senha:</label>
@@ -188,6 +188,8 @@ jQuery(function(jquery) {
 			
 		},{
 			quality: 50, 
+			correctOrientation: true,
+			sourceType: source,
 			destinationType: navigator.camera.DestinationType.FILE_URI,
 			sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
 		}
@@ -255,7 +257,9 @@ jQuery(function(jquery) {
 						"Está bem"
 					);
 		},{
-			quality: 50, 
+			quality: 50,
+			correctOrientation: true,
+			sourceType: source, 
 			destinationType: navigator.camera.DestinationType.FILE_URI,
 			sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
 		}
@@ -293,6 +297,7 @@ jQuery(function(jquery) {
 			}else if(resturn_data2.error)
 			{
 				//alert(resturn_data2.error);
+
 				
 				navigator.notification.alert(
 						resturn_data2.error,
@@ -324,7 +329,9 @@ jQuery(function(jquery) {
 						"Está bem"
 					);
 		},{
-			quality: 50, 
+			quality: 50,
+			correctOrientation: true,
+			sourceType: source, 
 			destinationType: navigator.camera.DestinationType.FILE_URI,
 			sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
 		}
