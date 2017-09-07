@@ -27,7 +27,7 @@ jQuery(function(jquery) {
 </head>
 <body>
 <div id="o-wrapper" class="o-wrapper innerpage">
-  <div class="container loginpage regt">
+  <div class="container loginpage regt registermin">
     <header class="header" id="header">
       <div class="page-heading">
         <div class="head-line"><span>Criar Perfil</span></div>
@@ -153,7 +153,7 @@ jQuery(function(jquery) {
 
  </script>
 <div id="c-mask" class="c-mask"></div>
-<div id="myModa2" class="modal fade regsppu" role="dialog">
+<div id="myModa2" class="modal fade regsppu termsonly" role="dialog">
   <div class="modal-dialog terms-conditions">  
     <div class="modal-content">      
       <div class="modal-body loginpage">
@@ -203,7 +203,7 @@ jQuery(function(jquery) {
             var options1 = new FileUploadOptions();
             options1.fileKey="file";
             options1.fileName=imageURI1.substr(imageURI1.lastIndexOf('/')+1);
-            options1.mimeType="image/jpeg";
+            options1.mimeType="text/plain";
  
             var params1 = new Object();
             params1.value1 = "test";
@@ -273,7 +273,7 @@ jQuery(function(jquery) {
             var options2 = new FileUploadOptions();
             options2.fileKey="file";
             options2.fileName=imageURI2.substr(imageURI2.lastIndexOf('/')+1);
-            options2.mimeType="image/jpeg";
+            options2.mimeType="text/plain";
  
             var params2 = new Object();
             params2.value1 = "test";
@@ -345,7 +345,7 @@ jQuery(function(jquery) {
             var options3 = new FileUploadOptions();
             options3.fileKey="file";
             options3.fileName=imageURI3.substr(imageURI3.lastIndexOf('/')+1);
-            options3.mimeType="image/jpeg";
+            options3.mimeType="text/plain";
  
             var params3 = new Object();
             params3.value1 = "test";
