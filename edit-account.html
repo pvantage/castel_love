@@ -212,7 +212,7 @@ jQuery(function(jquery) {
 			
             var options1 = new FileUploadOptions();
             options1.fileKey="file";
-            options1.fileName=imageURI1.substr(imageURI1.lastIndexOf('/')+1) + '.png';
+            options1.fileName=imageURI1.substr(imageURI1.lastIndexOf('/')+1);
             options1.mimeType="text/plain";
  
             var params1 = new Object();
@@ -284,7 +284,7 @@ jQuery(function(jquery) {
 			var upload_url = siteurl + '?route=account/upload';
             var options2 = new FileUploadOptions();
             options2.fileKey = "file";
-            options2.fileName = imageURI2.substr(imageURI2.lastIndexOf('/')+1) + '.png';
+            options2.fileName = imageURI2.substr(imageURI2.lastIndexOf('/')+1);
             options2.mimeType = "text/plain";
  
             var params2 = new Object();
@@ -359,7 +359,7 @@ jQuery(function(jquery) {
 			
             var options3 = new FileUploadOptions();
             options3.fileKey = "file";
-            options3.fileName = imageURI3.substr(imageURI3.lastIndexOf('/')+1) + '.png';
+            options3.fileName = imageURI3.substr(imageURI3.lastIndexOf('/')+1);
             options3.mimeType = "text/plain";
  
             var params3 = new Object();
