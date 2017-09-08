@@ -45,7 +45,7 @@ if(localStorage.getItem("customer_log_id") != null) {
 <script type="text/javascript">
 $(document).ready(function(e) {    
 
-$("#acctoun_login").on('click', function(){
+$("#acctoun_login").on('click, touchstart', function(){
 
 	var url = siteurl + '?route=account/login';
 	jQuery.ajax({
