@@ -34,7 +34,7 @@ if(localStorage.getItem("customer_log_id") != null) {
 <div class="l-box"><input type="email" name="login_email" id="login_email" placeholder="EMAIL"></div>
 <div class="l-box"><input type="password" name="login_password" id="login_password" placeholder="SENHA">
 </div>
-<div class="l-box btn-enter"><button id="acctoun_login" onClick="return accountLogin();">ENTRAR</button></div>
+<div class="l-box btn-enter"><button id="acctoun_login">ENTRAR</button></div>
 <div class="forgot-link"><a href="forgot_password.html">Esqueceu a senha?</a></div>
 </div>
 </div>
@@ -43,14 +43,10 @@ if(localStorage.getItem("customer_log_id") != null) {
 <div id="c-mask" class="c-mask"></div>
 </body>
 <script type="text/javascript">
-document.addEventListener("deviceready", onDeviceReady, false);
+$(document).ready(function(e) {    
 
-   
-    function onDeviceReady() {
-     
-    }
-	
-function accountLogin(){
+$("#acctoun_login").on('click', function(){
+
 	var url = siteurl + '?route=account/login';
 	jQuery.ajax({
 			 type: 'POST',
@@ -87,7 +83,8 @@ function accountLogin(){
 					window.location = './index.html';
 				}
 		}
-   });
-}
+   		});
+	});
+});
 </script>
 </html>
