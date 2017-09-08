@@ -173,8 +173,14 @@ jQuery(function(jquery) {
 </body>
 
  <script type="text/javascript">
-$(document).ready(function(e) {    
-$("#image_sr_1").on('click, touchstart', function(){  
+ document.addEventListener("deviceready", onDeviceReady, false);
+ 
+       
+        function onDeviceReady() {
+ 		
+        }
+ 
+  function getImage1() {	  
 	             
            navigator.camera.getPicture(uploadPhoto1, function(message) {
 						
