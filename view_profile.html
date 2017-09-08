@@ -24,6 +24,13 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 <script type="text/javascript">
+function checkDevice(){
+		document.addEventListener("deviceready", onDeviceReady, false);
+}
+
+function onDeviceReady() {
+ 		return true;
+  }
 if(localStorage.getItem("customer_log_id") === null){
   window.location = './login.html';
 }else if(parseInt(localStorage.getItem("customer_log_id")) > 0)
@@ -107,7 +114,7 @@ if(localStorage.getItem("customer_log_id") === null){
 }  
 </script>
 </head>
-<body>
+<body oncheckDevice();>
 <div id="o-wrapper" class="o-wrapper">
 
   <div class="container">

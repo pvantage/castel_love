@@ -30,6 +30,15 @@ if(localStorage.getItem("customer_log_id") === null){
     <![endif]-->
 
 <script type="text/javascript">
+
+function checkDevice(){
+		document.addEventListener("deviceready", onDeviceReady, false);
+}
+
+function onDeviceReady() {
+ 		getProfile();
+  }
+  
 function getProfile(){
 	
 	var url = siteurl + '?route=account/login/getprofile';
@@ -103,7 +112,7 @@ function getProfile(){
 	}
 </script>  
 </head>
-<body onLoad="getProfile();">
+<body onLoad="checkDevice();">
 <div id="o-wrapper" class="o-wrapper">
     <div class="container edit-prof-section">
         <header class="header">

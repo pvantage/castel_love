@@ -22,9 +22,18 @@
 if(localStorage.getItem("customer_log_id") != null) {
   window.location = './index.html';
 }
+
+function checkDevice(){
+		document.addEventListener("deviceready", onDeviceReady, false);
+}
+
+function onDeviceReady() {
+ 		return true;
+  }
+  
 </script>
 </head>
-<body>
+<body onLoad="checkDevice();">
 <div id="o-wrapper" class="o-wrapper innerpage">
 <div class="container loginpage">
 <div class="innercontent">

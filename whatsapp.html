@@ -13,8 +13,16 @@
 <script type="text/javascript" src="js/config.js"></script>
 <script src="js/plugins.js"></script>
 <script src="js/circletype.js"></script>
-
 <script type="text/javascript">
+
+function checkDevice(){
+		document.addEventListener("deviceready", onDeviceReady, false);
+}
+
+function onDeviceReady() {
+ 		myInvitation();
+  }
+
 function myInvitation(){
 	var url = siteurl + '?route=common/home/myInvites';
 	jQuery.ajax({
@@ -68,7 +76,7 @@ function myInvitation(){
 }
 </script>
 </head>
-<body class="chat-main" onLoad="myInvitation();">
+<body class="chat-main" onLoad="checkDevice();">
 <div id="o-wrapper" class="o-wrapper innerpage">
   <div class="container bankstars whatsapp-sect">
     <header class="header">
