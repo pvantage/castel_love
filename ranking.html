@@ -47,7 +47,9 @@ function getRanking(){
 								if(data['customer'][i]['image'])
 								{
 									top_3_users += '<img src="' + data['customer'][i]['image'] + '">';
-								}
+								}else{
+										top_3_users += '<img src="./images/no-images.png">';
+									}
 								top_3_users += '</div><div class="rank-title">';
 								top_3_users += data['customer'][i]['name'];
 								top_3_users += ' <br><img src="images/ranking-star.png">' + data['customer'][i]['rating'] + '</div></div>';
