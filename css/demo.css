@@ -399,8 +399,8 @@ a:focus, a:hover {
 	text-align: center;
 }
 .img-box span {
-    background: rgba(152,161,175,0.5);
-    background-repeat: no-repeat;
+   /* background: rgba(152,161,175,0.5);
+    background-repeat: no-repeat;*/
     position: absolute;
     top: 0;
     width: 100%;
