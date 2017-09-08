@@ -22,10 +22,19 @@
 jQuery(function(jquery) {
  jquery('select').selectBoxIt();
 });
+
+function checkDevice(){
+		document.addEventListener("deviceready", onDeviceReady, false);
+}
+
+function onDeviceReady() {
+ 		return true;
+  }
+
 </script>
 
 </head>
-<body>
+<body onLoad="checkDevice();">
 <div id="o-wrapper" class="o-wrapper innerpage">
   <div class="container loginpage regt registermin">
     <header class="header" id="header">
@@ -139,7 +148,7 @@ jQuery(function(jquery) {
           </div>
         </div>
         <div class="l-box btn_register_submit">
-          <button name="submit_register" id="submit_register">Cadastrar Meu Perfil </button>
+          <button name="submit_register" id="submit_register" onClick="return accountRegister();">Cadastrar Meu Perfil </button>
         </div>
       </div>
     </div>
@@ -173,13 +182,6 @@ jQuery(function(jquery) {
 </body>
 
  <script type="text/javascript">
- document.addEventListener("deviceready", onDeviceReady, false);
- 
-       
-        function onDeviceReady() {
- 		
-        }
- 
   function getImage1() {	  
 	             
            navigator.camera.getPicture(uploadPhoto1, function(message) {
@@ -201,8 +203,7 @@ jQuery(function(jquery) {
 		}
             );
  
-      	});
-	});
+        }
  
         function uploadPhoto1(imageURI1) {
 			var upload_url = siteurl + '?route=account/upload';
@@ -400,9 +401,7 @@ function callBackFunctionFlag(){
  </script>
 <script type="text/javascript">
 
-$(document).ready(function(e) { 
-$("#submit_register").on('click, touchstart', function(){
-	
+function accountRegister(){
 	var url = siteurl + '?route=account/register';
 	jQuery.ajax({
 			 type: 'POST',
@@ -474,9 +473,8 @@ $("#submit_register").on('click, touchstart', function(){
 					window.location = './thank-you.html';
 				}
 			}
-   		});
-	});
-});
+   });
+}
 </script>
 <script type="text/javascript">
 
