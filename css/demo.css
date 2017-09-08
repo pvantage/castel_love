@@ -114,6 +114,13 @@ li.no-fav {
     height: 170px;
     width: 100%;
 }
+.registermin .custom-file-upload img {
+    border-radius: 19px;
+    border: 3px solid #1cbac6;
+    box-shadow: 0px 11px 8px #000;
+    height: 170px;
+    width: 100%;
+}
 .voltar-text-bg{	background-image: url(../images/voltartext.png);
 	background-position: top center;
 	background-repeat: no-repeat;
@@ -1444,6 +1451,10 @@ ul.bankof-ul span {  float: right;}
 }
 	 
 .editaccountms .custom-file-upload img {
+    border-radius: 10px;
+    height: 100px;
+}
+.registermin .custom-file-upload img {
     border-radius: 10px;
     height: 100px;
 }	 
