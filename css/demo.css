@@ -21,6 +21,14 @@ body {
 	font-family: 'Open Sans', sans-serif;
 	color: #fff;
 }
+
+body .reset-confirmation {
+    padding-top: 30px;
+}
+.loginpage.thnkyous .page-heading .head-line span {
+    display: inline-block;
+}
+body .thnkyous{ padding-top:30px;}
 .loginpage.reset-confirmation .page-heading .head-line span {
 
 	display:inline-block;
@@ -388,7 +396,7 @@ a:focus, a:hover {
     border-radius: 10px;
     box-shadow: 0 0 0 3px #fff;
     float: left;
-    height: 162px;
+    /*height: 162px;*/
     overflow: hidden;
     position: relative;
     width: 100%;
@@ -409,7 +417,7 @@ a:focus, a:hover {
     left: 0;
     background-size: 100% 100%;
     /* opacity: 0.5; */
-}
+}.align_centre{ text-align:center;}
 body.favbgmain {
     background-image: url(../images/fav-bg1.png);
 }
@@ -713,7 +721,7 @@ font-size: 35px;
 }
 .r-top-only .ranking-person {
     width: 25%;
-    height: 105px;
+    /*height: 105px;*/
 	background:#fff;
 	border-radius:10px;
 }
@@ -1183,7 +1191,7 @@ ul.bankof-ul span {  float: right;}
 }
 .fav-prof .img-box {
 	border-radius: 4px;
-	height: 134px;
+	/*height: 134px;*/
 	box-shadow: 0px -1px 0px 2px #fff;
 }
 .username {
@@ -1316,8 +1324,17 @@ ul.bankof-ul span {  float: right;}
 
 .loginpage .page-heading .head-line span {    font-size: 50px; margin-top: 0px;}
 }
+ @media only screen and (min-width:500px) and (max-width: 570px) {
+body .thnkyous .page-heading .head-line {
+    padding: 28px 0px 0px 0px;
+    height: 176px;
+}
+ }
  @media only screen and (min-width:481px) and (max-width: 570px) {
-
+.thnkyous .page-heading .head-line {
+    padding: 19px 0px 0px 0px;
+    height: 176px;
+}
 	body .favrouitepage .page-heading .head-line{    padding: 19px 0px 0px 33px;
     max-width: 362px; margin-right:0px;}
 .favrouitepage .page-heading .head-line span {
@@ -1339,7 +1356,7 @@ ul.bankof-ul span {  float: right;}
 .favrouitepage .page-heading .head-line{margin-right: 82px;}
 .fav-prof .img-box {
 	border-radius: 4px;
-	height: 100px;
+	/*height: 100px;*/
 	box-shadow: 0px -1px 0px 2px #fff;
 }
 .fav-prof li {
@@ -1371,7 +1388,7 @@ ul.bankof-ul span {  float: right;}
 }
 .fav-prof .img-box {
 	border-radius: 4px;
-	height: 100px;
+	/*height: 100px;*/
 	box-shadow: 0px -1px 0px 2px #fff;
 }
 .fav-prof li {
@@ -1387,6 +1404,7 @@ ul.bankof-ul span {  float: right;}
 }
 }
  @media only screen and (max-width:480px) {
+
 .reset-confirmation .page-heading .head-line {
     padding: 19px 0px 0px 0px;
     height: 106px;
@@ -1418,7 +1436,7 @@ ul.bankof-ul span {  float: right;}
 }
 .r-top-only .ranking-person {
     width: 21%;
-    height: 59px;
+    /*height: 59px;*/
 	border-radius:10px;
 }
 .rankingbtm-section .ranking-top-div {
@@ -1512,8 +1530,19 @@ font-size: 30px;
 
 
 }
+@media only screen and (min-width:400px) and (max-width: 480px) {
+.thnkyous .page-heading .head-line {
+    padding: 19px 0px 0px 0px;
+    height: 106px;
+    width: 304px;
+} 
+.thnkyous .page-heading .head-line span{
+    font-size: 34px;
+}
+
+}
 @media only screen and (min-width:399px) and (max-width: 415px) {
-	
+
 
 	
 .bankstars.whatsapp-sect .page-heading .head-line {    height: 79px;     width: 228px;}
@@ -1562,7 +1591,7 @@ ul.bankof-ul span {  float: right;}
 }
 .fav-prof .img-box {
 	border-radius: 4px;
-	height: 80px;
+	/*height: 80px;*/
 	box-shadow: 0px -1px 0px 2px #fff;
 }
 .username {

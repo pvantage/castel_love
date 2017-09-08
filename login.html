@@ -11,8 +11,7 @@
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-<script type="text/javascript" src="js/config.js"></script> 
-
+<script type="text/javascript" src="js/config.js"></script>
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -40,7 +39,6 @@ if(localStorage.getItem("customer_log_id") != null) {
 </div>
 </div>
     </div>
-
 </div>
 <div id="c-mask" class="c-mask"></div>
 </body>
@@ -81,7 +79,7 @@ function accountLogin(){
 					localStorage.setItem("customer_sex", data['success']['sex']);
 					window.location = './index.html';
 				}
-			}
+		}
    });
 }
 </script>

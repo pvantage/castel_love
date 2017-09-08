@@ -69,7 +69,7 @@ function loadFav(){
 					 
 					 localStorage.setItem("total_fav", data['customer'].length);	
 				}else{
-					fav_lists += '<li>você excluiu todos os seus favoritos.</li>';
+					fav_lists += '<li class="no-fav">você excluiu todos os seus favoritos.</li>';
 					localStorage.setItem("total_fav", 0);	
 				}
 				
