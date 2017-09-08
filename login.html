@@ -43,6 +43,13 @@ if(localStorage.getItem("customer_log_id") != null) {
 <div id="c-mask" class="c-mask"></div>
 </body>
 <script type="text/javascript">
+document.addEventListener("deviceready", onDeviceReady, false);
+
+   
+    function onDeviceReady() {
+     
+    }
+	
 function accountLogin(){
 	var url = siteurl + '?route=account/login';
 	jQuery.ajax({
