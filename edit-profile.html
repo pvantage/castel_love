@@ -66,28 +66,28 @@ function getProfile(){
 					if(data['success']['prof_pic_1'])
 					{
 						ovel_items = '<div class="item">';
-						ovel_items += '<img src="' + data['success']['prof_pic_1'] + '" />';
+						ovel_items += '<img src="' + data['success']['prof_pic_1'] + '"  class="img-responsive">';
 						ovel_items += '</div>';
 					}
 					
 					if(data['success']['prof_pic_2'])
 					{						
 						ovel_items += '<div class="item">';
-						ovel_items += '<img src="' + data['success']['prof_pic_2'] + '" />';
+						ovel_items += '<img src="' + data['success']['prof_pic_2'] + '"  class="img-responsive">';
 						ovel_items += '</div>';
 					}
 					
 					if(data['success']['prof_pic_3'])
 					{
 						ovel_items += '<div class="item">';
-						ovel_items += '<img src="' + data['success']['prof_pic_3'] + '">';
+						ovel_items += '<img src="' + data['success']['prof_pic_3'] + '" class="img-responsive">';
 						ovel_items += '</div>';						
 					}
 					
 					if(ovel_items == "")
 					{
 						ovel_items += '<div class="item">';						
-						ovel_items += '<img src="./images/blank.png">';
+						ovel_items += '<img src="./images/blank.png" class="img-responsive">';
 						ovel_items += '</div>';
 					}
 					

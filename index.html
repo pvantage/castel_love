@@ -60,35 +60,35 @@ if(localStorage.getItem("customer_log_id") === null){
 					if(data['customer']['prof_pic_1'])
 					{
 						ovel_items = '<div class="item">';
-						ovel_items += '<img src="' + data['customer']['prof_pic_1'] + '">';
+						ovel_items += '<img src="' + data['customer']['prof_pic_1'] + '" class="img-responsive">';
 						ovel_items += '</div>';
 					}
 					
 					if(data['customer']['prof_pic_2'])
 					{						
 						ovel_items += '<div class="item">';						
-						ovel_items += '<img src="' + data['customer']['prof_pic_2'] + '">';
+						ovel_items += '<img src="' + data['customer']['prof_pic_2'] + '" class="img-responsive">';
 						ovel_items += '</div>';						
 					}
 					
 					if(data['customer']['prof_pic_3'])
 					{						
 						ovel_items += '<div class="item">';						
-						ovel_items += '<img src="' + data['customer']['prof_pic_3'] + '">';
+						ovel_items += '<img src="' + data['customer']['prof_pic_3'] + '" class="img-responsive">';
 						ovel_items += '</div>';						
 					}
 					
 					if(ovel_items == "")
 					{
 						ovel_items += '<div class="item">';						
-						ovel_items += '<img src="./images/blank.png">';
+						ovel_items += '<img src="./images/blank.png" class="img-responsive">';
 						ovel_items += '</div>';
 					}
 					
 										
 				 }else{					 
 					 	ovel_items += '<div class="item">';						
-						ovel_items += '<img src="./images/blank.png">';
+						ovel_items += '<img src="./images/blank.png" class="img-responsive">';
 						ovel_items += '</div>';
 					 	
 					 	$(".user_exist").hide();
@@ -277,7 +277,7 @@ function rateUser(rate_point){
       <div class="slider-content">
         <div class="slider-wrap"></div>
         <div class="owl-carousel owl-theme">
-          <div class="item" ><img src="images/blank.png" alt=""></div>
+          <div class="item" ><img src="images/blank.png" alt="" class="img-responsive"></div>
         </div>
         <div class="customNavigation"> <a class="prev"> <img src="images/prevbtn.png" alt=""></a> <a class="next"><img src="images/nextbtn.png" alt=""></a> </div>
         <div class="profile-age-clm">

@@ -33,8 +33,13 @@ function onDeviceReady() {
 
 </script>
 
+
+
 </head>
+
 <body onLoad="checkDevice();">
+
+
 <div id="o-wrapper" class="o-wrapper innerpage">
   <div class="container loginpage regt registermin">
     <header class="header" id="header">
@@ -122,13 +127,13 @@ function onDeviceReady() {
           <input type="password" name="customer_con_password" maxlength="12" id="customer_con_password" placeholder="Senha">
         </div>
         <div class="uploadfilemain">
-          <div class="custom-file-upload"> <img src="images/uploadimg.png" id="image_sr_1" onclick="getImage1();"/>          
+          <div class="custom-file-upload"> <img src="images/uploadimg.png" id="image_sr_1" onclick="getImage1();" class="img-responsive">          
           <input type="hidden" name="profile_image_1" id="profile_image_1">          
            </div>
-          <div class="custom-file-upload"> <img src="images/uploadimg.png" id="image_sr_2" onclick="getImage2();"/>
+          <div class="custom-file-upload"> <img src="images/uploadimg.png" id="image_sr_2" onclick="getImage2();" class="img-responsive">
           <input type="hidden" name="profile_image_2" id="profile_image_2">
            </div>
-          <div class="custom-file-upload"> <img src="images/uploadimg.png" id="image_sr_3" onclick="getImage3();"/>
+          <div class="custom-file-upload"> <img src="images/uploadimg.png" id="image_sr_3" onclick="getImage3();" class="img-responsive">
           <input type="hidden" name="profile_image_3" id="profile_image_3">
            </div>
           <div class="up-rightbox">
@@ -179,6 +184,9 @@ function onDeviceReady() {
     </div>
   </div>
 </div>
+
+<div class="loadermain" id="loadingImg">
+<div class="loader"></div>
 </body>
 
  <script type="text/javascript">
@@ -206,8 +214,9 @@ function onDeviceReady() {
         }
  
         function uploadPhoto1(imageURI1) {
-			var upload_url = siteurl + '?route=account/upload';
+			$("#loadingImg").fadeIn();
 			
+			var upload_url = siteurl + '?route=account/upload';			
             var options1 = new FileUploadOptions();
             options1.fileKey="file";
             options1.fileName=imageURI1.substr(imageURI1.lastIndexOf('/')+1);
@@ -225,7 +234,7 @@ function onDeviceReady() {
         }
  
         function win1(r){
-            
+            $("#loadingImg").fadeOut();
 			var resturn_data_1 = jQuery.parseJSON(r.response);
 			
 			if(resturn_data_1.success)
@@ -245,7 +254,7 @@ function onDeviceReady() {
         }
  
         function fail1(error) {
-           
+           $("#loadingImg").fadeOut();
 			navigator.notification.alert(
 						"Ocorreu um erro",
 						callBackFunctionFlag, 
@@ -275,6 +284,7 @@ function onDeviceReady() {
         }
  
         function uploadPhoto2(imageURI2) {
+			$("#loadingImg").fadeIn();
 			var upload_url = siteurl + '?route=account/upload';
 			
             var options2 = new FileUploadOptions();
@@ -294,7 +304,7 @@ function onDeviceReady() {
         }
  
         function win2(r){
-            
+            $("#loadingImg").fadeOut();
 			var resturn_data2 = jQuery.parseJSON(r.response);
 			
 			if(resturn_data2.success)
@@ -316,7 +326,8 @@ function onDeviceReady() {
             
         }
  
-        function fail2(error) {
+        function fail2(error) {	
+		$("#loadingImg").fadeOut();		
             navigator.notification.alert(
 						"Ocorreu um erro",
 						callBackFunctionFlag, 
@@ -346,6 +357,7 @@ function onDeviceReady() {
         }
  
         function uploadPhoto3(imageURI3) {
+			$("#loadingImg").fadeIn();
 			var upload_url = siteurl + '?route=account/upload';
 			
             var options3 = new FileUploadOptions();
@@ -365,7 +377,7 @@ function onDeviceReady() {
         }
  
         function win3(r){
-            
+            $("#loadingImg").fadeOut();
 			var resturn_data3 = jQuery.parseJSON(r.response);
 			
 			if(resturn_data3.success)
@@ -387,6 +399,7 @@ function onDeviceReady() {
         }
  
         function fail3(error) {
+			$("#loadingImg").fadeOut();
             navigator.notification.alert(
 						"Ocorreu um erro",
 						callBackFunctionFlag, 
@@ -396,6 +409,7 @@ function onDeviceReady() {
         }
 		
 function callBackFunctionFlag(){
+	$("#loadingImg").fadeOut();
 	return true;
 }
  </script>
@@ -481,4 +495,5 @@ function accountRegister(){
  $('#header .head-line span').circleType({radius: 1200}); 
 
  </script>
+
 </html>
