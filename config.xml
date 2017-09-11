@@ -45,7 +45,7 @@
 	<icon src="res/icon/ios/Icon-180.png" gap:platform="winphone" gap:role="background" />
 	
 	<!--Iphone icons-->
-	<splash src="splash.png" />
+	<!--<splash src="splash.png" />-->
 	<preference name="SplashScreen" value="res/screen/ios/Default-568h@2x~iphone.png" />
 	  
 	<icon height="57" platform="ios" src="res/icon/ios/Icon.png" width="57" />  
@@ -65,11 +65,11 @@
 	<icon height="87" platform="ios" src="res/icon/ios/Icon-Small@3x.png" width="87" />
 	
 	
-	<!--<splash src="res/screen/ios/Default.png" platform="ios" width="320" height="480" />
+	<splash src="res/screen/ios/Default.png" platform="ios" width="320" height="480" />
 	<splash src="res/screen/ios/Default@2x.png" platform="ios" width="640" height="960" />
 	
 	
-	<splash src="res/screen/ios/Default-568h@2x~iphone.png" platform="ios" width="640" height="1136" />-->
+	<splash src="res/screen/ios/Default-568h@2x~iphone.png" platform="ios" width="640" height="1136" />
 	
 	
 	<splash src="res/screen/ios/Default-667h@2x.png" platform="ios" width="750" height="1334" />
