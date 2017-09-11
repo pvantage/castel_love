@@ -61,6 +61,8 @@ function getProfile(){
 					$("#lavel").html('<span>Level</span>  ' + data['success']['lavel']);
 					$("#star_balance").html(data['success']['star_balance']);
 					
+					$("#total_fav").html(data['success']['total_fav']);
+					
 					var ovel_items = '';
 					
 					if(data['success']['prof_pic_1'])
@@ -167,12 +169,7 @@ function getProfile(){
 
 <div id="c-mask" class="c-mask"></div>
 <script type="text/javascript">
-	total_fav = 0;
-
-	if(localStorage.getItem("total_fav") != null){
-		total_fav = localStorage.getItem("total_fav");
-	}
-
+	
 	$("#total_fav").html(total_fav);
 	
 	ranking_position = '0º';
