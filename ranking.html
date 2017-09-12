@@ -28,6 +28,7 @@ function checkDevice(){
 }
 
 function onDeviceReady() {
+		getRanking();
  		return true;
   }
   
@@ -52,12 +53,12 @@ function getRanking(){
 								
 								if(data['customer'][i]['image'])
 								{
-									top_3_users += '<img src="' + data['customer'][i]['image'] + '">';
+									top_3_users += '<a href="view_profile.html?customer_id='+ data['customer'][i]['customer_id'] +'"><img src="' + data['customer'][i]['image'] + '"></a>';
 								}else{
-										top_3_users += '<img src="./images/no-images.png">';
+										top_3_users += '<a href="view_profile.html?customer_id='+ data['customer'][i]['customer_id'] +'"><img src="./images/no-images.png"></a>';
 									}
 								top_3_users += '</div><div class="rank-title">';
-								top_3_users += data['customer'][i]['name'];
+								top_3_users += '<a href="view_profile.html?customer_id='+ data['customer'][i]['customer_id'] +'">' + data['customer'][i]['name'] + '</a>';
 								top_3_users += ' <br><img src="images/ranking-star.png">' + data['customer'][i]['rating'] + '</div></div>';
 							
 							j++;
@@ -71,7 +72,7 @@ function getRanking(){
 	}
 </script>
 </head>
-<body class="ranking-page" onLoad="checkDevice(); getRanking();">
+<body class="ranking-page" onLoad="checkDevice();">
 <div id="o-wrapper" class="o-wrapper innerpage">
   <div class="container rnk-page">
     <header class="header">
