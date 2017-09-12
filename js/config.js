@@ -1,4 +1,4 @@
-var siteurl = "http://castellove.vantagewebtech.com/index.php";
+var siteurl = "http://app.cristaossolteiros.com.br/index.php";
 
 function gup(sParam) {
   var sPageURL = decodeURIComponent(window.location.search.substring(1)),
