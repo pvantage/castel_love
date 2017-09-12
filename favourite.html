@@ -63,9 +63,9 @@ function loadFav(){
 						
 						if(data['customer'][i]['image'])
 						{
-							fav_lists += '<img src="'+ data['customer'][i]['image'] + '">';	
+							fav_lists += '<a href="view_profile.html?customer_id='+ data['customer'][i]['customer_id'] + '"><img src="'+ data['customer'][i]['image'] + '"></a>';	
 						}else{
-							fav_lists += '<img src="images/fav-p.png" alt="">';
+							fav_lists += '<a href="view_profile.html?customer_id='+ data['customer'][i]['customer_id'] + '"><img src="images/fav-p.png" alt=""></a>';
 						}
 						
 						fav_lists += '<a href="view_profile.html?customer_id='+ data['customer'][i]['customer_id'] + '"><span></span></a></div>';
