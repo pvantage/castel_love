@@ -88,7 +88,9 @@ li.no-fav {
     width: auto !important;
 }
 
-
+.rank-title a {
+    color: #fff;
+}
 .bankstars.whatsapp-sect .page-heading .head-line {
     background-image: url(../images/whts-img.png);
     height: 151px;

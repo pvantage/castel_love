@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CastelLove</title>
+<title>Cristãos Solteiros</title>
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/owl.carousel.css">
 <link href="css/style.css" rel="stylesheet">
@@ -24,6 +24,13 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 <script type="text/javascript">
+function checkDevice(){
+		document.addEventListener("deviceready", onDeviceReady, false);
+}
+
+function onDeviceReady() {
+ 		return true;
+  }
 if(localStorage.getItem("customer_log_id") === null){
   window.location = './login.html';
 }else if(parseInt(localStorage.getItem("customer_log_id")) > 0)
@@ -44,41 +51,41 @@ if(localStorage.getItem("customer_log_id") === null){
 					$("#state").html(data['success']['state']);
 					$("#current_customer").val(data['success']['customer_id']);					
 					$("#rating").html(data['success']['ranking']);
-															
+					$("#total_fav").html(data['success']['total_fav']);										
 					var ovel_items = '';
 					
 					if(data['success']['prof_pic_1'])
 					{
 						ovel_items = '<div class="item">';
-						ovel_items += '<img src="' + data['success']['prof_pic_1'] + '">';
+						ovel_items += '<img src="' + data['success']['prof_pic_1'] + '" class="img-responsive">';
 						ovel_items += '</div>';
 					}
 					
 					if(data['success']['prof_pic_2'])
 					{						
 						ovel_items += '<div class="item">';						
-						ovel_items += '<img src="' + data['success']['prof_pic_2'] + '">';
+						ovel_items += '<img src="' + data['success']['prof_pic_2'] + '" class="img-responsive">';
 						ovel_items += '</div>';						
 					}
 					
 					if(data['success']['prof_pic_3'])
 					{						
 						ovel_items += '<div class="item">';						
-						ovel_items += '<img src="' + data['success']['prof_pic_3'] + '">';
+						ovel_items += '<img src="' + data['success']['prof_pic_3'] + '" class="img-responsive">';
 						ovel_items += '</div>';						
 					}
 					
 					if(ovel_items == "")
 					{
 						ovel_items += '<div class="item">';						
-						ovel_items += '<img src="./images/blank.png">';
+						ovel_items += '<img src="./images/blank.png" class="img-responsive">';
 						ovel_items += '</div>';
 					}
 					
 										
 				 }else{					 
 					 	ovel_items += '<div class="item">';						
-						ovel_items += '<img src="./images/blank.png">';
+						ovel_items += '<img src="./images/blank.png" class="img-responsive">';
 						ovel_items += '</div>';				 	
 					 	
 					 }
@@ -107,7 +114,7 @@ if(localStorage.getItem("customer_log_id") === null){
 }  
 </script>
 </head>
-<body>
+<body onLoad="oncheckDevice();">
 <div id="o-wrapper" class="o-wrapper">
 
   <div class="container">
@@ -131,7 +138,7 @@ if(localStorage.getItem("customer_log_id") === null){
       <div class="slider-content">
         <div class="slider-wrap"></div>
         <div class="owl-carousel owl-theme">
-          <div class="item" ><img src="images/blank.png" alt=""></div>
+          <div class="item" ><img src="images/blank.png" alt="" class="img-responsive"></div>
         </div>
         <div class="customNavigation"> <a class="prev"> <img src="images/prevbtn.png" alt=""></a> <a class="next"><img src="images/nextbtn.png" alt=""></a> </div>
         <div class="profile-age-clm">
