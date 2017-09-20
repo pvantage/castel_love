@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
     <widget xmlns   = "http://www.w3.org/ns/widgets"
     xmlns:gap   = "http://phonegap.com/ns/1.0"
-    id          = "castellove.com"
+    id          = "cristaossolteiros.com.br"
     versionCode = "5" 
     version     = "2.0.3" >
     <!-- versionCode is optional and Android only -->
-    <name>Castel Love</name>
+    <name>Cristãos Solteiros</name>
     <description>
-      Castel Love
+      Cristãos Solteiros
     </description>
     <author href="http://www.vantagewebtech.com" email="vantage.krishna@gmail.com">
       Krishna Kumar
