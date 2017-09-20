@@ -24,13 +24,6 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 <script type="text/javascript">
-function checkDevice(){
-		document.addEventListener("deviceready", onDeviceReady, false);
-}
-
-function onDeviceReady() {
- 		return true;
-  }
 if(localStorage.getItem("customer_log_id") === null){
   window.location = './login.html';
 }else if(parseInt(localStorage.getItem("customer_log_id")) > 0)
@@ -57,35 +50,35 @@ if(localStorage.getItem("customer_log_id") === null){
 					if(data['success']['prof_pic_1'])
 					{
 						ovel_items = '<div class="item">';
-						ovel_items += '<img src="' + data['success']['prof_pic_1'] + '" class="img-responsive">';
+						ovel_items += '<img src="' + data['success']['prof_pic_1'] + '">';
 						ovel_items += '</div>';
 					}
 					
 					if(data['success']['prof_pic_2'])
 					{						
 						ovel_items += '<div class="item">';						
-						ovel_items += '<img src="' + data['success']['prof_pic_2'] + '" class="img-responsive">';
+						ovel_items += '<img src="' + data['success']['prof_pic_2'] + '">';
 						ovel_items += '</div>';						
 					}
 					
 					if(data['success']['prof_pic_3'])
 					{						
 						ovel_items += '<div class="item">';						
-						ovel_items += '<img src="' + data['success']['prof_pic_3'] + '" class="img-responsive">';
+						ovel_items += '<img src="' + data['success']['prof_pic_3'] + '">';
 						ovel_items += '</div>';						
 					}
 					
 					if(ovel_items == "")
 					{
 						ovel_items += '<div class="item">';						
-						ovel_items += '<img src="./images/blank.png" class="img-responsive">';
+						ovel_items += '<img src="./images/blank.png">';
 						ovel_items += '</div>';
 					}
 					
 										
 				 }else{					 
 					 	ovel_items += '<div class="item">';						
-						ovel_items += '<img src="./images/blank.png" class="img-responsive">';
+						ovel_items += '<img src="./images/blank.png">';
 						ovel_items += '</div>';				 	
 					 	
 					 }
@@ -114,7 +107,7 @@ if(localStorage.getItem("customer_log_id") === null){
 }  
 </script>
 </head>
-<body oncheckDevice();>
+<body>
 <div id="o-wrapper" class="o-wrapper">
 
   <div class="container">
@@ -138,7 +131,7 @@ if(localStorage.getItem("customer_log_id") === null){
       <div class="slider-content">
         <div class="slider-wrap"></div>
         <div class="owl-carousel owl-theme">
-          <div class="item" ><img src="images/blank.png" alt="" class="img-responsive"></div>
+          <div class="item" ><img src="images/blank.png" alt=""></div>
         </div>
         <div class="customNavigation"> <a class="prev"> <img src="images/prevbtn.png" alt=""></a> <a class="next"><img src="images/nextbtn.png" alt=""></a> </div>
         <div class="profile-age-clm">

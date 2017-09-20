@@ -18,12 +18,6 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/plugins.js"></script>
 <script src="js/circletype.js"></script>
-<script>
-  document.addEventListener("deviceready", onDeviceReady, false);
-  function onDeviceReady() {
-   navigator.splashscreen.hide()
-  }
-</script>
 <script type="text/javascript">
 jQuery(function(jquery) {
  jquery('select').selectBoxIt();
@@ -210,7 +204,7 @@ function onDeviceReady() {
 			
 			
 		},{
-			quality: 50, 
+			quality: 100, 
 			correctOrientation: true,						
 			destinationType: navigator.camera.DestinationType.FILE_URI,
 			sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
@@ -280,7 +274,7 @@ function onDeviceReady() {
 						"Está bem"
 					);
 		},{
-			quality: 50,
+			quality: 100,
 			correctOrientation: true,					
 			destinationType: navigator.camera.DestinationType.FILE_URI,
 			sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
@@ -353,7 +347,7 @@ function onDeviceReady() {
 						"Está bem"
 					);
 		},{
-			quality: 50,
+			quality: 100,
 			correctOrientation: true,						
 			destinationType: navigator.camera.DestinationType.FILE_URI,
 			sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY

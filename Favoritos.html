@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title>CastelLove</title>
+
+<!-- Bootstrap -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/owl.carousel.css">
+<link href="css/demo.css" rel="stylesheet">
+<link href="css/menu.css" rel="stylesheet">
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<style>
+html .modal-backdrop {
+    background: rgba(21,40,72,0.9);
+}
+</style>
+
+</head>
+<body class="favbgmain">
+<div id="o-wrapper" class="o-wrapper innerpage">
+    <div class="container favrouitepage">
+        <header class="header">
+           <div class="page-heading"><div class="head-line"><span>Favoritos</span></div></div>
+        </header>
+
+<div class="innercontent">
+<ul class="fav-prof">
+<li><div class="img-box"><img src="images/fav-p.png" alt=""/><span></span></div>
+<a class="closed" href="#"><img src="images/close.png"/></a>
+<div class="username"><a href="#">Paulo</a></div>
+</li>
+
+<li><div class="img-box"><img src="images/fav-p1.png" alt=""/><span></span></div>
+<a class="closed" href="#"><img src="images/close.png"/></a>
+<div class="username"><a href="#">Paulo</a></div>
+</li>
+
+<li><div class="img-box"><img src="images/fav-p2.png" alt=""/><span></span></div>
+<a class="closed" href="#"><img src="images/close.png"/></a>
+<div class="username"><a href="#">Paulo</a></div>
+</li>
+
+<li><div class="img-box"><img src="images/fav-p3.png" alt=""/><span></span></div>
+<a class="closed" href="#"><img src="images/close.png"/></a>
+<div class="username"><a href="#">Paulo</a></div>
+</li>
+
+
+<li><div class="img-box"><img src="images/fav-p.png" alt=""/><span></span></div>
+<a class="closed" href="#"><img src="images/close.png"/></a>
+<div class="username"><a href="#">Paulo</a></div>
+</li>
+
+<li><div class="img-box"><img src="images/fav-p1.png" alt=""/><span></span></div>
+<a class="closed" href="#"><img src="images/close.png"/></a>
+<div class="username"><a href="#">Paulo</a></div>
+</li>
+
+<li><div class="img-box"><img src="images/fav-p2.png" alt=""/><span></span></div>
+<a class="closed" href="#"><img src="images/close.png"/></a>
+<div class="username"><a href="#">Paulo</a></div>
+</li>
+
+<li><div class="img-box"><img src="images/fav-p3.png" alt=""/><span></span></div>
+<a class="closed" href="#"><img src="images/close.png"/></a>
+<div class="username"><a href="#">Paulo</a></div>
+</li>
+
+
+<li><div class="img-box"><img src="images/fav-p.png" alt=""/><span></span></div>
+<a class="closed" href="#"><img src="images/close.png"/></a>
+<div class="username"><a href="#">Paulo</a></div>
+</li>
+
+<li><div class="img-box"><img src="images/fav-p1.png" alt=""/><span></span></div>
+<a class="closed" href="#"><img src="images/close.png"/></a>
+<div class="username"><a href="#">Paulo</a></div>
+</li>
+
+<li><div class="img-box"><img src="images/fav-p2.png" alt=""/><span></span></div>
+<a class="closed" href="#"><img src="images/close.png"/></a>
+<div class="username"><a href="#">Paulo</a></div>
+</li>
+
+<li><div class="img-box"><img src="images/fav-p3.png" alt=""/><span></span></div>
+<a class="closed" href="#"><img src="images/close.png"/></a>
+<div class="username"><a href="#">Paulo</a></div>
+</li>
+</ul>
+
+<div class="volterbox"><button><span data-toggle="modal" data-target="#myModa3">Voltar</span></button></div>
+</div>
+    </div>
+
+</div>
+
+<!-- /c-menu slide-right -->
+
+<div id="c-mask" class="c-mask"></div>
+<!-- /c-mask --> 
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="js/bootstrap.min.js"></script> 
+<script src="js/menu.js"></script> 
+<script src="js/owl.carousel.js"></script> 
+<script src="js/plugins.js"></script> 
+<script src="js/circletype.js"></script> 
+
+<script>
+
+  var slideRight = new Menu({
+    wrapper: '#o-wrapper',
+    type: 'slide-right',
+    menuOpenerClass: '.c-button',
+    maskId: '#c-mask'
+  });
+ 
+  var slideRightBtn = document.querySelector('#c-button--slide-right');
+  
+  slideRightBtn.addEventListener('click', function(e) {
+    e.preventDefault;
+    slideRight.open();
+  });
+
+</script>
+
+
+<script>
+     $('.owl-carousel').owlCarousel({
+    items:1,
+    margin:0,
+	
+	
+});
+
+owl = $('.owl-carousel').owlCarousel();
+$(".prev").click(function () {
+    owl.trigger('prev.owl.carousel');
+});
+
+$(".next").click(function () {
+    owl.trigger('next.owl.carousel');
+});
+     </script> 
+<script>
+ $('.head-line span').circleType({radius: 1200});
+ $('.volterbox button span').circleType({radius: -600});
+  $('.namesub ').circleType({radius: 700});
+</script> 
+ 
+ 
+ 
+ 
+  
+  <div id="myModa3" class="modal fade" role="dialog">
+  <div class="modal-dialog terms-conditions">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">X</button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+<div class="fav-popup">
+<div class="fav-title">Tem Certeza Que Deseja Excluir?</div>
+<div class="fav-pop-btn"><a href="#"><img src="images/fav1.png"/></a> <a href="#"><img src="images/fav2.png"/></a></div>
+</div>
+
+      </div>
+      
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
