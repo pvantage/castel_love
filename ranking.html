@@ -23,6 +23,11 @@
     <![endif]-->
 <script type="text/javascript">
 
+if(localStorage.getItem("ranking_list") != null) {
+  	$("#top_3").html(localStorage.getItem("ranking_list"));
+}
+
+
 function checkDevice(){
 		document.addEventListener("deviceready", onDeviceReady, false);
 }
@@ -65,6 +70,8 @@ function getRanking(){
 						}
 				 
 				 	$("#top_3").html(top_3_users);
+					
+					localStorage.setItem("ranking_list", top_3_users);
 			  }
 			}
    		});

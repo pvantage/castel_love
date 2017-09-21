@@ -47,6 +47,19 @@ body .favrouitepage {
 .custom-file-upload.cu-third {
     margin: 0;
 }
+.rank-title a {
+    color: #fff;
+}
+.loginpage.registermin .page-heading .head-line span {
+
+    float: left;
+    width: 100%;
+}
+.editaccountms .page-heading .head-line span {
+  float: left; 
+ width: 100%;
+}
+
 .loader {
        border: 5px solid #f3f3f3;
     border-top: 5px solid #3498db;
@@ -88,9 +101,7 @@ li.no-fav {
     width: auto !important;
 }
 
-.rank-title a {
-    color: #fff;
-}
+
 .bankstars.whatsapp-sect .page-heading .head-line {
     background-image: url(../images/whts-img.png);
     height: 151px;
@@ -420,7 +431,9 @@ a:focus, a:hover {
     padding: 0px 5px;
     vertical-align: top;
     line-height: 51px;
-	text-align:left;
+	text-align:right;
+	width: 13%;
+	    padding-left: 0px;
 }
 .r-top-only .rank img {
     margin-left: 6px;
@@ -473,7 +486,6 @@ body.favbgmain {
     background-image: url(../images/fav-bg1.png);
 }
 .img-box img {
- height: 100%;
     position: relative;
     width: 100%;
 }
@@ -1372,7 +1384,7 @@ ul.bankof-ul span {  float: right;}
 	
 .ranking-top-div {    border-radius: 12px; text-align: center; margin-top: 9px; }
 .trophy { left: -12px; top: 10px; width: 50px;/* margin-right: 10px; */}
-.ranking-top-div .rank {   font-size: 24px;  margin-top: 0; padding: 0px 5px; line-height: 28px;  text-align: left;}
+.ranking-top-div .rank {   font-size: 24px;  margin-top: 0; padding: 0px 5px; line-height: 28px;  text-align: right; padding-left: 0px;}
 .ranking-person {   width: 23%;}
 .rank-title {   font-size: 17px; padding-left: 10px; padding-top: 0px;text-align: left;}
 .rank-title img {      width: 24px;
@@ -1391,6 +1403,9 @@ body .thnkyous .page-heading .head-line {
 }
  }
  @media only screen and (min-width:481px) and (max-width: 570px) {
+body .registermin .head-line, body .editaccountms .page-heading .head-line {
+	height: 180px;
+}	 
 .thnkyous .page-heading .head-line {
     padding: 19px 0px 0px 0px;
     height: 176px;
@@ -1427,7 +1442,15 @@ body .thnkyous .page-heading .head-line {
 	    line-height: normal;
 } 
 }
+ @media only screen and (min-width:440px) and (max-width: 480px) {
+body .registermin .head-line, body .editaccountms .page-heading .head-line {
+    padding-top: 45px;
+}
+
+}
  @media only screen and (min-width:400px) and (max-width: 480px) {
+	 
+	 
 	.loginpage.reset-confirmation .page-heading .head-line span {
 
 	    line-height: normal;
@@ -1618,6 +1641,9 @@ ul.bankof-ul span {  float: right;}
 
 
 @media only screen and (min-width:320px) and (max-width: 399px) {
+.ranking-top-div .rank {
+    font-size: 19px;
+}	
 .bankstars.whatsapp-sect .page-heading .head-line {    height: 79px;     width: 228px;}
 body .innerpage .whatsapp-sect .page-heading .head-line span{          padding-left: 38px; padding-top: 0; font-size: 24px; margin-top: 20px; }
 .whatsapp-sect label {    font-size: 14px;    padding-right: 3px;    margin-right: 6px;    width: 40%; border-right:1px solid #a8f39d; line-height: 16px;}
@@ -1671,6 +1697,12 @@ ul.bankof-ul span {  float: right;}
 }
 
 @media only screen and (min-width:320px) and (max-width: 360px) {
+.rank-title {
+    font-size: 16px;
+}
+.ranking-top-div .rank {
+    font-size: 18px;
+}		
 .username {
 	font-size: 12px;
 }	
