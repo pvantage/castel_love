@@ -2,8 +2,8 @@
     <widget xmlns   = "http://www.w3.org/ns/widgets"
     xmlns:gap   = "http://phonegap.com/ns/1.0"
     id          = "cristaossolteiros.com.br"
-    versionCode = "5" 
-    version     = "2.0.3" >
+    versionCode = "6" 
+    version     = "2.0.4" >
     <!-- versionCode is optional and Android only -->
     <name>Cristãos Solteiros</name>
     <description>
