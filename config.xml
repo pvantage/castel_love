@@ -2,8 +2,8 @@
     <widget xmlns   = "http://www.w3.org/ns/widgets"
     xmlns:gap   = "http://phonegap.com/ns/1.0"
     id          = "castellove.com"
-    versionCode = "7" 
-    version     = "2.0.5" >
+    versionCode = "8" 
+    version     = "2.0.6" >
     <!-- versionCode is optional and Android only -->
     <name>Cristãos Solteiros</name>
     <description>
